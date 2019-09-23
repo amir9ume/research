@@ -27,6 +27,7 @@ corpus=corpora.MmCorpus('./lda_trained2/bow_corpus.mm')
 
 #dic= corpora.Dictionary.load_from_text('../wordlist.txt')
 
+#stores bag of words for comaprison
 corpus_vectors=[]
 for i in range(1,3):
 
