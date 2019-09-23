@@ -5,22 +5,13 @@ import re
 import numpy as np
 import pandas as pd
 from pprint import pprint
-
 import gensim
 import gensim.corpora as corpora
 from gensim.utils import simple_preprocess
-from gensim.models import CoherenceModel
 from gensim.models import LdaModel
 
-
-import spacy
-import pyLDAvis
-import pyLDAvis.gensim
 import matplotlib.pyplot as plt
-
-
 from nltk.corpus import stopwords
-
 from itertools import chain
 import sys
 
@@ -58,16 +49,15 @@ for i in range(1,3):
     data_words= list(sent_to_words(dataset))
     data_words= remove_stopwords(data_words)
     data_words= [j for sub in data_words for j in sub]
-#print(len(data_words))
 
     bigram= list(ngrams(data_words,2))
-#print(bigram)
     unigram=data_words
-#print(unigram)
 
 #id is first field. Use both title and abstract text for finding out lda topics
-    nlp= spacy.load('en',disable=['parser','ner'])
+#    nlp= spacy.load('en',disable=['parser','ner'])
     """https://spacy.io/api/annotation"""
+
+#try once without lemmatization on bag of words
 
     def lemmatization(texts, allowed_postags=['NOUN','ADJ','VERB','ADV']):
         texts_out= []
@@ -76,7 +66,6 @@ for i in range(1,3):
             texts_out.append([token.lemma_ for token in doc if token.pos_ in allowed_postags]) 
         return texts_out
 
-#try once without lemmatization on bag of words
 #z_words= lemmatization(z_words, allowed_postags=['NOUN','ADJ','VERB','ADV'])
 
     unigram= [u.split() for u in unigram]
