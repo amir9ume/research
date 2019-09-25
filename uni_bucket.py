@@ -54,4 +54,4 @@ u['bucket']= u['ranking'].apply(bucketing_universities)
 print(u[:60])
 u.to_csv('author_uni_ranking_bucket', index=False)
 
-#bucket universities
+#tag abstracts to these ids and read them.Make their document vectors
