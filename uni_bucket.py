@@ -12,34 +12,45 @@ print(u.columns)
 del u[' Gender']
 del u[' Author size']
 
+#use the top uni rankings for bucket. that is guaranteed
+g= open('./data_info/top_uni', "r")
+contents= g.read()
+print(contents)
+print(type(contents))
+
+
 def ranking_func(uni):
     if uni in rankings:
         return rankings[uni]
+    elif uni in contents:
+            return 1
     else:
         for d in rankings:
-            Ratio = fuzz.ratio(uni.lower(),d.lower())
+            Ratio = fuzz.partial_ratio(uni.lower(),d.lower())
             if Ratio>60:
                 return rankings[d]
+            else:
+                return 0
         
 
-def bucketing_universities(uni):
-    for d in rankings:
-    
-        Ratio = fuzz.ratio(uni.lower(),d.lower())
-        if Ratio>60:
-            if rankings[d]<10:
-                return 1
-            if dict[d]>=10 and rankings[d]<50:
-                return 2
-            if dict[d]>=50 and rankings[d]<100:
-                return 3
-            if dict[d]>=100 and rankings[d]<200:
-                return 4
-        else:
-            return 5
+def bucketing_universities(rank):
+    rank= int(rank)
+    if rank==0:
+        return 5
+    elif rank >0 and rank<10:
+        return 1
+    elif rank>=10 and rank<50:
+        return 2
+    elif rank>=50 and rank<100:
+        return 3
+    elif rank>=100 and rank<200:
+        return 4
+    else:
+        return 5
 
-#u['bucket']= u[' Univeristy'].apply(bucketing_universities)
 u['ranking']= u[' Univeristy'].apply(ranking_func)
-print(u[30:60])
+u['bucket']= u['ranking'].apply(bucketing_universities)
+
+print(u[:60])
 
 #bucket universities
