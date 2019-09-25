@@ -119,6 +119,10 @@ print('Cosine similarity',cosine_similiarity(v[0], v[1]))
 
 
 
+
+
+
+
 #bigram corpus will need bigram dictionary of its own. this unigram dictionary will not be able to catch it
 #bigram =[j for sub in bigram for j in sub]
 #print(bigram)
@@ -130,4 +134,6 @@ print('Cosine similarity',cosine_similiarity(v[0], v[1]))
 #ld= lda[z_corpus]   
 
 
+
+#pick files and abstracts from each of the bins. and make vectors of those abstracts
 
