@@ -55,3 +55,48 @@ print(u[:60])
 u.to_csv('author_uni_ranking_bucket', index=False)
 
 #tag abstracts to these ids and read them.Make their document vectors
+#read files according to each of the bins
+#how to get abstract for each bin- sid to abstract- (based on author final) and sid to u bucket
+import pandas as pd
+filepath= './data_info/author_uni_ranking_bucket'
+author= pd.read_csv(filepath)
+#print(author)
+print(author.columns)
+#[' Submission ID', ' Author Position', ' Country', ' Univeristy',
+#       'ranking', 'bucket']
+author.columns=['Name','sid','author_pos','country','university','ranking','bucket']
+print(author.head())
+
+fpath= './data_info/abstracts_processed'
+abstracts= pd.read_csv(fpath)
+#print(abstracts)
+print(abstracts.columns)
+
+abstracts_with_bucket= pd.merge(abstracts, author, how='left', on='sid')
+print(abstracts_with_bucket.head())
+print(abstracts_with_bucket.columns)
+
+ab= abstracts_with_bucket.loc[abstracts_with_bucket['author_pos']==1]
+print(ab.head())
+
+def write_abstracts(ab,bin):
+    
+    fname='./data_info/bin_'+str(bin)+'_uni_abstract'
+    cols_to_keep=['title','abstract']
+    ab[cols_to_keep].to_csv(fname, index= False)
+    
+    
+a1= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==1]
+write_abstracts(a1,1)
+
+a2= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==2]
+write_abstracts(a2,2)
+
+a3= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==3]
+write_abstracts(a3,3)
+
+a4= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==4]
+write_abstracts(a4,4)
+
+a5= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==5]
+write_abstracts(a5,5)
