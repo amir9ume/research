@@ -105,9 +105,20 @@ for i in range(1,3):
    # print(n_uni_corpus[:10])
    # print('\n')
      
-    
+def cosine_similiarity(v1,v2):
+    m1= np.linalg.norm(v1)
+    m2= np.linalg.norm(v2)
+    m= m1*m2
+    d= np.dot(v1,v2)
+    return d/(m)
+
+
 diff= v[0]-v[1]
 print(np.nonzero(diff))
+print('Cosine similarity',cosine_similiarity(v[0], v[1]))
+
+
+
 #bigram corpus will need bigram dictionary of its own. this unigram dictionary will not be able to catch it
 #bigram =[j for sub in bigram for j in sub]
 #print(bigram)
