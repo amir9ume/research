@@ -22,13 +22,20 @@ stop_words.extend(['from','subject','re','edu','use'])
 from gensim.test.utils import datapath
 #loading previously trained lda model, corpus and dictionary
 lda=LdaModel.load('./lda_trained/model_lda_nips12')
+
+#this dictionary was prepared on all submitted papers
+#without any stemming or lemmatizing in the lda_training.py script
 id2word= corpora.Dictionary.load('./lda_trained2/id2word_lda.dict')
 corpus=corpora.MmCorpus('./lda_trained2/bow_corpus.mm')
+number_of_words_corpus= len(id2word)
+print(id2word)
+print(number_of_words_corpus)
 
 #dic= corpora.Dictionary.load_from_text('../wordlist.txt')
 
 #stores bag of words for comaprison
 corpus_vectors=[]
+v=[]
 for i in range(1,3):
 
     f= open('./data_info/'+sys.argv[i], "r")
@@ -37,7 +44,7 @@ for i in range(1,3):
     dataset=[d.split() for d in data]
 
  
-#deacc = True will remove punctuations
+    #deacc = True will remove punctuations
     def sent_to_words(sentences):
         for sentence in sentences:
             yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
@@ -74,29 +81,33 @@ for i in range(1,3):
     unigram= [j for sub in unigram for j in sub]
     unigram_corpus= id2word.doc2bow(unigram)         
 
-    number_of_words=0
-    for id,freq in unigram_corpus:
-        number_of_words+= freq
-    print('total number of words', number_of_words)
-
+    dict_words={}
+    for u in unigram:
+        u= u.strip('\"')
+        dict_words[u] =1
+    number_of_words=len(dict_words)
+    
+  
     n_uni_corpus= [(id, freq/number_of_words) for id,freq in unigram_corpus]
-#print(n_uni_corpus[:20])
-    corpus_vectors.append(n_uni_corpus)
-    k= [(id2word[id],freq) for id, freq in n_uni_corpus]   
-    print(k[:20])
+    v1= np.zeros(number_of_words_corpus,dtype=float)
+    
+    for u in n_uni_corpus:
+        if len(u)>1:
+            j=u[0]
+            v1[j]= u[1]
+            
+    v.append(v1)             
+    
 
 
-from nltk.cluster import KMeansClusterer
-import nltk
-nc=2
-#kclusterer= KMeansClusterer(nc,distance=nltk.cluster.util.cosine_distance,repeats=25)
-#as_c= kclusterer.cluster(corpus_vectors,assign_clusters=True)
-#print(as_c)
-
-plt.hist(corpus_vectors[0])
-plt.show()
-
-
+   # print(n_uni_corpus[2]) 
+   # print(n_uni_corpus[2][0],':::',n_uni_corpus[2][1])
+   # print(n_uni_corpus[:10])
+   # print('\n')
+     
+    
+diff= v[0]-v[1]
+print(np.nonzero(diff))
 #bigram corpus will need bigram dictionary of its own. this unigram dictionary will not be able to catch it
 #bigram =[j for sub in bigram for j in sub]
 #print(bigram)
