@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
 from itertools import chain
 import sys
+import os
 
 
 stop_words= stopwords.words('english')
@@ -36,9 +37,12 @@ print(number_of_words_corpus)
 #stores bag of words for comaprison
 corpus_vectors=[]
 v=[]
-for i in range(1,3):
-
-    f= open('./data_info/'+sys.argv[i], "r")
+folder= sys.argv[1]
+list_files= os.listdir('./data_info/'+folder)
+for file_name in list_files:
+    print(file_name)
+    
+    f= open('./data_info/'+folder+'/'+file_name, "r")
     contents= f.read()
     data= contents.splitlines()
     dataset=[d.split() for d in data]
@@ -112,12 +116,15 @@ def cosine_similiarity(v1,v2):
     d= np.dot(v1,v2)
     return d/(m)
 
-
-diff= v[0]-v[1]
-print(np.nonzero(diff))
-print('Cosine similarity',cosine_similiarity(v[0], v[1]))
-
-
+#comparing top with rest
+compare_top=[]
+for j in range(len(v)):
+    compare_temp=[]
+    for i in range(len(v)):
+        c= cosine_similiarity(v[i], v[j])
+        compare_temp.append(c)
+    compare_top.append(compare_temp)
+print('Cosine similarity',compare_top)
 
 
 
@@ -134,6 +141,8 @@ print('Cosine similarity',cosine_similiarity(v[0], v[1]))
 #ld= lda[z_corpus]   
 
 
-
-#pick files and abstracts from each of the bins. and make vectors of those abstracts
+#command line argument: take name of folder.
+#list all files in them. preapre separate vectors for each of them
+# prepare vectors for all uni bin abstracts
+#calculate bag of words cosine similarity between each of the uni bins
 
