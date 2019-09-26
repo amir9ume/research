@@ -58,7 +58,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 #print(X_train)
 
 from sklearn.svm import SVC
+#using a support vector machine
 s_clf = SVC()
+
 X_train=np.array(X_train)
 X_train= np.nan_to_num(X_train)
 X_train=X_train.reshape(-1,1)
