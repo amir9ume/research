@@ -86,16 +86,19 @@ abstracts_with_bucket_max_author.columns= ['sid', 'title', 'abstract', 'Name', '
 print(abstracts_with_bucket_max_author.head(20))
 #ab= abstracts_with_bucket.loc[abstracts_with_bucket['author_pos']==1]
 
-ab= abstracts_with_bucket_max_author.loc[abstracts_with_bucket_max_author['author_pos']==abstracts_with_bucket_max_author['max_author_pos']]
-print(ab.head())
+ab_for_max_author= abstracts_with_bucket_max_author.loc[abstracts_with_bucket_max_author['author_pos']==abstracts_with_bucket_max_author['max_author_pos']]
+print(ab_for_max_author.head())
 
 def write_abstracts(ab,bin):
     
     fname='./data_info/uni_bin_abstracts_max_author/bin_'+str(bin)+'_uni_abstract'
     cols_to_keep=['title','abstract']
     ab[cols_to_keep].to_csv(fname, index= False)
-    
-    
+
+#careful with the line below. all the writing is done using below data frame only 
+abstracts_with_bucket= ab_for_max_author
+print(abstracts_with_bucket.head())
+
 a1= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==1]
 write_abstracts(a1,1)
 
