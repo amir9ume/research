@@ -51,6 +51,7 @@ def bucketing_universities(rank):
 u['ranking']= u[' Univeristy'].apply(ranking_func)
 u['bucket']= u['ranking'].apply(bucketing_universities)
 
+
 print(u[:60])
 u.to_csv('author_uni_ranking_bucket', index=False)
 
@@ -76,12 +77,21 @@ abstracts_with_bucket= pd.merge(abstracts, author, how='left', on='sid')
 print(abstracts_with_bucket.head())
 print(abstracts_with_bucket.columns)
 
-ab= abstracts_with_bucket.loc[abstracts_with_bucket['author_pos']==1]
+
+max_author= abstracts_with_bucket.groupby('sid', sort= False)['author_pos'].max()
+abstracts_with_bucket_max_author= pd.merge(abstracts_with_bucket,max_author, how='left',on='sid')
+
+abstracts_with_bucket_max_author.columns= ['sid', 'title', 'abstract', 'Name', 'author_pos', 'country',
+       'university', 'ranking', 'bucket', 'max_author_pos']
+print(abstracts_with_bucket_max_author.head(20))
+#ab= abstracts_with_bucket.loc[abstracts_with_bucket['author_pos']==1]
+
+ab= abstracts_with_bucket_max_author.loc[abstracts_with_bucket_max_author['author_pos']==abstracts_with_bucket_max_author['max_author_pos']]
 print(ab.head())
 
 def write_abstracts(ab,bin):
     
-    fname='./data_info/uni_bin_abstracts/bin_'+str(bin)+'_uni_abstract'
+    fname='./data_info/uni_bin_abstracts_max_author/bin_'+str(bin)+'_uni_abstract'
     cols_to_keep=['title','abstract']
     ab[cols_to_keep].to_csv(fname, index= False)
     
