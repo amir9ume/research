@@ -81,7 +81,7 @@ print(ab.head())
 
 def write_abstracts(ab,bin):
     
-    fname='./data_info/bin_'+str(bin)+'_uni_abstract'
+    fname='./data_info/uni_bin_abstracts/bin_'+str(bin)+'_uni_abstract'
     cols_to_keep=['title','abstract']
     ab[cols_to_keep].to_csv(fname, index= False)
     
