@@ -38,7 +38,8 @@ print(number_of_words_corpus)
 corpus_vectors=[]
 v=[]
 folder= sys.argv[1]
-list_files= os.listdir('./data_info/'+folder)
+list_files= sorted(os.listdir('./data_info/'+folder))
+
 for file_name in list_files:
     print(file_name)
     
@@ -116,15 +117,15 @@ def cosine_similiarity(v1,v2):
     d= np.dot(v1,v2)
     return d/(m)
 
-#comparing top with rest
-compare_top=[]
+#comparing all
+compare_all=[]
 for j in range(len(v)):
     compare_temp=[]
     for i in range(len(v)):
         c= cosine_similiarity(v[i], v[j])
         compare_temp.append(c)
-    compare_top.append(compare_temp)
-print('Cosine similarity',compare_top)
+    compare_all.append(compare_temp)
+print('Cosine similarity',compare_all)
 
 
 
