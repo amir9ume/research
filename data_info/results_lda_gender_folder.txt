@@ -1,0 +1,134 @@
+topics learnt by the lda model
+[(22,
+  '0.110*"hidden" + 0.091*"layer" + 0.068*"network" + 0.064*"neural" + '
+  '0.054*"units" + 0.053*"deep" + 0.044*"learning" + 0.038*"weights" + '
+  '0.024*"boltzmann" + 0.024*"layers"'),
+ (7,
+  '0.047*"state" + 0.046*"policy" + 0.042*"reward" + 0.042*"action" + '
+  '0.022*"reinforcement" + 0.022*"actions" + 0.021*"agent" + 0.019*"learning" '
+  '+ 0.019*"optimal" + 0.017*"function"'),
+ (1,
+  '0.066*"image" + 0.022*"images" + 0.022*"wavelet" + 0.020*"boundary" + '
+  '0.020*"video" + 0.018*"texture" + 0.016*"region" + 0.016*"segmentation" + '
+  '0.016*"pixel" + 0.015*"energy"'),
+ (13,
+  '0.031*"neural" + 0.024*"input" + 0.022*"neurons" + 0.019*"visual" + '
+  '0.018*"spike" + 0.018*"neuron" + 0.018*"response" + 0.017*"ﬁlter" + '
+  '0.015*"receptive" + 0.013*"figure"'),
+ (15,
+  '0.035*"ranking" + 0.034*"search" + 0.030*"items" + 0.027*"similarity" + '
+  '0.025*"matching" + 0.025*"query" + 0.025*"rank" + 0.018*"user" + '
+  '0.015*"score" + 0.014*"canonical"'),
+ (23,
+  '0.053*"image" + 0.052*"object" + 0.034*"images" + 0.023*"model" + '
+  '0.022*"objects" + 0.022*"recognition" + 0.019*"detection" + 0.018*"visual" '
+  '+ 0.015*"shape" + 0.013*"scene"'),
+ (10,
+  '0.047*"target" + 0.029*"control" + 0.027*"human" + 0.023*"tracking" + '
+  '0.015*"system" + 0.015*"trajectories" + 0.015*"behavior" + 0.014*"figure" + '
+  '0.013*"position" + 0.012*"rotation"'),
+ (14,
+  '0.055*"loss" + 0.040*"classiﬁcation" + 0.025*"binary" + 0.023*"margin" + '
+  '0.023*"training" + 0.023*"class" + 0.020*"classiﬁer" + 0.020*"learning" + '
+  '0.015*"error" + 0.014*"data"'),
+ (16,
+  '0.064*"model" + 0.046*"decision" + 0.036*"active" + 0.025*"bayesian" + '
+  '0.024*"learning" + 0.020*"expected" + 0.017*"data" + 0.016*"test" + '
+  '0.016*"cost" + 0.015*"probability"'),
+ (4,
+  '0.053*"model" + 0.044*"state" + 0.027*"time" + 0.023*"sequence" + '
+  '0.021*"models" + 0.016*"dynamic" + 0.015*"states" + 0.014*"stimulus" + '
+  '0.014*"hidden" + 0.014*"dynamics"'),
+ (5,
+  '0.055*"algorithm" + 0.051*"learning" + 0.046*"online" + 0.029*"algorithms" '
+  '+ 0.021*"regret" + 0.018*"time" + 0.013*"batch" + 0.012*"loss" + '
+  '0.012*"prediction" + 0.011*"best"'),
+ (19,
+  '0.058*"tree" + 0.037*"node" + 0.032*"algorithm" + 0.028*"nodes" + '
+  '0.025*"set" + 0.022*"number" + 0.021*"size" + 0.015*"trees" + 0.012*"path" '
+  '+ 0.012*"time"'),
+ (9,
+  '0.024*"model" + 0.022*"regression" + 0.018*"covariance" + '
+  '0.017*"estimation" + 0.016*"group" + 0.016*"matrix" + 0.015*"lasso" + '
+  '0.015*"log" + 0.013*"sparse" + 0.013*"selection"'),
+ (12,
+  '0.034*"sampling" + 0.032*"inference" + 0.023*"number" + 0.023*"process" + '
+  '0.017*"time" + 0.017*"variables" + 0.016*"distribution" + 0.015*"algorithm" '
+  '+ 0.015*"bayesian" + 0.014*"set"'),
+ (3,
+  '0.043*"algorithm" + 0.025*"gradient" + 0.023*"convergence" + '
+  '0.022*"solution" + 0.022*"function" + 0.021*"problem" + 0.019*"optimal" + '
+  '0.018*"convex" + 0.018*"local" + 0.018*"optimization"'),
+ (24,
+  '0.057*"matrix" + 0.026*"sparse" + 0.023*"problem" + 0.022*"method" + '
+  '0.022*"algorithm" + 0.017*"data" + 0.016*"optimization" + 0.014*"min" + '
+  '0.014*"methods" + 0.013*"proposed"'),
+ (6,
+  '0.045*"distribution" + 0.034*"model" + 0.028*"prior" + 0.028*"data" + '
+  '0.019*"parameters" + 0.019*"likelihood" + 0.018*"variational" + 0.018*"log" '
+  '+ 0.016*"gaussian" + 0.016*"distributions"'),
+ (17,
+  '0.061*"kernel" + 0.039*"function" + 0.024*"linear" + 0.021*"functions" + '
+  '0.021*"data" + 0.020*"learning" + 0.017*"basis" + 0.016*"space" + '
+  '0.014*"method" + 0.014*"regression"'),
+ (8,
+  '0.033*"theorem" + 0.028*"function" + 0.026*"bound" + 0.020*"probability" + '
+  '0.018*"error" + 0.016*"lemma" + 0.016*"random" + 0.015*"distribution" + '
+  '0.014*"consider" + 0.014*"set"'),
+ (2,
+  '0.067*"feature" + 0.059*"learning" + 0.058*"features" + 0.055*"training" + '
+  '0.021*"set" + 0.019*"data" + 0.018*"test" + 0.017*"number" + '
+  '0.016*"accuracy" + 0.013*"learn"')]
+female_abstracts
+[(0, 0.044698477),
+ (1, 0.027347215),
+ (2, 0.047456708),
+ (3, 0.03718736),
+ (4, 0.031316545),
+ (5, 0.043724846),
+ (6, 0.04288052),
+ (7, 0.032444343),
+ (8, 0.028336436),
+ (9, 0.04783191),
+ (10, 0.028373586),
+ (11, 0.05959093),
+ (12, 0.03916709),
+ (13, 0.043454397),
+ (14, 0.012654224),
+ (15, 0.022732075),
+ (16, 0.025608996),
+ (17, 0.056339595),
+ (18, 0.051901516),
+ (19, 0.021954907),
+ (20, 0.04194216),
+ (21, 0.05938179),
+ (23, 0.058426585),
+ (24, 0.08864962)]
+sum of prob:  0.9934018366038799
+male_abstracts
+[(0, 0.04366554),
+ (1, 0.028186107),
+ (2, 0.05821907),
+ (3, 0.04551443),
+ (4, 0.033936493),
+ (5, 0.052061357),
+ (6, 0.047862086),
+ (7, 0.02919336),
+ (8, 0.03350375),
+ (9, 0.042042997),
+ (10, 0.019824715),
+ (11, 0.049600933),
+ (12, 0.038734302),
+ (13, 0.044373676),
+ (14, 0.020223226),
+ (15, 0.024769628),
+ (16, 0.02924517),
+ (17, 0.06266271),
+ (18, 0.046742607),
+ (19, 0.029770652),
+ (20, 0.032353643),
+ (21, 0.049007777),
+ (23, 0.052649025),
+ (24, 0.07829161)]
+sum of prob:  0.9924348685890436
+Cosine similarity [[1.0, 0.9885813809775433], [0.9885813809775433, 1.0000000000000002]]
