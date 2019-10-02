@@ -1,0 +1,158 @@
+                Name  author_pos gender  sid  max_author
+4   Masashi Sugiyama           5   male    2           5
+5        Hsin-Min Lu           1   male    3           1
+9   Masashi Sugiyama           4   male    4           4
+11      Manuel Lopes           2   male    5           2
+14        Heng Huang           3   male    6           3
+count before 1415
+count after 1415
+['male' 'female']
+len of labels is: 1415
+(1415, 25)
+Using kernel:  linear ::gamma of:  0.1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  linear ::gamma of:  1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  linear ::gamma of:  10
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  linear ::gamma of:  100
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  rbf ::gamma of:  0.1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  rbf ::gamma of:  1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  rbf ::gamma of:  10
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  rbf ::gamma of:  100
+train set accuracy SVM: 0.9858623939679547
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  poly ::gamma of:  0.1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  poly ::gamma of:  1
+train set accuracy SVM: 0.8388312912346843
+accuracy on test set SVM 0.8559322033898306
+[[  0  51]
+ [  0 303]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  poly ::gamma of:  10
+train set accuracy SVM: 0.8633364750235627
+accuracy on test set SVM 0.844632768361582
+[[  1  50]
+ [  5 298]]
+accuracy for each of the groups
+----------------------------------
+Using kernel:  poly ::gamma of:  100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.7033898305084746
+[[ 11  40]
+ [ 65 238]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree:  2 ::gamma of: 100
+train set accuracy SVM: 0.9048067860508954
+accuracy on test set SVM 0.768361581920904
+[[ 13  38]
+ [ 44 259]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree:  3 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.7033898305084746
+[[ 11  40]
+ [ 65 238]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree:  4 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.7429378531073446
+[[  7  44]
+ [ 47 256]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree:  5 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree 2: cs of  0.1 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree 2: cs of  1 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree 2: cs of  10 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree 2: cs of  100 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
+Using kernel poly of degree 2: cs of  1000 ::gamma of: 100
+train set accuracy SVM: 1.0
+accuracy on test set SVM 0.748587570621469
+[[  8  43]
+ [ 46 257]]
+accuracy for each of the groups
+----------------------------------
