@@ -1,0 +1,120 @@
+                  Name   Submission ID  ...  ranking  bucket
+32        Marc Lelarge              16  ...       88  fourth
+38        Sam Gershman              24  ...       86  fourth
+39    Angela Radulescu              24  ...       86  fourth
+40      Kenneth Norman              24  ...       86  fourth
+41            Yael Niv              24  ...       86  fourth
+...                ...             ...  ...      ...     ...
+3937        Edward Kao            1498  ...       68  fourth
+3938      Panos Toulis            1498  ...       68  fourth
+3939       Edo Airoldi            1498  ...       68  fourth
+4001   Edoardo Airoldi            1528  ...       68  fourth
+4013        Ryan Adams            1531  ...       68  fourth
+
+[395 rows x 7 columns]
+                           Name   Submission ID  ...  ranking bucket
+34       Louis-Philippe Morency              19  ...       34  third
+42              Ehsan Elhamifar              25  ...       36  third
+44                   Rene Vidal              25  ...       36  third
+50              Sirish Nandyala              28  ...       34  third
+101                  Jieping Ye              56  ...       51  third
+...                         ...             ...  ...      ...    ...
+3979                Peter Stone            1516  ...       29  third
+4002  Dominique Perrault-Joncas            1529  ...       27  third
+4003               Marina Meila            1529  ...       27  third
+4004                    Yao Zhu            1530  ...       58  third
+4005                    Qi Alan            1530  ...       58  third
+
+[395 rows x 7 columns]
+                         Name   Submission ID  ...  ranking  bucket
+33                  Yale Song              19  ...        9  second
+35              Randall Davis              19  ...        9  second
+53    Vinay Kumar Bettadapura              29  ...       23  second
+54            Grant Schindler              29  ...       23  second
+56                 Irfan Essa              29  ...       23  second
+...                       ...             ...  ...      ...     ...
+3993            Zhiliang Ying            1522  ...       14  second
+4006              Lusann Yang            1530  ...        9  second
+4007           Gerbrand Ceder            1530  ...        9  second
+4015                  Hao Xia            1534  ...       20  second
+4016               Steven Hoi            1534  ...       20  second
+
+[395 rows x 7 columns]
+                  Name   Submission ID  ...  ranking bucket
+4     Masashi Sugiyama               2  ...      128  fifth
+9     Masashi Sugiyama               4  ...      128  fifth
+14          Heng Huang               6  ...      103  fifth
+17          Heng Huang               8  ...      103  fifth
+18          Chris Ding               8  ...      103  fifth
+...                ...             ...  ...      ...    ...
+3951       Daniel Lowd            1503  ...      215  fifth
+3985           Dao Lam            1519  ...      350  fifth
+3996   Nicolas Vayatis            1523  ...      334  fifth
+3997   Roman Yangarber            1526  ...      250  fifth
+4020         Jan Macak            1457  ...      250  fifth
+
+[395 rows x 7 columns]
+                    Name   Submission ID  ...  ranking bucket
+3              Eric Xing               2  ...        1  first
+20        Andrew Ziegler              12  ...        1  first
+21     Eric Christiansen              12  ...        1  first
+22        David Kriegman              12  ...        1  first
+23        Serge Belongie              12  ...        1  first
+...                  ...             ...  ...      ...    ...
+3955  Raghuram Ramanujan            1506  ...        2  first
+3957         Bart Selman            1506  ...        2  first
+3965    Rafael Frongillo            1510  ...        1  first
+3967      Stuart Russell            1511  ...        1  first
+3990         Moontae Lee            1521  ...        4  first
+
+[395 rows x 7 columns]
+                      Name   Submission ID  ...  ranking  bucket
+123           Hongyuan Zha              66  ...       23  second
+124          Xiaokang Yang              66  ...       43   third
+125          Yuanlong Shao              67  ...      125   fifth
+126          Jungseock Joo              69  ...       18  second
+127          Song-Chun Zhu              69  ...       18  second
+131            Andrew Polk              71  ...       58   third
+132         Karthik Ramani              71  ...       58   third
+133              Jason Lee              72  ...        4   first
+134          Trevor Hastie              72  ...        4   first
+135             Zhiwei Qin              73  ...       14  second
+136        Donald Goldfarb              73  ...       14  second
+137         Varun Nagaraja              74  ...       11  second
+138      Wael Abd-Almageed              74  ...       11  second
+141          Hossein Azari              77  ...       68  fourth
+142            David Parks              77  ...       68  fourth
+144                Jia Wei              78  ...      125   fifth
+147           jiabing wang              78  ...      125   fifth
+153        Manfred Warmuth              81  ...       40   third
+154             Chong Wang              83  ...       86  fourth
+155             David Blei              83  ...       86  fourth
+158        Robert Schapire              84  ...       86  fourth
+159            Tony Jebara              84  ...       14  second
+160            Georg Goerg              85  ...        1   first
+161    Karthik Gurumoorthy              86  ...      167   fifth
+162       Anand Rangarajan              86  ...      167   fifth
+165           James Gibson              88  ...       34   third
+166  Athanasios Katsamanis              88  ...       34   third
+167    Shrikanth Narayanan              88  ...       34   third
+170              Yujian Li              91  ...      350   fifth
+178            Saba Yahyaa              98  ...      450   fifth
+179      Bernard Manderick              98  ...      450   fifth
+180         Wenliang Zhong              99  ...       63  fourth
+181             James Kwok              99  ...       63  fourth
+182                 Wei Bi             100  ...       63  fourth
+183             James Kwok             100  ...       63  fourth
+187          Bing Tian Dai             102  ...       66  fourth
+188            Ee-Peng Lim             102  ...       66  fourth
+190         Facundo Memoli             103  ...       87  fourth
+191      Alejandro Ribeiro             103  ...       17  second
+192       Santiago Segarra             103  ...       17  second
+
+[40 rows x 7 columns]
+bucket
+first     395
+second    395
+third     395
+fourth    395
+fifth     395
+Name:  Submission ID, dtype: int64
