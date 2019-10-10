@@ -82,12 +82,12 @@ def ranking_func(uni):
         
         target_shanghai_ranking=max(dict_ratios_shanghai.items(), key=operator.itemgetter(1))[0]
 
-        if dict_ratios_cs[target_cs_ranking]>82:
+        if dict_ratios_cs[target_cs_ranking]>85:
             #r=(rankings[target_cs_ranking])
-            print('University given as input ', uni, '---- University found--',target_cs_ranking,'----Ranking-----', rankings[target_cs_ranking])
+           # print('University given as input ', uni, '---- University found--',target_cs_ranking,'----Ranking-----', rankings[target_cs_ranking])
             return rankings[target_cs_ranking]
-        elif dict_ratios_shanghai[target_shanghai_ranking]>82:
-            print('University given as input ', uni, '---- University found--',target_shanghai_ranking,'----Ranking-----', shanghai_ranks[target_shanghai_ranking])
+        elif dict_ratios_shanghai[target_shanghai_ranking]>85:
+            #print('University given as input ', uni, '---- University found--',target_shanghai_ranking,'----Ranking-----', shanghai_ranks[target_shanghai_ranking])
             return shanghai_ranks[target_shanghai_ranking]
         else:
             return max_rank_present+1
@@ -110,13 +110,16 @@ def bucketing_universities(rank):
 u['ranking']= u[' Univeristy'].apply(ranking_func)
 #u = u.dropna(subset=['rankings'])
 #u['ranking']= u['ranking'].apply(int)
-u['bucket']=pd.cut(u['ranking'], 5, labels=['first','second','third','fourth','fifth'])
-#print(u[60:100])
-#print(u.groupby('bucket')[' Submission ID'].count() )
-#u['bucket']= u['ranking'].apply(bucketing_universities)
+u=u.loc[u['ranking']!=max_rank_present+1]
+u['bucket']=pd.qcut(u['ranking'].rank(method='first'), 5, labels=['first','second','third','fourth','fifth'], duplicates='drop')
+print(u.loc[u['bucket']=='fourth'])
+print(u.loc[u['bucket']=='third'])
+print(u.loc[u['bucket']=='second'])
+print(u.loc[u['bucket']=='fifth'])
+print(u.loc[u['bucket']=='first'])
 
-
-#print(u[:60])
+print(u[60:100])
+print(u.groupby('bucket')[' Submission ID'].count() )
 #u.to_csv('author_uni_ranking_bucket', index=False)
 
 #tag abstracts to these ids and read them.Make their document vectors
