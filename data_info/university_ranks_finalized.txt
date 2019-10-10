@@ -1,4 +1,4 @@
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
@@ -15,10 +15,10 @@ University given as input  University of California, Los Angeles ---- University
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
 University given as input  University of California, Santa Cruz ---- University found-- University of California - Santa Cruz ----Ranking----- 40
-University given as input  Zhejiang University of Technology ---- University found-- Graz University of Technology ----Ranking----- 105
+University given as input  Zhejiang University of Technology ---- University found-- Zhejiang University of Technology ----Ranking----- 350
 University given as input  Vrije Universiteit Brussel ---- University found-- Vrije Universiteit Brussel (VUB) ----Ranking----- 450
 University given as input  Vrije Universiteit Brussel ---- University found-- Vrije Universiteit Brussel (VUB) ----Ranking----- 450
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
@@ -38,7 +38,7 @@ University given as input  University of California, Santa Barbara ---- Universi
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Santa Barbara ---- University found-- University of California - Santa Barbara ----Ranking----- 60
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  Washington University, Saint Louis ---- University found-- Washington University in St. Louis ----Ranking----- 94
 University given as input  Washington University, Saint Louis ---- University found-- Washington University in St. Louis ----Ranking----- 94
 University given as input  Washington University, Saint Louis ---- University found-- Washington University in St. Louis ----Ranking----- 94
@@ -48,8 +48,6 @@ University given as input  Beijing Institute of Technology ---- University found
 University given as input  Beijing Institute of Technology ---- University found-- Harbin Institute of Technology ----Ranking----- 82
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
 University given as input  Universita della Svizzera Italiana ---- University found-- Università della Svizzera italiana ----Ranking----- 198
 University given as input  Universita della Svizzera Italiana ---- University found-- Università della Svizzera italiana ----Ranking----- 198
 University given as input  Universita della Svizzera Italiana ---- University found-- Università della Svizzera italiana ----Ranking----- 198
@@ -63,17 +61,15 @@ University given as input  Korea Advanced Institute of Science & Technology ----
 University given as input  Korea Advanced Institute of Science & Technology ---- University found-- Korea Advanced Institute of Science and Technology ----Ranking----- 63
 University given as input  Korea Advanced Institute of Science & Technology ---- University found-- Korea Advanced Institute of Science and Technology ----Ranking----- 63
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
-University given as input  Northwestern University In Qatar ---- University found-- Northwestern University ----Ranking----- 81
-University given as input  Northwestern University In Qatar ---- University found-- Northwestern University ----Ranking----- 81
 University given as input  City University of Hong Kong ---- University found-- University of Hong Kong ----Ranking----- 142
 University given as input  Wuhan University ---- University found-- Fudan University ----Ranking----- 32
 University given as input  City University of Hong Kong ---- University found-- University of Hong Kong ----Ranking----- 142
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
 University given as input  Universidade Tecnica de Lisboa ---- University found-- Universidade NOVA de Lisboa ----Ranking----- 304
-University given as input  University of Venice ---- University found-- University of Vienna ----Ranking----- 237
-University given as input  University of Venice ---- University found-- University of Vienna ----Ranking----- 237
+University given as input  University of Venice ---- University found-- University of Florence ----Ranking----- 350
+University given as input  University of Venice ---- University found-- University of Florence ----Ranking----- 350
 University given as input  Indian Institute of Science ---- University found-- Indian Institute of Science ----Ranking----- 350
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
@@ -103,7 +99,6 @@ University given as input  Indian Institute of Science ---- University found-- I
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
-University given as input  San Diego State University ---- University found-- Wayne State University ----Ranking----- 263
 University given as input  Sabanci University ---- University found-- Sabancı University ----Ranking----- 298
 University given as input  Sabanci University ---- University found-- Sabancı University ----Ranking----- 298
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
@@ -111,16 +106,15 @@ University given as input  University of Massachusetts at Amherst ---- Universit
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
 University given as input  University of California, Santa Barbara ---- University found-- University of California - Santa Barbara ----Ranking----- 60
 University given as input  University of California, Santa Barbara ---- University found-- University of California - Santa Barbara ----Ranking----- 60
-University given as input  University of Nebraska, Lincoln ---- University found-- University of Nebraska ----Ranking----- 308
-University given as input  University of Nebraska, Lincoln ---- University found-- University of Nebraska ----Ranking----- 308
+University given as input  University of Nebraska, Lincoln ---- University found-- University of Nebraska - Lincoln ----Ranking----- 350
+University given as input  University of Nebraska, Lincoln ---- University found-- University of Nebraska - Lincoln ----Ranking----- 350
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
-University given as input  University of Wisconsin - Whitewater ---- University found-- University of Wisconsin - Milwaukee ----Ranking----- 349
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
-University given as input  University of California, Merced ---- University found-- University of California - Berkeley ----Ranking----- 16
-University given as input  University of California, Merced ---- University found-- University of California - Berkeley ----Ranking----- 16
+University given as input  University of California, Merced ---- University found-- University of California, Berkeley ----Ranking----- 3
+University given as input  University of California, Merced ---- University found-- University of California, Berkeley ----Ranking----- 3
 University given as input  Shanghai Jiaotong University ---- University found-- Shanghai Jiao Tong University ----Ranking----- 43
 University given as input  Shanghai Jiaotong University ---- University found-- Shanghai Jiao Tong University ----Ranking----- 43
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
@@ -154,8 +148,8 @@ University given as input  Université Libre de Bruxelles ---- University found-
 University given as input  Université Libre de Bruxelles ---- University found-- Université libre de Bruxelles ----Ranking----- 351
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Milan ---- University found-- University of Miami ----Ranking----- 307
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Missouri - Columbia ---- University found-- University of Missouri - Columbia ----Ranking----- 350
 University given as input  University of Missouri - Columbia ---- University found-- University of Missouri - Columbia ----Ranking----- 350
@@ -176,8 +170,8 @@ University given as input  University of Illinois at Urbana-Champaign ---- Unive
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
 University given as input  Beijing Normal University ---- University found-- Beijing Normal University ----Ranking----- 250
@@ -210,8 +204,6 @@ University given as input  University of Canberra ---- University found-- Univer
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  South China Normal University ---- University found-- East China Normal University ----Ranking----- 350
-University given as input  Macquarie University ---- University found-- Ariel University ----Ranking----- 216
-University given as input  Macquarie University ---- University found-- Ariel University ----Ranking----- 216
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
@@ -229,9 +221,6 @@ University given as input  Royal lnstitute of Technology ---- University found--
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
@@ -241,7 +230,7 @@ University given as input  University of Trento ---- University found-- Universi
 University given as input  Czech Technical University of Prague ---- University found-- Czech Technical University in Prague ----Ranking----- 250
 University given as input  Czech Technical University of Prague ---- University found-- Czech Technical University in Prague ----Ranking----- 250
 University given as input  Universidade Tecnica de Lisboa ---- University found-- Universidade NOVA de Lisboa ----Ranking----- 304
-University given as input  Delft University of Technology ---- University found-- Graz University of Technology ----Ranking----- 105
+University given as input  Delft University of Technology ---- University found-- Delft University of Technology ----Ranking----- 125
 University given as input  Universidade Tecnica de Lisboa ---- University found-- Universidade NOVA de Lisboa ----Ranking----- 304
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
@@ -257,7 +246,7 @@ University given as input  Hong Kong University of Science and Technology ---- U
 University given as input  Hong Kong University of Science and Technology ---- University found-- The Hong Kong University of Science and Technology ----Ranking----- 63
 University given as input  University of Basel ---- University found-- University of Bath ----Ranking----- 172
 University given as input  University of Basel ---- University found-- University of Bath ----Ranking----- 172
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
 University given as input  Shanghai Jiaotong University ---- University found-- Shanghai Jiao Tong University ----Ranking----- 43
@@ -274,7 +263,7 @@ University given as input  University of Illinois at Urbana-Champaign ---- Unive
 University given as input  Heriot-Watt University ---- University found-- Heriot-Watt University ----Ranking----- 350
 University given as input  Heriot-Watt University ---- University found-- Heriot-Watt University ----Ranking----- 350
 University given as input  Heriot-Watt University ---- University found-- Heriot-Watt University ----Ranking----- 350
-University given as input  Anhui University ---- University found-- Aarhus University ----Ranking----- 239
+University given as input  Anhui University ---- University found-- Anhui University ----Ranking----- 350
 University given as input  University of Geneva ---- University found-- University of Nevada ----Ranking----- 309
 University given as input  University of Geneva ---- University found-- University of Nevada ----Ranking----- 309
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
@@ -287,13 +276,10 @@ University given as input  University of Geneva ---- University found-- Universi
 University given as input  University of Geneva ---- University found-- University of Nevada ----Ranking----- 309
 University given as input  University of Helsinki ---- University found-- University of Helsinki ----Ranking----- 250
 University given as input  University of Helsinki ---- University found-- University of Helsinki ----Ranking----- 250
-University given as input  University of Birmingham ---- University found-- University of Miami ----Ranking----- 307
-University given as input  University of Birmingham ---- University found-- University of Miami ----Ranking----- 307
+University given as input  University of Birmingham ---- University found-- University of Birmingham ----Ranking----- 125
+University given as input  University of Birmingham ---- University found-- University of Birmingham ----Ranking----- 125
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
-University given as input  Karlsruher Institut für Technologie ---- University found-- Karlsruhe Institute of Technology (KIT) ----Ranking----- 250
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of Padua ---- University found-- University of Passau ----Ranking----- 236
@@ -305,7 +291,6 @@ University given as input  University of California, Los Angeles ---- University
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  Indian Institute of Science ---- University found-- Indian Institute of Science ----Ranking----- 350
-University given as input  Northwestern University In Qatar ---- University found-- Northwestern University ----Ranking----- 81
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Tennessee, Knoxville ---- University found-- University of Tennessee - Knoxville ----Ranking----- 175
 University given as input  University of Tennessee, Knoxville ---- University found-- University of Tennessee - Knoxville ----Ranking----- 175
@@ -357,7 +342,7 @@ University given as input  Technion - Israel Institute of Technology ---- Univer
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  Sichuan University ---- University found-- Tsinghua University ----Ranking----- 3
 University given as input  Sichuan University ---- University found-- Tsinghua University ----Ranking----- 3
-University given as input  Hosei University ---- University found-- Ohio University ----Ranking----- 244
+University given as input  Hosei University ---- University found-- Yonsei University ----Ranking----- 250
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
 University given as input  University of California, Davis ---- University found-- University of California - Davis ----Ranking----- 111
@@ -386,7 +371,7 @@ University given as input  Royal lnstitute of Technology ---- University found--
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
 University given as input  Royal lnstitute of Technology ---- University found-- KTH Royal Institute of Technology ----Ranking----- 338
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
 University given as input  Beijing Normal University ---- University found-- Beijing Normal University ----Ranking----- 250
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
@@ -394,23 +379,19 @@ University given as input  University of California, Los Angeles ---- University
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  Nagoya Institute of Technology ---- University found-- Georgia Institute of Technology ----Ranking----- 23
-University given as input  Anhui University ---- University found-- Aarhus University ----Ranking----- 239
+University given as input  Anhui University ---- University found-- Anhui University ----Ranking----- 350
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
 University given as input  Technische Universität Darmstadt ---- University found-- Technical University Darmstadt ----Ranking----- 175
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
-University given as input  Swinburne University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  Swinburne University of Technology ---- University found-- Swinburne University of Technology ----Ranking----- 250
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  Korea Advanced Institute of Science & Technology ---- University found-- Korea Advanced Institute of Science and Technology ----Ranking----- 63
 University given as input  Korea Advanced Institute of Science & Technology ---- University found-- Korea Advanced Institute of Science and Technology ----Ranking----- 63
 University given as input  Korea Advanced Institute of Science & Technology ---- University found-- Korea Advanced Institute of Science and Technology ----Ranking----- 63
-University given as input  South China University of Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  South China University of Technology ---- University found-- South China University of Technology ----Ranking----- 125
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
@@ -425,7 +406,6 @@ University given as input  University of Ioannina ---- University found-- Univer
 University given as input  University of Ioannina ---- University found-- University of Vienna ----Ranking----- 237
 University given as input  Virginia Polytechnic Institute and State University ---- University found-- Virginia Polytechnic Institute and State University ----Ranking----- 88
 University given as input  Virginia Polytechnic Institute and State University ---- University found-- Virginia Polytechnic Institute and State University ----Ranking----- 88
-University given as input  Polytechnic University of New York ---- University found-- Polytechnic University of Turin ----Ranking----- 450
 University given as input  University of California, Santa Barbara ---- University found-- University of California - Santa Barbara ----Ranking----- 60
 University given as input  University of California, Santa Barbara ---- University found-- University of California - Santa Barbara ----Ranking----- 60
 University given as input  Technion - Israel Institute of Technology ---- University found-- Technion-Israel Institute of Technology ----Ranking----- 63
@@ -481,8 +461,6 @@ University given as input  University of California, Los Angeles ---- University
 University given as input  Virginia Polytechnic Institute and State University ---- University found-- Virginia Polytechnic Institute and State University ----Ranking----- 88
 University given as input  Virginia Polytechnic Institute and State University ---- University found-- Virginia Polytechnic Institute and State University ----Ranking----- 88
 University given as input  Virginia Polytechnic Institute and State University ---- University found-- Virginia Polytechnic Institute and State University ----Ranking----- 88
-University given as input  Universität Hamburg ---- University found-- University of Hamburg ----Ranking----- 450
-University given as input  Universität Hamburg ---- University found-- University of Hamburg ----Ranking----- 450
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
@@ -491,7 +469,6 @@ University given as input  University of California, Irvine ---- University foun
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
-University given as input  Montana State University - Bozeman ---- University found-- Montana State University ----Ranking----- 395
 University given as input  University of Bergen ---- University found-- University of Bern ----Ranking----- 255
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
@@ -515,10 +492,9 @@ University given as input  Washington University, Saint Louis ---- University fo
 University given as input  Washington University, Saint Louis ---- University found-- Washington University in St. Louis ----Ranking----- 94
 University given as input  Technische Universität Darmstadt ---- University found-- Technical University Darmstadt ----Ranking----- 175
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
-University given as input  Northwestern University In Qatar ---- University found-- Northwestern University ----Ranking----- 81
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
 University given as input  University of California, Irvine ---- University found-- University of California - Irvine ----Ranking----- 55
-University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
+University given as input  Ecole Normale Supérieure de Paris ---- University found-- Ecole Normale Superieure - Paris ----Ranking----- 88
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Maryland, College Park ---- University found-- University of Maryland - College Park ----Ranking----- 11
 University given as input  University of Cagliari ---- University found-- University of Calgary ----Ranking----- 288
@@ -527,12 +503,8 @@ University given as input  University of Illinois at Urbana-Champaign ---- Unive
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Illinois at Urbana-Champaign ---- University found-- Univ. of Illinois at Urbana-Champaign ----Ranking----- 10
 University given as input  University of Helsinki ---- University found-- University of Helsinki ----Ranking----- 250
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
-University given as input  Wright State University ---- University found-- Washington State University ----Ranking----- 238
 University given as input  University of California, Los Angeles ---- University found-- University of California - Los Angeles ----Ranking----- 18
-University given as input  Missouri University of Science and Technology ---- University found-- Missouri University of Technology ----Ranking----- 297
+University given as input  Missouri University of Science and Technology ---- University found-- Missouri University of Science and Technology ----Ranking----- 350
 University given as input  University of Massachusetts at Amherst ---- University found-- University of Massachusetts Amherst ----Ranking----- 15
 University given as input  Ecole Normale Supérieure de Cachan ---- University found-- Ecole Normale Superieure de Cachan ----Ranking----- 334
 University given as input  University of Helsinki ---- University found-- University of Helsinki ----Ranking----- 250
