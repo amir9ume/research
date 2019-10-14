@@ -2,7 +2,7 @@ Name| Gender| Submission ID| Author Position| Author size| Country| Univeristy
 Makoto Yamada|gender|2|1|15.5|unknown|Tokyo Institute of Technology
 Wittawat Jitkrittum|gender|2|2|15.5|unknown|Tokyo Institute of Technology
 Leonid Sigal|gender|2|3|15.5|unknown|Disney Research Pittsburgh
-Eric Xing|gender|2|4|15.5|United States|CMU
+Eric Xing|gender|2|4|15.5|United States|Carnegie Mellon University
 Masashi Sugiyama|gender|2|5|15.5|Japan|Tokyo Institute of Technology
 Hsin-Min Lu|gender|3|1|3.5|unknown|National Taiwan University
 Makoto Yamada|gender|4|1|12.5|unknown|Tokyo Institute of Technology
@@ -32,11 +32,11 @@ Bernhard Sch?lkopf|gender|15|4|12.5|unknown|Max Planck Institute for Intelligent
 Simon Heimlicher|gender|16|1|9.5|unknown|Technicolor
 Laurent Massouli?|gender|16|2|9.5|unknown|Technicolor
 Marc Lelarge|gender|16|3|9.5|France|INRIA ? ?cole Normale Sup?rieure
-Yale Song|gender|19|1|9.5|United States|MIT
-Louis-Philippe Morency|gender|19|2|9.5|United States|USC
-Randall Davis|gender|19|3|9.5|United States|MIT
+Yale Song|gender|19|1|9.5|United States|Massachusetts Institute of Technology
+Louis-Philippe Morency|gender|19|2|9.5|United States|University of Southern California
+Randall Davis|gender|19|3|9.5|United States|Massachusetts Institute of Technology
 Gunhee Kim|gender|23|1|6.5|United States|Carnegie Mellon University
-Eric Xing|gender|23|2|6.5|United States|CMU
+Eric Xing|gender|23|2|6.5|United States|Carnegie Mellon University
 Sam Gershman|gender|24|1|12.5|United States| Princeton University
 Angela Radulescu|gender|24|2|12.5|United States|Princeton University
 Kenneth Norman|gender|24|3|12.5|United States|Princeton University
@@ -48,10 +48,10 @@ Chad Scherrer|gender|26|1|12.5|unknown|Pacific Northwest National Lab
 Ambuj Tewari|gender|26|2|12.5|unknown|University of Michigan
 Mahantesh Halappanavar|gender|26|3|12.5|unknown|Pacific Northwest National Laboratory
 David Haglin|gender|26|4|12.5|unknown|Pacific Northwest National Laboratory
-C. Minos Niu|gender|28|1|12.5|unknown|USC
+C. Minos Niu|gender|28|1|12.5|unknown|others
 Sirish Nandyala|gender|28|2|12.5|United States|University of Southern California
 Won Joon Sohn|gender|28|3|12.5|unknown|others
-Terence  Sanger|gender|28|4|12.5|unknown|USC
+Terence  Sanger|gender|28|4|12.5|unknown|others
 Vinay Kumar Bettadapura|gender|29|1|12.5|United States|Georgia Tech
 Grant Schindler|gender|29|2|12.5|United States|Georgia Tech
 Thomas Ploetz|gender|29|3|12.5|United Kingdom|Newcastle University
@@ -70,9 +70,9 @@ Carl Rasmussen|gender|32|4|18.5|United Kingdom|University of Cambridge
 Stephen Roberts|gender|32|5|18.5|unknown|University of Oxford
 Zoubin Ghahramani|gender|32|6|18.5|unknown|University of Cambridge
 Jianxiong Xiao|gender|33|1|6.5|United States|CSAIL MIT
-Antonio Torralba|gender|33|2|6.5|United States|MIT
-Dahua Lin|gender|35|1|6.5|United States|MIT
-John Fisher|gender|35|2|6.5|United States|MIT
+Antonio Torralba|gender|33|2|6.5|United States|Massachusetts Institute of Technology
+Dahua Lin|gender|35|1|6.5|United States|Massachusetts Institute of Technology
+John Fisher|gender|35|2|6.5|United States|Massachusetts Institute of Technology
 Xiaosong Lu|gender|36|1|6.5|Canada|Carleton University
 Howard Schwartz|gender|36|2|6.5|Canada|Carleton University
 Minjie Xu|gender|37|1|9.5|unknown|Tsinghua University
@@ -117,8 +117,8 @@ Chu-Song Chen|gender|61|4|12.5|unknown|Academia Sinica
 Charles Dubout|gender|62|1|6.5|unknown|Idiap Research Institute
 Fran?ois Fleuret|gender|62|2|6.5|unknown|IDIAP Martigny
 Nicholas Ruozzi|gender|63|1|3.5|Switzerland|EPFL
-Oisin Mac Aodha|gender|64|1|6.5|unknown|UCL
-Gabriel Brostow|gender|64|2|6.5|unknown|UCL
+Oisin Mac Aodha|gender|64|1|6.5|unknown|others
+Gabriel Brostow|gender|64|2|6.5|unknown|others
 Yu Tian|gender|66|1|15.5|unknown|others
 Junchi Yan|gender|66|2|15.5|unknown|Shanghai Jiao Tong University
 Ya Zhang|gender|66|3|15.5|China|Shanghai Jiao Tong University
@@ -128,7 +128,7 @@ Yuanlong Shao|gender|67|1|3.5|United States|The Ohio State University
 Jungseock Joo|gender|69|1|7.5|United States|Computer Science Dept.
 Song-Chun Zhu|gender|69|2|7.5|United States|UCLA
 Chhavi Rana|gender|70|1|9.5|unknown|UIET
-Sanjay Jain|gender|70|2|9.5|unknown|NIT
+Sanjay Jain|gender|70|2|9.5|unknown|others
 Hairong Liu|gender|71|1|9.5|unknown|Purdue University
 Andrew Polk|gender|71|2|9.5|United States|Purdue University
 Karthik Ramani|gender|71|3|9.5|United States|Purdue University
@@ -167,7 +167,7 @@ Tomasz Imielinski|gender|87|2|6.5|United States|Rutgers University
 James Gibson|gender|88|1|9.5|United States|University of So. California
 Athanasios Katsamanis|gender|88|2|9.5|United States|University of Southern California
 Shrikanth Narayanan|gender|88|3|9.5|United States|University of Southern California
-Luis Copertari|gender|89|1|3.5|unknown|UAZ
+Luis Copertari|gender|89|1|3.5|unknown|others
 Makiko Konoshima|gender|90|1|3.5|unknown|FUJITSU LABORATORIES LTD.
 Yujian Li|gender|91|1|12.5|China|Beijing University of Technolo
 Qiang Kui Leng|gender|91|2|12.5|unknown|others
@@ -177,8 +177,8 @@ Deyu Meng|gender|92|1|3.5|unknown|Xi'an Jiaotong University
 Suvrit Sra|gender|93|1|3.5|unknown|Max Planck Institute
 Wei Zhang|gender|94|1|3.5|unknown|Fudan University
 Wei Zhang|gender|95|1|3.5|unknown|Fudan University
-Saba Yahyaa|gender|98|1|6.5|Belgium|VUB
-Bernard Manderick|gender|98|2|6.5|Belgium|VUB
+Saba Yahyaa|gender|98|1|6.5|Belgium|Vrije Universiteit Brussel
+Bernard Manderick|gender|98|2|6.5|Belgium|Vrije Universiteit Brussel
 Wenliang Zhong|gender|99|1|6.5|Hong Kong|HKUST
 James Kwok|gender|99|2|6.5|Hong Kong|Hong Kong University of Science and Technology
 Wei Bi|gender|100|1|6.5|Hong Kong|HKUST
@@ -196,8 +196,8 @@ Marc Sobel|gender|104|1|3.5|United States|Temple University
 Simon Hawe|gender|105|1|9.5|Germany|TU Munich
 Martin Kleinsteuber|gender|105|2|9.5|Germany|Technische Universität München
 Matthias Seibert|gender|105|3|9.5|Germany|Technische Universität München
-David Olsen|gender|106|1|6.5|unknown|UMN
-John Carlis|gender|106|2|6.5|United States|UMN
+David Olsen|gender|106|1|6.5|unknown|others
+John Carlis|gender|106|2|6.5|United States|University of Minnesota
 Amit Dhurandhar|gender|107|1|6.5|unknown|IBM TJ Watson
 Marek Petrik|gender|107|2|6.5|unknown|IBM TJ Watson
 Tuo Zhao|gender|108|1|9.5|United States|Johns Hopkins University
@@ -216,7 +216,7 @@ Yuxu Lin|gender|113|2|15.5|China|Zhejiang University
 Mingli Song|gender|113|3|15.5|China|Zhejiang University
 Chun Chen|gender|113|4|15.5|unknown|Zhejiang University
 David Jacobs|gender|113|5|15.5|United States|University of Maryland
-Shinsuke Koyama|gender|114|1|3.5|unknown|ISM
+Shinsuke Koyama|gender|114|1|3.5|unknown|others
 Mario Krell|gender|115|1|6.5|unknown|University of Bremen
 David Feess|gender|115|2|6.5|unknown|DFKI RIC
 Mario Krell|gender|116|1|13.5|unknown|University of Bremen
@@ -271,16 +271,16 @@ Mark Cohen|gender|139|4|12.5|United States|UCLA
 Varun Kanade|gender|140|1|9.5|United States|Harvard University
 Zhenming Liu|gender|140|2|9.5|United States|Harvard University
 Bozidar Radunovic|gender|140|3|9.5|unknown|Microsoft Research Cambridge
-Allison Chang|gender|141|1|9.5|United States|MIT
-Dimitris Bertsimas|gender|141|2|9.5|United States|MIT
-Cynthia Rudin|gender|141|3|9.5|United States|MIT
+Allison Chang|gender|141|1|9.5|United States|Massachusetts Institute of Technology
+Dimitris Bertsimas|gender|141|2|9.5|United States|Massachusetts Institute of Technology
+Cynthia Rudin|gender|141|3|9.5|United States|Massachusetts Institute of Technology
 Dmitry Kovalenko|gender|143|1|7.5|unknown|State University of New York
 Sargur Srihari|gender|143|2|7.5|United States|The State University of New York
 Tomasz Trzcinski|gender|144|1|12.5|Switzerland|EPFL
 Mario Christoudias|gender|144|2|12.5|Switzerland|EPFL
 Vincent Lepetit|gender|144|3|12.5|Switzerland|EPF Lausanne
 Pascal Fua|gender|144|4|12.5|Switzerland|Ecole Polytechnique Federal de Lausanne
-Chunxiao Zhou|gender|145|1|9.5|unknown|NIH
+Chunxiao Zhou|gender|145|1|9.5|unknown|others
 jiseong Park|gender|145|2|9.5|unknown|others
 Yun Fu|gender|145|3|9.5|United States|SUNY at Buffalo
 Binbin Lin|gender|146|1|15.5|China|Zhejiang University
@@ -302,10 +302,10 @@ Alon Zweig|gender|150|2|6.5|unknown|Hebrew University of Jerusalem
 Marco Cuturi|gender|151|1|3.5|Japan|Kyoto University
 Dalton Lunga|gender|152|1|6.5|United States|Purdue University
 Okan Ersoy|gender|152|2|6.5|United States|Purdue University
-Aditya Khosla|gender|154|1|12.5|United States|MIT
+Aditya Khosla|gender|154|1|12.5|United States|Massachusetts Institute of Technology
 Jianxiong Xiao|gender|154|2|12.5|United States|CSAIL MIT
-Antonio Torralba|gender|154|3|12.5|United States|MIT
-Aude Oliva|gender|154|4|12.5|United States|MIT
+Antonio Torralba|gender|154|3|12.5|United States|Massachusetts Institute of Technology
+Aude Oliva|gender|154|4|12.5|United States|Massachusetts Institute of Technology
 Elad Gilboa|gender|156|1|9.5|United States|Washington University at St. L
 Peng Yang|gender|156|2|9.5|United States|Washington University
 Arye Nehorai|gender|156|3|9.5|United States|Washington University at St. Louis
@@ -331,7 +331,7 @@ Chiranjib Bhattacharyya|gender|163|4|12.5|unknown|Indian Institute of Science
 Norimichi Ukita|gender|164|1|3.5|unknown|NAIST
 Jiqian Liu|gender|166|1|6.5|China|Beijing Institute of Technolog
 Yunde Jia|gender|166|2|6.5|China|Beijing Institute of Technology
-David Shaw|gender|167|1|6.5|United States|UMD
+David Shaw|gender|167|1|6.5|United States|University of Maryland, College Park
 Rama Chellappa|gender|167|2|6.5|United States|University of Maryland, College Park
 Boris Schauerte|gender|168|1|6.5|Germany|Karlsruhe Inst. Tech.
 Rainer Stiefelhagen|gender|168|2|6.5|Germany|Karlsruhe Inst. Tech. & Fraunhofer IOSB
@@ -360,7 +360,7 @@ Shipeng Yu|gender|175|2|6.5|unknown|Siemens
 Dan Zhang|gender|177|1|12.5|unknown|Purdue University
 Jingrui He|gender|177|2|12.5|unknown|IBM T.J. Watson Research Center
 Luo Si|gender|177|3|12.5|United States|Purdue University
-Richard Lawrence|gender|177|4|12.5|unknown|IBM
+Richard Lawrence|gender|177|4|12.5|unknown|others
 Joonseok Lee|gender|178|1|12.5|unknown|Georgia Tech
 Mingxuan Sun|gender|178|2|12.5|United States|Georgia Tech
 Seungyeon Kim|gender|178|3|12.5|United States|Georgia Tech
@@ -369,7 +369,7 @@ Arnak Dalalyan|gender|179|1|12.5|France|ENPC
 Katia Meziani|gender|179|2|12.5|France|University Paris Dauphine
 Mohamed Hebiri|gender|179|3|12.5|France|Universit? Paris Est
 Joseph Salmon|gender|179|4|12.5|United States|Duke University
-Quanquan Gu|gender|180|1|13.5|United States|CS
+Quanquan Gu|gender|180|1|13.5|United States|University of Illinois at Urbana-Champaign
 Tong Zhang|gender|180|2|13.5|United States|Rutgers University
 Chris Ding|gender|180|3|13.5|United States|University of Texas at Arlington
 Jiawei Han|gender|180|4|13.5|United States|UIUC
@@ -380,15 +380,15 @@ Butler Lampson|gender|181|4|15.5|unknown|Microsoft Research
 Adam Kalai|gender|181|5|15.5|unknown|Microsoft Research
 Tal Wagner|gender|182|1|6.5|Israel|Technion - Israel Institute of Technology
 Koby Crammer|gender|182|2|6.5|Israel|Technion
-Bin Zhao|gender|183|1|6.5|unknown|CMU
-Eric Xing|gender|183|2|6.5|United States|CMU
+Bin Zhao|gender|183|1|6.5|unknown|others
+Eric Xing|gender|183|2|6.5|United States|Carnegie Mellon University
 Junyuan Xie|gender|184|1|6.5|unknown|Univ. of Sci. & Tech. of China
 Linli Xu|gender|184|2|6.5|China|University of Science and Tech
 Hua Wang|gender|185|1|9.5|unknown|Univ. of Texas at Arlington
 Feiping Nie|gender|185|2|9.5|unknown|University of Texas at Arlington
 Heng Huang|gender|185|3|9.5|United States|University of Texas Arlington
 Du Tran|gender|186|1|6.5|Singapore|Nanyang Technological Univ
-Junsong Yuan|gender|186|2|6.5|Singapore|NTU
+Junsong Yuan|gender|186|2|6.5|Singapore|Nanyang Technological University
 Fang Han|gender|187|1|6.5|unknown|Johns Hopkins University
 Han Liu|gender|187|2|6.5|unknown|The Johns Hopkins University
 Ognjen Arandjelovic|gender|189|1|3.5|unknown|Swansea University
@@ -401,8 +401,8 @@ Sung-Ho Kim|gender|191|3|9.5|Korea, Republic of|KAIST
 Hado Van Hasselt|gender|192|1|3.5|unknown|Centrum Wiskunde & Informatica
 Hankz Hankui Zhuo|gender|194|1|3.5|unknown|Sun Yat-sen University
 Lihi Zelnik-Manor|gender|195|1|3.5|Israel| VIS
-Christian Wachinger|gender|196|1|7.5|United States|MIT
-Polina Golland|gender|196|2|7.5|United States|MIT
+Christian Wachinger|gender|196|1|7.5|United States|Massachusetts Institute of Technology
+Polina Golland|gender|196|2|7.5|United States|Massachusetts Institute of Technology
 Angela Eigenstetter|gender|197|1|6.5|Germany|IWR University Heidelberg
 Bjorn Ommer|gender|197|2|6.5|Germany|Ruprecht-Karls-Universität Heidelberg
 Siwei Lyu|gender|198|1|9.5|United States|SUNY Albany
@@ -413,7 +413,7 @@ Ciamac Moallemi|gender|199|2|9.5|United States|Columbia University
 Vivek Farias|gender|199|3|9.5|United States|Massachusetts Institute of Technology
 Ying Liu|gender|200|1|9.5|United States|Massachusetts Inst. of Tech.
 Oliver Kosut|gender|200|2|9.5|United States|Massachusetts Inst. of Tech.
-Alan Willsky|gender|200|3|9.5|United States|MIT
+Alan Willsky|gender|200|3|9.5|United States|Massachusetts Institute of Technology
 Yun Jiang|gender|201|1|9.5|United States|Cornell University
 Marcus Lim|gender|201|2|9.5|United States|Cornell University
 Ashutosh Saxena|gender|201|3|9.5|United States|Cornell
@@ -440,9 +440,9 @@ Jun Fan|gender|209|1|12.5|unknown|City University of Hong Kong
 TIng Hu|gender|209|2|12.5|China|Wuhan University
 Qiang Wu|gender|209|3|12.5|United States|MTSU
 Ding-Xuan Zhou|gender|209|4|12.5|Hong Kong|City University of Hong Kong
-Bin Zhao|gender|210|1|6.5|unknown|CMU
-Eric Xing|gender|210|2|6.5|United States|CMU
-Hyun Soo Park|gender|212|1|9.5|United States|CMU
+Bin Zhao|gender|210|1|6.5|unknown|others
+Eric Xing|gender|210|2|6.5|United States|Carnegie Mellon University
+Hyun Soo Park|gender|212|1|9.5|United States|Carnegie Mellon University
 eakta Jain|gender|212|2|9.5|United States|Carnegie Mellon University
 Yaser Sheikh|gender|212|3|9.5|United States|Carnegie Mellon University
 jiabing wang|gender|213|1|12.5|China|South China University of Technology
@@ -458,10 +458,10 @@ Masashi Sugiyama|gender|215|3|9.5|Japan|Tokyo Institute of Technology
 Rahul Agrawal|gender|216|1|13.5|unknown|Microsoft IDC AdCenter
 Archit Gupta|gender|216|2|13.5|unknown|Indian Institute of Technology
 Yashoteja Prabhu|gender|216|3|13.5|unknown|Microsoft Research India
-Manik Varma|gender|216|4|13.5|unknown|MSR
+Manik Varma|gender|216|4|13.5|unknown|others
 Zheng Pan|gender|217|1|6.5|unknown|Tsinghua University
 Changshui Zhang|gender|217|2|6.5|China|Tsinghua University
-Jacinto Nascimento|gender|218|1|6.5|Portugal|ISR
+Jacinto Nascimento|gender|218|1|6.5|Portugal|Universidade Tecnica de Lisboa
 Gustavo Carneiro|gender|218|2|6.5|unknown|Univ. Adelaide
 Liwei Wang|gender|219|1|12.5|unknown|Peking University
 Di He|gender|219|2|12.5|unknown|others
@@ -498,9 +498,9 @@ Vladimir Kolmogorov|gender|226|2|6.5|Austria|IST Austria
 Qiong Yan|gender|227|1|9.5|unknown|CUHK
 Li Xu|gender|227|2|9.5|unknown|CUHK
 Jiaya Jia|gender|227|3|9.5|unknown|others
-Tomoharu Iwata|gender|228|1|9.5|unknown|NTT
-Tsutomu Hirao|gender|228|2|9.5|unknown|NTT
-Naonori Ueda|gender|228|3|9.5|unknown|NTT
+Tomoharu Iwata|gender|228|1|9.5|unknown|others
+Tsutomu Hirao|gender|228|2|9.5|unknown|others
+Naonori Ueda|gender|228|3|9.5|unknown|others
 Joan Fruitet|gender|229|1|12.5|unknown|INRIA
 Alexandra Carpentier|gender|229|2|12.5|unknown| INRIA
 Remi Munos|gender|229|3|12.5|unknown|Inria Lille
@@ -517,8 +517,8 @@ Khadidja Sylla|gender|232|4|12.5|Canada|Laval University
 Peng He|gender|233|1|6.5|unknown|Tsinghua University
 Changshui Zhang|gender|233|2|6.5|China|Tsinghua University
 UPENDRA SINGH|gender|235|1|3.5|unknown|DRDO
-Jenna Wiens|gender|236|1|9.5|United States|MIT
-John Guttag|gender|236|2|9.5|United States|MIT
+Jenna Wiens|gender|236|1|9.5|United States|Massachusetts Institute of Technology
+John Guttag|gender|236|2|9.5|United States|Massachusetts Institute of Technology
 Eric Horvitz|gender|236|3|9.5|unknown|others
 Sohail Bahmani|gender|237|1|9.5|United States|Carnegie Mellon University
 Petros Boufounos|gender|237|2|9.5|unknown|Mitsubishi Electric Research Laboratories
@@ -538,7 +538,7 @@ Subramanian Ramamoorthy|gender|242|2|6.5|United Kingdom|U. Edinburgh
 Jeremy Weiss|gender|243|1|9.5|United States|University of Wisconsin
 David Page|gender|243|2|9.5|United States|University of Wisconsin
 Sriraam Natarajan|gender|243|3|9.5|United States|Wake Forest University Baptist Medical Center
-Jinglei Lv|gender|245|1|18.5|unknown|NPU
+Jinglei Lv|gender|245|1|18.5|unknown|others
 Tuo Zhang|gender|245|2|18.5|unknown|NWPU
 Dajiang Zhu|gender|245|3|18.5|unknown|The University of Georgia
 Kaiming Li|gender|245|4|18.5|unknown|Nothwestern Polytechnical University
@@ -548,17 +548,17 @@ Robbie Haertel|gender|246|1|12.5|unknown|Brigham Young University
 Eric Ringger|gender|246|2|12.5|United States|Brigham Young University
 Kevin Seppi|gender|246|3|12.5|United States|Brigham Young University
 Paul Felt|gender|246|4|12.5|unknown|Brigham Young University
-Jenna Wiens|gender|247|1|9.5|United States|MIT
-John Guttag|gender|247|2|9.5|United States|MIT
+Jenna Wiens|gender|247|1|9.5|United States|Massachusetts Institute of Technology
+John Guttag|gender|247|2|9.5|United States|Massachusetts Institute of Technology
 Eric Horvitz|gender|247|3|9.5|unknown|others
 Tianbao Yang|gender|248|1|15.5|United States|Michigan State University
 Yu-Feng Li|gender|248|2|15.5|unknown|Nanjing University
 Mehrdad Mahdavi|gender|248|3|15.5|United States|Michigan State University
 Rong Jin|gender|248|4|15.5|United States|Michigan State
 Zhi-Hua Zhou|gender|248|5|15.5|China|Nanjing University
-Atiyeh Ghoreyshi|gender|249|1|9.5|United States|USC
-Terence  Sanger|gender|249|2|9.5|unknown|USC
-Juan-Miguel Rocamora|gender|249|3|9.5|unknown|USC
+Atiyeh Ghoreyshi|gender|249|1|9.5|United States|University of Southern California
+Terence  Sanger|gender|249|2|9.5|unknown|others
+Juan-Miguel Rocamora|gender|249|3|9.5|unknown|others
 Lauren Hannah|gender|250|1|6.5|United States|Duke University
 David Dunson|gender|250|2|6.5|United States|Duke Statistics
 Amit Daniely|gender|251|1|9.5|unknown|Hebrew university
@@ -591,9 +591,9 @@ Zhaosong Lu|gender|260|2|6.5|Canada|Simon Fraser University
 Yong Zhang|gender|261|1|6.5|Canada|Simon Fraser University
 Zhaosong Lu|gender|261|2|6.5|Canada|Simon Fraser University
 Dmitri Chklovskii|gender|262|1|4.5|unknown| Janelia Farm
-Pietro Di Lena|gender|263|1|9.5|United States|UCI
+Pietro Di Lena|gender|263|1|9.5|United States|University of California, Irvine
 Pierre Baldi|gender|263|2|9.5|United States|University of California @ Irvine
-Ken Nagata|gender|263|3|9.5|United States|UCI
+Ken Nagata|gender|263|3|9.5|United States|University of California, Irvine
 Ognjen Arandjelovic|gender|264|1|3.5|unknown|Swansea University
 Noriaki Kawamae|gender|265|1|3.5|unknown|Tokyo Denki University
 Maksims Volkovs|gender|266|1|9.5|unknown|University of Toronto
@@ -657,9 +657,9 @@ Maryam Fazel|gender|291|3|18.5|United States|University of Washington
 Karthik Mohan|gender|291|4|18.5|United States|University of Washington
 Mike Chung|gender|291|5|18.5|United States|University of Washington
 Seungyeop Han|gender|291|6|18.5|United States|University of Washington
-Gemma Roig|gender|292|1|15.5|Switzerland|ETH
-Xavier Boix|gender|292|2|15.5|Switzerland|ETH
-Roderick de Nijs|gender|292|3|15.5|Germany|TUM
+Gemma Roig|gender|292|1|15.5|Switzerland|ETHZ - ETH Zurich
+Xavier Boix|gender|292|2|15.5|Switzerland|ETHZ - ETH Zurich
+Roderick de Nijs|gender|292|3|15.5|Germany|Technische Universität München
 Kolja Kuehnlenz|gender|292|4|15.5|Germany|Technische Universität München
 Luc Van Gool|gender|292|5|15.5|Switzerland|ETH Zurich
 John Moeller|gender|293|1|12.5|United States|University of Utah
@@ -754,14 +754,14 @@ Marthinus du Plessis|gender|324|4|18.5|unknown|Tokyo Institute of Technology
 Song Liu|gender|324|5|18.5|unknown|Tokyo Institute of Technology
 Ichiro Takeuchi|gender|324|6|18.5|Japan|Nagoya Institute of Technology
 Francis Bach|gender|325|1|3.5|unknown|INRIA
-Qing Tao|gender|326|1|6.5|unknown|Ia
+Qing Tao|gender|326|1|6.5|unknown|others
 QK Gao|gender|326|2|6.5|unknown|others
 Longyin Wen|gender|327|1|15.5|unknown|Cbsr.ia.ac.cn
 ZhaoWei Cai|gender|327|2|15.5|unknown|cbsr.ia.ac.cn
 Zhen Lei|gender|327|3|15.5|unknown|cbsr.ia.ac.cn
 Dong Yi|gender|327|4|15.5|unknown|cbsr.ia.ac.cn
 Stan.Z. Li|gender|327|5|15.5|unknown|cbsr.ia.ac.cn
-Qiang Liu|gender|328|1|9.5|United States|UCI
+Qiang Liu|gender|328|1|9.5|United States|University of California, Irvine
 Jian Peng|gender|328|2|9.5|unknown|TTI Chicago
 Alex Ihler|gender|328|3|9.5|United States|UC Irvine
 Kenji Matsuzaka|gender|329|1|12.5|unknown|Kyushu Institute of Technology
@@ -783,7 +783,7 @@ Nandita Nayak|gender|334|2|9.5|unknown|others
 Amit Roy-Chowdhury|gender|334|3|9.5|United States|University of California, Riverside
 Jingrui He|gender|335|1|12.5|unknown|IBM Research
 Yan Liu|gender|335|2|12.5|United States|University of Southern California
-Richard Lawrence|gender|335|3|12.5|unknown|IBM
+Richard Lawrence|gender|335|3|12.5|unknown|others
 Qiang Yang|gender|335|4|12.5|Hong Kong|Hong Kong University of Science and Technology
 Assaf Glazer|gender|336|1|9.5|Israel|Technion
 Michael Lindenbaoum|gender|336|2|9.5|Israel|Technion
@@ -797,16 +797,16 @@ Vikas Garg|gender|339|1|9.5|unknown|IBM Research
 Priyanka Agrawal|gender|339|2|9.5|India|Indian Institute of Science
 Karthik Nagesh|gender|339|3|9.5|India|Indian Institute of Science
 Wei Chen|gender|340|1|3.5|unknown|Naval Research Laboratory	
-Donglai Wei|gender|341|1|6.5|United States|MIT
+Donglai Wei|gender|341|1|6.5|United States|Massachusetts Institute of Technology
 Erik Sudderth|gender|341|2|6.5|United States|Brown University
 Jianxiong Xiao|gender|342|1|9.5|United States|CSAIL MIT
 Bryan Russell|gender|342|2|9.5|United States|U Washington
-Antonio Torralba|gender|342|3|9.5|United States|MIT
+Antonio Torralba|gender|342|3|9.5|United States|Massachusetts Institute of Technology
 Tsung-Yi Lin|gender|343|1|12.5|United States|UC San Diego
 Mohammad Moghimi|gender|343|2|12.5|United States|UC San Diego
 Gert Lanckriet|gender|343|3|12.5|United States|UCSD
 Serge Belongie|gender|343|4|12.5|United States| UC San Diego
-Peder Olsen|gender|344|1|12.5|unknown|IBM
+Peder Olsen|gender|344|1|12.5|unknown|others
 Figen Oztoprak|gender|344|2|12.5|United States|Northwestern University
 Jorge Nocedal|gender|344|3|12.5|United States|Northwestern University
 Steven Rennie|gender|344|4|12.5|unknown|IBM research
@@ -831,7 +831,7 @@ Ali Bozorgkhan|gender|351|2|9.5|Canada|Simon Fraser University
 Oliver Schulte|gender|351|3|9.5|Canada|Simon Fraser University
 Jing Lei|gender|352|1|9.5|unknown|Carnegie Mellon University
 Alessandro Rinaldo|gender|352|2|9.5|unknown|Carnegie Mellon University
-Larry Wasserman|gender|352|3|9.5|unknown|CMU
+Larry Wasserman|gender|352|3|9.5|unknown|others
 Ricky Sethi|gender|353|1|9.5|unknown|USC ISI
 Hyunjoon Jo|gender|353|2|9.5|United States|USC ISI
 Yolanda Gil|gender|353|3|9.5|unknown|USC ISI
@@ -860,14 +860,14 @@ Guillermo Sapiro|gender|363|3|10.5|United States|Minnesota
 Yuancheng Luo|gender|364|1|7.5|United States|University of Maryland
 Ramani Duraiswami|gender|364|2|7.5|United States|University of Maryland
 Asma REJEB SFAR|gender|365|1|6.5|unknown|INRIA
-Donald GEMAN|gender|365|2|6.5|United States|JHU
+Donald GEMAN|gender|365|2|6.5|United States|Johns Hopkins University
 Xiaoye Jiang|gender|366|1|15.5|United States|Stanford University
 Bangpeng Yao|gender|366|2|15.5|United States|Stanford
 Han Liu|gender|366|3|15.5|United States|Johns Hopkins University
 Li Fei-Fei|gender|366|4|15.5|United States|Stanford University
 Leonidas Guibas|gender|366|5|15.5|United States|Stanford University
 Yan Liu|gender|367|1|9.5|United States|University of Southern California
-Taha Bahadori|gender|367|2|9.5|United States|USC
+Taha Bahadori|gender|367|2|9.5|United States|University of Southern California
 Bo Long|gender|367|3|9.5|unknown|Yahoo
 Lopamudra Mukherjee|gender|368|1|12.5|United States|University of Wisconsin 
 Vikas Singh|gender|368|2|12.5|United States|University of Wisconsin
@@ -920,8 +920,8 @@ Sridhar Mahadevan|gender|390|2|6.5|United States|University of Massachusetts Amh
 Shuo Xiang|gender|391|1|9.5|United States|Arizona State University
 Xiaotong Shen|gender|391|2|9.5|United States|University of Minnesota
 Jieping Ye|gender|391|3|9.5|United States|Arizona State U.
-Tomi Silander|gender|392|1|6.5|unknown|NUS
-Tze Yun Leong|gender|392|2|6.5|unknown|NUS
+Tomi Silander|gender|392|1|6.5|unknown|others
+Tze Yun Leong|gender|392|2|6.5|unknown|others
 Sakrapee Paisitkriangkrai|gender|393|1|9.5|Australia|The University of Adelaide
 Chunhua Shen|gender|393|2|9.5|unknown|The University of Adelaide
 Anton van den Hengel|gender|393|3|9.5|Australia|The University of Adelaide
@@ -946,8 +946,8 @@ Judy Hoffman|gender|401|1|12.5|United States|UC Berkeley
 Jeff Donahue|gender|401|2|12.5|United States|UC Berkeley
 Kate Saenko|gender|401|3|12.5|United States| VIS
 Trevor Darrell|gender|401|4|12.5|United States|UC Berkeley EECS and ICSI
-Stephen Gould|gender|402|1|6.5|Australia|ANU
-Yuhang Zhang|gender|402|2|6.5|Australia|ANU
+Stephen Gould|gender|402|1|6.5|Australia|Australian National University
+Yuhang Zhang|gender|402|2|6.5|Australia|Australian National University
 Uri Maoz|gender|403|1|16.5|United States|Caltech
 Shengxuan Ye|gender|403|2|16.5|United States|University of Virginia
 Ian Ross|gender|403|3|16.5|unknown|Huntington Memorial Hospital
@@ -960,7 +960,7 @@ Amir Navot|gender|405|2|8.5|unknown|Rafael
 Katsunari Shibata|gender|407|1|6.5|Japan|Oita University
 Kenta Goto|gender|407|2|6.5|unknown|Oita University
 Yutian Chen|gender|408|1|6.5|United States|UC Irvine
-Max Welling|gender|408|2|6.5|United States|UCI
+Max Welling|gender|408|2|6.5|United States|University of California, Irvine
 Frank Lin|gender|409|1|6.5|United States|Carnegie Mellon University
 William Cohen|gender|409|2|6.5|United States|Carnegie Mellon University
 Bogdan Alexe|gender|410|1|12.5|Switzerland|ETH ZURICH
@@ -968,7 +968,7 @@ Nicolas Heess|gender|410|2|12.5|United Kingdom|Gatsby Unit
 Yee Whye Teh|gender|410|3|12.5|unknown|others
 Vittorio Ferrari|gender|410|4|12.5|unknown|others
 Katsuhiko Ishiguro|gender|411|1|9.5|unknown|NTT Communication Science Laboratories
-Naonori Ueda|gender|411|2|9.5|unknown|NTT
+Naonori Ueda|gender|411|2|9.5|unknown|others
 Hiroshi Sawada|gender|411|3|9.5|unknown|NTT Communication Science Laboratories
 Mahsa Baktashmotlagh|gender|412|1|15.5|unknown|University of Queensland
 Mehrtash Harandi|gender|412|2|15.5|unknown|Nicta
@@ -1025,11 +1025,11 @@ Mikio Braun|gender|434|5|15.5|Germany|TU Berlin
 Michail Vrettas|gender|435|1|9.5|United Kingdom|Aston University
 Manfred Opper|gender|435|2|9.5|Germany|TU Berlin
 Dan Cornford|gender|435|3|9.5|United Kingdom|Aston University
-Fuzhen Zhuang|gender|436|1|21.5|unknown|ICT
+Fuzhen Zhuang|gender|436|1|21.5|unknown|others
 peifeng Yin|gender|436|2|21.5|unknown|HP Labs
 Ping Luo|gender|436|3|21.5|unknown|HP Labs
-Qing He|gender|436|4|21.5|unknown|ICT
-Zhongzhi Shi|gender|436|5|21.5|unknown|ICT
+Qing He|gender|436|4|21.5|unknown|others
+Zhongzhi Shi|gender|436|5|21.5|unknown|others
 Stephan Cl?men?on|gender|437|1|9.5|unknown|Telecom ParisTech
 Jessica Tressou|gender|437|2|9.5|unknown|INRA
 Sylvain Robbiano|gender|437|3|9.5|unknown|Telecom-ParisTech
@@ -1083,7 +1083,7 @@ Thomas Pock|gender|453|2|6.5|Austria|Graz University of Technology
 Yun Yang|gender|454|1|6.5|unknown|Duke University
 David Dunson|gender|454|2|6.5|United States|Duke Statistics
 Corinna Cortes|gender|455|1|6.5|unknown| Google
-Mehryar Mohri|gender|455|2|6.5|United States|NYU
+Mehryar Mohri|gender|455|2|6.5|United States|New York University
 Anteo Smerieri|gender|456|1|15.5|unknown|Universit? libre de Bruxelles
 Fran?ois Duport|gender|456|2|15.5|Belgium|Universit? libre de Bruxelles
 Yvon Paquot|gender|456|3|15.5|Belgium|Universit? libre de Bruxelles
@@ -1096,7 +1096,7 @@ Luc Van Gool|gender|458|3|9.5|Switzerland|ETH Zurich
 Corinna Cortes|gender|459|1|12.5|unknown| Google
 Ana Radovanovic|gender|459|2|12.5|unknown|Google Research
 Stephen Boyd|gender|459|3|12.5|United States|Stanford/Google
-Mehryar Mohri|gender|459|4|12.5|United States|NYU
+Mehryar Mohri|gender|459|4|12.5|United States|New York University
 Andrew Delong|gender|460|1|9.5|unknown|University of Western Ontario
 Olga Veksler|gender|460|2|9.5|Canada|University of Western Ontario
 Yuri Boykov|gender|460|3|9.5|Canada|University of Western Ontario
@@ -1121,7 +1121,7 @@ Hongzhi  Wang|gender|467|1|3.5|United States|University of Pennsylvania
 Roland Memisevic|gender|468|1|6.5|Germany|University of Frankfurt
 Georgios Exarchakis|gender|468|2|6.5|unknown|others
 Corinna Cortes|gender|469|1|9.5|unknown| Google
-Mehryar Mohri|gender|469|2|9.5|United States|NYU
+Mehryar Mohri|gender|469|2|9.5|United States|New York University
 Afshin Rostamizadeh|gender|469|3|9.5|unknown|Google Research
 Shinichi Nakajima|gender|470|1|12.5|unknown|Nikon Corporation
 Ryota Tomioka|gender|470|2|12.5|unknown|The University of Tokyo
@@ -1130,7 +1130,7 @@ S. Derin Babacan|gender|470|4|12.5|United States|Illinois University
 Nicol? Cesa-Bianchi|gender|471|1|12.5|Italy|Univ. degli Studi di Milano
 Pierre Gaillard|gender|471|2|12.5|France|Ecole normale sup?rieure
 Gabor Lugosi|gender|471|3|12.5|unknown|Pompeu Fabra
-Gilles Stoltz|gender|471|4|12.5|France|ENS
+Gilles Stoltz|gender|471|4|12.5|France|Ecole Normale Supérieure de Paris
 Morteza Alamgir|gender|472|1|6.5|unknown|Max Planck Inst. for I.S.
 Ulrike von Luxburg|gender|472|2|6.5|unknown|Tuebingen
 Xing Wang|gender|473|1|3.5|unknown|Harbin Institute of Technology
@@ -1163,15 +1163,15 @@ Tony Han|gender|480|6|18.5|United States|University of Missouri - Columbia
 Kamalika Chaudhuri|gender|482|1|9.5|United States|UC San Diego
 Anand Sarwate|gender|482|2|9.5|unknown|TTI Chicago
 Kaushik Sinha|gender|482|3|9.5|United States|UCSD
-Mladen Kolar|gender|483|1|9.5|United States|CMU
+Mladen Kolar|gender|483|1|9.5|United States|Carnegie Mellon University
 Han Liu|gender|483|2|9.5|United States|Johns Hopkins University
-Eric Xing|gender|483|3|9.5|United States|CMU
+Eric Xing|gender|483|3|9.5|United States|Carnegie Mellon University
 BILAL PIOT|gender|485|1|9.5|France|SUPELEC
 Matthieu Geist|gender|485|2|9.5|France|SUPELEC
 Olivier Pietquin|gender|485|3|9.5|France|SUPELEC - UMI 2958 (GeorgiaTech - CNRS)
 Sivaraman Balakrishnan|gender|486|1|15.5|United States|Carnegie Mellon University
-Mladen Kolar|gender|486|2|15.5|United States|CMU
-Alessandro Rinaldo|gender|486|3|15.5|United States|CMU
+Mladen Kolar|gender|486|2|15.5|United States|Carnegie Mellon University
+Alessandro Rinaldo|gender|486|3|15.5|United States|Carnegie Mellon University
 Aarti Singh|gender|486|4|15.5|United States|Carnegie Mellon University
 Larry Wasserman|gender|486|5|15.5|United States|Carnegie Mellon University
 James Lloyd|gender|487|1|12.5|United Kingdom|University of Cambridge
@@ -1205,8 +1205,8 @@ Andrew Barto|gender|493|3|9.5|United States|UMass Amherst Computer Science
 Ashwini Shukla|gender|494|1|6.5|Switzerland|EPFL
 Aude Billard|gender|494|2|6.5|Switzerland|EPFL
 Arthur Guez|gender|495|1|9.5|unknown|Gatsby Unit
-David Silver|gender|495|2|9.5|unknown|UCL
-Peter Dayan|gender|495|3|9.5|unknown|UCL
+David Silver|gender|495|2|9.5|unknown|others
+Peter Dayan|gender|495|3|9.5|unknown|others
 Mads Dyrholm|gender|496|1|9.5|unknown|University of Copenhagen
 Maria Nordfang|gender|496|2|9.5|Denmark|Copenhagen University
 Claus Bundesen|gender|496|3|9.5|Denmark|Copenhagen University
@@ -1231,19 +1231,19 @@ Georgios Anagnostopoulos|gender|502|3|9.5|United States|Florida Institute of Tec
 Srivatsan Laxman|gender|503|1|9.5|unknown|Microsoft Research
 Sushil Mittal|gender|503|2|9.5|United States|Columbia University
 Ramarathnam Venkatesan|gender|503|3|9.5|unknown|others
-Yin Zhou|gender|504|1|18.5|Singapore|NUS
-Tong Wu|gender|504|2|18.5|Singapore|NUS
-Jian Xu|gender|504|3|18.5|Singapore|NUS
+Yin Zhou|gender|504|1|18.5|Singapore|National University of Singapore
+Tong Wu|gender|504|2|18.5|Singapore|National University of Singapore
+Jian Xu|gender|504|3|18.5|Singapore|National University of Singapore
 Victor Pikov|gender|504|4|18.5|unknown|HMRI
 Cuntai Guan|gender|504|5|18.5|unknown|I2R/A*STAR
-Zhi Yang|gender|504|6|18.5|Singapore|NUS
+Zhi Yang|gender|504|6|18.5|Singapore|National University of Singapore
 Yoshinobu Kawahara|gender|505|1|9.5|unknown|Osaka University
 Satoko Moriguchi|gender|505|2|9.5|unknown|others
 Takashi Washio|gender|505|3|9.5|unknown|others
 Behzad Ghazanfari|gender|506|1|6.5|unknown|Iran university of Science and
 Nasser Mozayani|gender|506|2|6.5|Iran|Iran University of Science and Technology Tehran
 Anima Anandkumar|gender|507|1|6.5|United States|UC Irvine
-Ragupathyraj Valluvan|gender|507|2|6.5|United States|UCI
+Ragupathyraj Valluvan|gender|507|2|6.5|United States|University of California, Irvine
 Philip Thomas|gender|508|1|3.5|unknown|UMass Amherst
 Gungor Polatkan|gender|509|1|15.5|unknown|Princeton University
 Mingyuan Zhou|gender|509|2|15.5|United States|Duke University
@@ -1271,14 +1271,14 @@ Zhen Li|gender|515|1|18.5|United States|UIUC
 Shiyu Chang|gender|515|2|18.5|United States|UIUC
 Feng Liang|gender|515|3|18.5|United States|UIUC
 Thomas Huang|gender|515|4|18.5|United States|University of Illinois at Urbana-Champaign
-Liangliang Cao|gender|515|5|18.5|unknown|IBM
-John Smith|gender|515|6|18.5|unknown|IBM
+Liangliang Cao|gender|515|5|18.5|unknown|others
+John Smith|gender|515|6|18.5|unknown|others
 Emre Neftci|gender|516|1|15.5|Switzerland|Institute of Neuroinformatics
 Elisabetta Chicca|gender|516|2|15.5|Germany|Universität Bielefeld
 Jean-Jacques Slotine|gender|516|3|15.5|United States|Massachusetts Institute of Technology
 Giacomo Indiveri|gender|516|4|15.5|Switzerland|Insitute of Neuroinformatics
 Rodney Douglas|gender|516|5|15.5|Switzerland|ETHZ - ETH Zurich
-Trong Nghia Hoang|gender|517|1|6.5|unknown|NUS
+Trong Nghia Hoang|gender|517|1|6.5|unknown|others
 Bryan Kian Hsiang Low|gender|517|2|6.5|unknown|National University of Singapore
 Maxwell Collins|gender|518|1|6.5|United States|University of Wisconsin-Madiso
 Vikas Singh|gender|518|2|6.5|United States|University of Wisconsin
@@ -1293,7 +1293,7 @@ Jens Nyman|gender|522|1|12.5|unknown|Ghent University
 Tim Waegeman|gender|522|2|12.5|unknown|Ghent University
 Ken Caluwaerts|gender|522|3|12.5|unknown|Ghent University
 Benjamin Schrauwen|gender|522|4|12.5|unknown|Ghent University
-Tomoharu Iwata|gender|523|1|9.5|unknown|NTT
+Tomoharu Iwata|gender|523|1|9.5|unknown|others
 David Duvenaud|gender|523|2|9.5|United Kingdom|University of Cambridge
 Zoubin Ghahramani|gender|523|3|9.5|unknown|University of Cambridge
 Zhirong Yang|gender|524|1|15.5|unknown|Aalto University
@@ -1322,9 +1322,9 @@ Matthew Kusner|gender|532|2|12.5|United States|Washington University
 Minmin Chen|gender|532|3|12.5|United States|Washington University in St. Louis
 Kilian Weinberger|gender|532|4|12.5|United States|U. Washington
 Saurabh Paul|gender|533|1|13.5|United States|CS Dept
-Malik Magdon-Ismail|gender|533|2|13.5|United States|RPI
+Malik Magdon-Ismail|gender|533|2|13.5|United States|Rensselaer Polytechnic Institute
 Petros Drineas|gender|533|3|13.5|United States|Rensselaer Polytechnic Institute
-Christos Boutsidis|gender|533|4|13.5|unknown|IBM
+Christos Boutsidis|gender|533|4|13.5|unknown|others
 Alex Krizhevsky|gender|534|1|9.5|unknown|others
 Ilya Sutskever|gender|534|2|9.5|unknown|University of Toronto
 Geoff Hinton|gender|534|3|9.5|unknown|University of Toronto
@@ -1340,7 +1340,7 @@ Anthony Hoogs|gender|538|2|6.5|unknown|Kitware Inc.
 Adrian Barbu|gender|539|1|9.5|unknown|Florida State University
 Maria Pavlovskaia|gender|539|2|9.5|unknown|UCLA
 Song-Chun Zhu|gender|539|3|9.5|United States|UCLA
-Lucas Theis|gender|540|1|9.5|unknown|CIN
+Lucas Theis|gender|540|1|9.5|unknown|others
 Jascha Sohl-Dickstein|gender|540|2|9.5|United States|UC Berkeley
 Matthias Bethge|gender|540|3|9.5|unknown|Max Planck Institute Tuebingen
 Aaron Wilson|gender|541|1|9.5|United States|Oregon State University
@@ -1354,7 +1354,7 @@ Kristin Lauter|gender|545|1|9.5|unknown|Microsoft Research
 Thore Graepel|gender|545|2|9.5|unknown|Microsoft Research
 Michael Naehrig|gender|545|3|9.5|unknown|TU Eindhoven
 Haim Avron|gender|546|1|12.5|unknown|IBM Research
-Christos Boutsidis|gender|546|2|12.5|unknown|IBM
+Christos Boutsidis|gender|546|2|12.5|unknown|others
 Sivan Toledo|gender|546|3|12.5|Israel|Tel-Aviv University
 Anastasios Zouzias|gender|546|4|12.5|unknown|University of Toronto
 Patrick Flaherty|gender|547|1|3.5|United States|Stanford University
@@ -1371,7 +1371,7 @@ Dmitri Chklovskii|gender|550|2|6.5|unknown| Janelia Farm
 Jingrui He|gender|551|1|12.5|unknown|IBM Research
 Hanghang Tong|gender|551|2|12.5|unknown|IBM Research
 Qiaozhu Mei|gender|551|3|12.5|United States|University of Michigan
-Boleslaw Szymanski|gender|551|4|12.5|unknown|RPI
+Boleslaw Szymanski|gender|551|4|12.5|unknown|others
 Michel Besserve|gender|552|1|9.5|unknown|MPI for Intelligent Systems
 Nikos Logothetis|gender|552|2|9.5|unknown|MPI for Biological Cybernetics
 Bernhard Sch?lkopf|gender|552|3|9.5|unknown|Max Planck Institute for Intelligent Systems
@@ -1397,14 +1397,14 @@ John Chuang|gender|559|1|12.5|United States|UC Berkeley
 Hamilton Nguyen|gender|559|2|12.5|United States|UC Berkeley
 Charles Wang|gender|559|3|12.5|United States|UC Berkeley
 Benjamin Johnson|gender|559|4|12.5|United States|UC Berkeley
-Yongqiang Li|gender|560|1|9.5|unknown|RPI
-Yongping Zhao|gender|560|2|9.5|China|HIT
+Yongqiang Li|gender|560|1|9.5|unknown|others
+Yongping Zhao|gender|560|2|9.5|China|Harbin Institute of Technology
 Qiang Ji|gender|560|3|9.5|United States|Rensselaer Polytechnic Institute
 Laurens van der Maaten|gender|828|1|3.5|unknown|Delft University of Technology
 Cristina Savin|gender|829|1|9.5|United Kingdom|University of Cambridge
-Peter Dayan|gender|829|2|9.5|unknown|UCL
+Peter Dayan|gender|829|2|9.5|unknown|others
 Mate Lengyel|gender|829|3|9.5|unknown|University of Cambridge
-Raphael Bailly|gender|830|1|3.5|France|LIF
+Raphael Bailly|gender|830|1|3.5|France|Université de Provence (Aix-Marseille I)
 Krishnakumar Balasubramanian|gender|831|1|9.5|United States|Georgia Institute of Technolog
 Kai Yu|gender|831|2|9.5|unknown|NEC Labs Cupertino
 Tong Zhang|gender|831|3|9.5|United States|Rutgers University
@@ -1414,7 +1414,7 @@ Adam Pocock|gender|833|3|12.5|unknown|University of Manchester
 Gavin Brown|gender|833|4|12.5|unknown|University of Manchester
 Masahiro Nakano|gender|834|1|15.5|unknown|NTT communication science lab
 Yasunori Ohishi|gender|834|2|15.5|unknown|others
-Hirokazu Kameoka|gender|834|3|15.5|unknown|NTT
+Hirokazu Kameoka|gender|834|3|15.5|unknown|others
 Ryo Mukai|gender|834|4|15.5|unknown|others
 Kunio Kashino|gender|834|5|15.5|unknown|others
 Zhitang CHEN|gender|835|1|10.5|unknown|Chinese Univ. of Hong Kong
@@ -1435,9 +1435,9 @@ Michael Gro?hans|gender|839|1|12.5|Germany|University of Potsdam
 Christoph Sawade|gender|839|2|12.5|Germany|University of Potsdam
 Michael Br?ckner|gender|839|3|12.5|Germany|University of Potsdam
 Tobias Scheffer|gender|839|4|12.5|Germany|Universit?t Potsdam
-Vikas Garg|gender|840|1|9.5|unknown|IBM
-Balakrishnan Narayanaswamy|gender|840|2|9.5|unknown|IBM
-Jayram Thathachar|gender|840|3|9.5|unknown|IBM
+Vikas Garg|gender|840|1|9.5|unknown|others
+Balakrishnan Narayanaswamy|gender|840|2|9.5|unknown|others
+Jayram Thathachar|gender|840|3|9.5|unknown|others
 Harald Steck|gender|842|1|4.5|unknown|Bell Labs
 Jinbo Zhang|gender|843|1|4.5|unknown|Freelance
 Daniel Zoran|gender|844|1|7.5|unknown|Hebrew Universi
@@ -1523,9 +1523,9 @@ Jonas Kubilius|gender|874|1|9.5|Belgium|KU Leuven
 Johan Wagemans|gender|874|2|9.5|Belgium|KU Leuven
 Hans Op de Beeck|gender|874|3|9.5|Belgium|KU Leuven
 Dongyu Shi|gender|875|1|3.5|China|East China Normal University
-Jixu Chen|gender|876|1|9.5|unknown|GE
+Jixu Chen|gender|876|1|9.5|unknown|others
 Siwei Lyu|gender|876|2|9.5|United States|SUNY Albany
-Xiaoming Liu|gender|876|3|9.5|unknown|GE
+Xiaoming Liu|gender|876|3|9.5|unknown|others
 Vignesh Ramanathan|gender|877|1|9.5|United States|Stanford University
 Bangpeng Yao|gender|877|2|9.5|United States|Stanford
 Li Fei-Fei|gender|877|3|9.5|United States|Stanford University
@@ -1544,13 +1544,13 @@ Arfon Smith|gender|882|3|9.5|unknown|Zooniverse
 Changyou Chen|gender|883|1|15.5|unknown|ANU & NICTA
 Wray Buntine|gender|883|2|15.5|unknown|NICTA
 Nan Ding|gender|883|3|15.5|unknown|Purdue University
-Lexing Xie|gender|883|4|15.5|Australia|ANU
+Lexing Xie|gender|883|4|15.5|Australia|Australian National University
 Lan Du|gender|883|5|15.5|Australia|Macquarie University
 Alexander Lorbert|gender|884|1|6.5|United States|Princeton University
 Peter Ramadge|gender|884|2|6.5|United States|Princeton
-Cheng Zhang|gender|885|1|9.5|Sweden|KTH
+Cheng Zhang|gender|885|1|9.5|Sweden|Royal lnstitute of Technology
 Dan Song|gender|885|2|9.5|Sweden|Royal Institute of Technology
-Hedvig Kjellstrom|gender|885|3|9.5|Sweden|KTH
+Hedvig Kjellstrom|gender|885|3|9.5|Sweden|Royal lnstitute of Technology
 Giorgio Magri|gender|886|1|4.5|unknown|LLF (CNRS
 Yi-Chen Chen|gender|887|1|15.5|United States|UMIACS
 Vishal Patel|gender|887|2|15.5|United States|UMIACS
@@ -1568,21 +1568,21 @@ Dhruv Batra|gender|891|2|9.5|unknown|TTIC
 Pushmeet Kohli|gender|891|3|9.5|unknown|Microsoft Research Cambridge
 Mathieu Sinn|gender|892|1|6.5|unknown|IBM Research
 Bei Chen|gender|892|2|6.5|Canada|McMaster University
-Jialei Wang|gender|893|1|6.5|Singapore|NTU
-Steven Hoi|gender|893|2|6.5|Singapore|NTU
+Jialei Wang|gender|893|1|6.5|Singapore|Nanyang Technological University
+Steven Hoi|gender|893|2|6.5|Singapore|Nanyang Technological University
 Heydar Maboudi Afkham|gender|894|1|9.5|Sweden|Kth-CVAP
-Carl Henrik Ek|gender|894|2|9.5|Sweden|KTH
+Carl Henrik Ek|gender|894|2|9.5|Sweden|Royal lnstitute of Technology
 Stefan Carlsson|gender|894|3|9.5|Sweden|KTH-CVAP
-Florian Pokorny|gender|895|1|12.5|Sweden|KTH
-Carl Henrik Ek|gender|895|2|12.5|Sweden|KTH
-Hedvig Kjellstr?m|gender|895|3|12.5|Sweden|KTH
-Danica Kragic|gender|895|4|12.5|Sweden|KTH
+Florian Pokorny|gender|895|1|12.5|Sweden|Royal lnstitute of Technology
+Carl Henrik Ek|gender|895|2|12.5|Sweden|Royal lnstitute of Technology
+Hedvig Kjellstr?m|gender|895|3|12.5|Sweden|Royal lnstitute of Technology
+Danica Kragic|gender|895|4|12.5|Sweden|Royal lnstitute of Technology
 Eric Hall|gender|896|1|6.5|United States|Duke ECE
 Rebecca Willet|gender|896|2|6.5|United States|Duke ECE
-Steven Hoi|gender|897|1|6.5|Singapore|NTU
-Jialei Wang|gender|897|2|6.5|Singapore|NTU
+Steven Hoi|gender|897|1|6.5|Singapore|Nanyang Technological University
+Jialei Wang|gender|897|2|6.5|Singapore|Nanyang Technological University
 Sebastian Brechtel|gender|898|1|9.5|Germany|Karlsruhe Inst. of Technology
-Tobias Gindele|gender|898|2|9.5|Germany|KIT
+Tobias Gindele|gender|898|2|9.5|Germany|Karlsruher Institut für Technologie
 R?diger Dillmann|gender|898|3|9.5|Germany|Karlsruhe Inst.  of Technology
 Cam-Tu Nguyen|gender|899|1|9.5|unknown|Nanjing University
 De-Chuan  Zhan|gender|899|2|9.5|China|Nanjing University
@@ -1601,7 +1601,7 @@ Nils Rosemann|gender|904|3|12.5|unknown|others
 Werner Brockmann|gender|904|4|12.5|unknown|others
 James Rankin|gender|905|1|15.5|unknown|INRIA Sophia-Antipolis
 Andrew Meso|gender|905|2|15.5|France|CNRS
-Guillaume Masson|gender|905|3|15.5|France|INT
+Guillaume Masson|gender|905|3|15.5|France|Université de Pau et des Pays de l'Adour
 Olivier Faugeras|gender|905|4|15.5|unknown|INRIA
 Pierre Kornprobst|gender|905|5|15.5|unknown|INRIA Sophia-Antipolis
 Steffen Borgwardt|gender|907|1|12.5|Germany|Technische Universität München
@@ -1610,7 +1610,7 @@ Nino Shervashidze|gender|907|3|12.5|unknown|Max Planck Institute for Intelligent
 Karsten Borgwardt|gender|907|4|12.5|unknown|MPI T?bingen
 Bruno Scherrer|gender|908|1|6.5|unknown|INRIA Loria
 Boris Lesner|gender|908|2|6.5|unknown|INRIA
-Sander Bohte|gender|909|1|3.5|unknown|CWI
+Sander Bohte|gender|909|1|3.5|unknown|others
 Cewu Lu|gender|910|1|3.5|unknown|The Chinese University of HK
 Ramnath Balasubramanyan|gender|911|1|6.5|United States|Carnegie Mellon University
 William Cohen|gender|911|2|6.5|United States|Carnegie Mellon University
@@ -1649,7 +1649,7 @@ Dirk Husmeier|gender|924|2|12.5|unknown|University of Glasgow
 Maurizio Filippone|gender|924|3|12.5|unknown|University of Glasgow
 Simon Rogers|gender|924|4|12.5|unknown|University of Glasgow
 Byron Boots|gender|925|1|6.5|United States|Carnegie Mellon University
-Geoff Gordon|gender|925|2|6.5|United States|CMU
+Geoff Gordon|gender|925|2|6.5|United States|Carnegie Mellon University
 Justin Kinney|gender|926|1|6.5|United States|Cold Spring Harbor Laboratory
 Gurinder Atwal|gender|926|2|6.5|United States|Cold Spring Harbor Laboratory
 Xiaoyu Wang|gender|927|1|15.5|United States|University of Missouri
@@ -1685,7 +1685,7 @@ Anil Jain|gender|936|3|9.5|United States|Michigan State University
 Clemens Hage|gender|937|1|6.5|Germany|TU M?nchen
 Martin Kleinsteuber|gender|937|2|6.5|Germany|Technische Universität München
 Asja Fischer|gender|938|1|10.5|unknown|INI University Bochum
-Kai Br?gge|gender|938|2|10.5|unknown|INI
+Kai Br?gge|gender|938|2|10.5|unknown|others
 Christian Igel|gender|938|3|10.5|unknown| University of Copenhagen
 Richard Gibson|gender|939|1|12.5|Canada|University of Alberta
 Marc Lanctot|gender|939|2|12.5|Canada|University of Alberta
@@ -1736,9 +1736,9 @@ Romain Caz?|gender|955|1|6.5|France|Departement Sciences Cognitives ENS
 Matthijs Van der Meer|gender|955|2|6.5|Canada|University of Waterloo
 Maayan Harel|gender|956|1|6.5|unknown|Technion
 Shie Mannor|gender|956|2|6.5|Israel|Technion
-Qi Mao|gender|957|1|12.5|Singapore|NTU
+Qi Mao|gender|957|1|12.5|Singapore|Nanyang Technological University
 Ivor Tsang|gender|957|2|12.5|Singapore|NTU Singapore
-Shenghua Gao|gender|957|3|12.5|Singapore|NTU
+Shenghua Gao|gender|957|3|12.5|Singapore|Nanyang Technological University
 Li Wang|gender|957|4|12.5|United States|UCSD
 Konstantinos Tsianos|gender|958|1|9.5|unknown|McGIll University
 Sean Lawlor|gender|958|2|9.5|unknown|others
@@ -1773,7 +1773,7 @@ Paolo di Prodi|gender|969|4|12.5|unknown|others
 Tiberio Caetano|gender|970|1|9.5|unknown|NICTA Canberra
 Xianghang Liu|gender|970|2|9.5|unknown|National ICT Australia
 James Petterson|gender|970|3|9.5|unknown|NICTA
-David Silver|gender|971|1|12.5|unknown|UCL
+David Silver|gender|971|1|12.5|unknown|others
 Leonard Newnham|gender|971|2|12.5|unknown|Causata
 David Barker|gender|971|3|12.5|unknown|Causata
 Suzanne Weller|gender|971|4|12.5|unknown|Causata
@@ -1808,11 +1808,11 @@ Tanzeem Choudhury|gender|984|4|15.5|United States|Cornell University
 Andrew Campbell|gender|984|5|15.5|United States|Dartmouth College
 Anna-Antonia Pape|gender|985|1|6.5|unknown|Knowledge Media Research Cente
 Thorsten Zander|gender|985|2|6.5|unknown|Max Planck Institute for Intelligent Systems
-Dilip Krishnan|gender|986|1|9.5|United States|NYU
-David  Eigen|gender|986|2|9.5|United States|NYU
+Dilip Krishnan|gender|986|1|9.5|United States|New York University
+David  Eigen|gender|986|2|9.5|United States|New York University
 Rob Fergus|gender|986|3|9.5|United States|New York University
 Li Cheng|gender|987|1|8.5|unknown|Bioinformatics Institute
-Jialin Pan|gender|987|2|8.5|unknown|I2R
+Jialin Pan|gender|987|2|8.5|unknown|others
 Brian Taylor|gender|988|1|12.5|United States|UCLA
 Alper Ayvaci|gender|988|2|12.5|United States|UCLA
 Avinash Ravichandran|gender|988|3|12.5|United States|UCLA
@@ -1826,7 +1826,7 @@ Jongmin Kim|gender|990|2|15.5|unknown|KAIST
 Sanghyuk Park|gender|990|3|15.5|Korea, Republic of|KAIST
 Sungrack Yun|gender|990|4|15.5|Korea, Republic of|KAIST
 Chang D. Yoo|gender|990|5|15.5|unknown|KAIST
-N?h?my Lim|gender|991|1|9.5|unknown|CEA
+N?h?my Lim|gender|991|1|9.5|unknown|others
 George Michailidis|gender|991|2|9.5|United States|University of Michigan - Ann Arbor
 Florence d'Alche-Buc|gender|991|3|9.5|unknown|Universit? d?Evry
 Mandar Dixit|gender|992|1|6.5|United States|UC San Diego
@@ -1851,8 +1851,8 @@ Yi Ma|gender|998|3|9.5|unknown|Microsoft Research Asia
 Hidekazu Oiwa|gender|999|1|9.5|unknown|The University of Tokyo
 Issei Sato|gender|999|2|9.5|unknown|The University of Tokyo
 Hiroshi Nakagawa|gender|999|3|9.5|unknown|University of Tokyo
-Steven Hoi|gender|1000|1|6.5|Singapore|NTU
-Peilin Zhao|gender|1000|2|6.5|Singapore|NTU
+Steven Hoi|gender|1000|1|6.5|Singapore|Nanyang Technological University
+Peilin Zhao|gender|1000|2|6.5|Singapore|Nanyang Technological University
 Liangda Li|gender|1001|1|12.5|unknown|Georgia Tech
 Le Song|gender|1001|2|12.5|United States| Georgia Tech
 Mariya Ishteva|gender|1001|3|12.5|United States|Georgia Institute of Technology
@@ -1862,11 +1862,11 @@ Zhaosong Lu|gender|1002|2|12.5|Canada|Simon Fraser University
 Pinghua Gong|gender|1002|3|12.5|unknown|Tsinghua University
 Jieping Ye|gender|1002|4|12.5|United States|Arizona State U.
 Suyash Shringarpure|gender|1003|1|6.5|United States|Carnegie Mellon University
-Eric Xing|gender|1003|2|6.5|United States|CMU
+Eric Xing|gender|1003|2|6.5|United States|Carnegie Mellon University
 Huahua Wang|gender|1004|1|7.5|United States|Uni. of Minnesota
 Arindam Banerjee|gender|1004|2|7.5|United States|Univ. of Minnesota
-Theja Tulabandhula|gender|1005|1|6.5|United States|MIT
-Cynthia Rudin|gender|1005|2|6.5|United States|MIT
+Theja Tulabandhula|gender|1005|1|6.5|United States|Massachusetts Institute of Technology
+Cynthia Rudin|gender|1005|2|6.5|United States|Massachusetts Institute of Technology
 Zhuoran Wang|gender|1007|1|9.5|United Kingdom|Heriot-Watt University
 Paul Crook|gender|1007|2|9.5|United Kingdom|Heriot-Watt University
 Oliver Lemon|gender|1007|3|9.5|United Kingdom|Heriot-Watt University
@@ -1880,7 +1880,7 @@ Moez Draief|gender|1009|3|12.5|unknown|Imperial College London
 Michael Kearns|gender|1009|4|12.5|United States|University of Pennsylvania
 Aur?lien Bellet|gender|1010|1|6.5|France|University Jean Monnet of Saint-Etienne
 Amaury Habrard|gender|1010|2|6.5|France|University of Saint-Etienne
-Moti Cohanim|gender|1011|1|6.5|unknown|TAU
+Moti Cohanim|gender|1011|1|6.5|unknown|others
 Nathan intrators|gender|1011|2|6.5|unknown|Tel aviv university
 Aaron Dennis|gender|1012|1|6.5|United States|Brigham Young University
 Dan Ventura|gender|1012|2|6.5|United States|Brigham Young University
@@ -1976,7 +1976,7 @@ Ashutosh Saxena|gender|1047|1|6.5|United States|Cornell
 Abhishek Anand|gender|1047|2|6.5|United States|Cornell University
 Qirong Ho|gender|1048|1|9.5|United States|Carnegie Mellon University
 Junming Yin|gender|1048|2|9.5|United States|Carnegie Mellon University
-Eric Xing|gender|1048|3|9.5|United States|CMU
+Eric Xing|gender|1048|3|9.5|United States|Carnegie Mellon University
 Deguang Kong|gender|1049|1|7.5|unknown|University of Texas at arlingt
 Chris Ding|gender|1049|2|7.5|United States|University of Texas at Arlington
 Mahdi Pakdaman Naeini|gender|1050|1|9.5|United States|University of Pittsburgh
@@ -1990,7 +1990,7 @@ Ulrik Beierholm|gender|1052|2|6.5|United Kingdom|University of Birmingham
 Deguang Kong|gender|1053|1|6.5|unknown|University of Texas at arlingt
 Chris Ding|gender|1053|2|6.5|United States|University of Texas at Arlington
 Kriti Puniyani|gender|1054|1|6.5|United States|Carnegie Mellon University
-Eric Xing|gender|1054|2|6.5|United States|CMU
+Eric Xing|gender|1054|2|6.5|United States|Carnegie Mellon University
 PING WEI|gender|1055|1|10.5|unknown|Xi'an Jiaotong University
 Yibiao Zhao|gender|1055|2|10.5|United States|UCLA
 Song-Chun Zhu|gender|1055|3|10.5|United States|UCLA
@@ -2001,9 +2001,9 @@ Margareta Ackerman|gender|1057|1|12.5|unknown| University of Waterloo
 Shai Ben-David|gender|1057|2|12.5|Canada|U. Waterloo
 David Loker|gender|1057|3|12.5|unknown|others
 Sivan Sabato|gender|1057|4|12.5|unknown|Hebrew university
-Tobias Gindele|gender|1058|1|9.5|Germany|KIT
+Tobias Gindele|gender|1058|1|9.5|Germany|Karlsruher Institut für Technologie
 Sebastian Brechtel|gender|1058|2|9.5|Germany|Karlsruhe Inst. of Technology
-R?diger Dillmann|gender|1058|3|9.5|Germany|KIT
+R?diger Dillmann|gender|1058|3|9.5|Germany|Karlsruher Institut für Technologie
 Eran Swears|gender|1059|1|9.5|unknown|Kitware Inc.
 Anthony Hoogs|gender|1059|2|9.5|unknown|Kitware Inc.
 Qiang Ji|gender|1059|3|9.5|United States|Rensselaer Polytechnic Institute
@@ -2041,7 +2041,7 @@ Nishant Mehta|gender|1070|1|9.5|United States|Georgia Institute of Technology
 Dongryeol Lee|gender|1070|2|9.5|unknown|Georgia Institute of Technology
 Alexander Gray|gender|1070|3|9.5|United States|Georgia Institute of Technology
 Dougal Sutherland|gender|1071|1|9.5|United States|Carnegie Mellon University
-Barnabas Poczos|gender|1071|2|9.5|United States|CMU
+Barnabas Poczos|gender|1071|2|9.5|United States|Carnegie Mellon University
 Jeff Schneider|gender|1071|3|9.5|United States|Carnegie Mellon University
 Bo Zheng|gender|1072|1|12.5|unknown|The University of Tokyo
 Yibiao Zhao|gender|1072|2|12.5|United States|UCLA
@@ -2052,8 +2052,8 @@ Anna Goldenberg|gender|1073|2|6.5|Canada|University of Toronto
 Alessandro Chiuso|gender|1074|1|10.5|Italy|University of Padova
 Georgios Georgiadis|gender|1074|2|10.5|United States|UCLA
 Stefano Soatto|gender|1074|3|10.5|United States|UCLA
-Borja Balle|gender|1075|1|6.5|Spain|UPC
-Mehryar Mohri|gender|1075|2|6.5|United States|NYU
+Borja Balle|gender|1075|1|6.5|Spain|Universidad Politécnica de Cataluna
+Mehryar Mohri|gender|1075|2|6.5|United States|New York University
 Liang Hu|gender|1076|1|15.5|unknown|Shanghai Jiaotong University
 Jian Cao|gender|1076|2|15.5|China|Shanghai Jiaotong University
 Jie Wang|gender|1076|3|15.5|United States|Stanford University
@@ -2109,8 +2109,8 @@ Sergey Plis|gender|566|2|15.5|unknown|Mind Research Network
 Vince Calhoun|gender|566|3|15.5|unknown|Mind Research Network
 Barak Pearlmutter|gender|566|4|15.5|unknown|National University of Ireland Maynooth
 Thomas Hayes|gender|566|5|15.5|United States|University of New Mexico
-Jared Glover|gender|567|1|6.5|United States|MIT
-Leslie Kaelbling|gender|567|2|6.5|United States|MIT
+Jared Glover|gender|567|1|6.5|United States|Massachusetts Institute of Technology
+Leslie Kaelbling|gender|567|2|6.5|United States|Massachusetts Institute of Technology
 Zhuoyuan Chen|gender|568|1|9.5|Qatar|Northwestern University
 Jiang Wang|gender|568|2|9.5|unknown|Northwestern University
 Ying Wu|gender|568|3|9.5|United States|Northwestern University
@@ -2153,7 +2153,7 @@ Yevgeniy Slutskiy|gender|582|1|6.5|United States|Columbia University
 Aurel Lazar|gender|582|2|6.5|United States|Columbia University
 Yali Wang|gender|583|1|6.5|Canada|Laval University
 Brahim Chaib-draa|gender|583|2|6.5|Canada|Laval University
-Yunchao Gong|gender|584|1|12.5|United States|UNC
+Yunchao Gong|gender|584|1|12.5|United States|University of North Carolina at Chapel Hill
 Sanjiv Kumar|gender|584|2|12.5|unknown| Google
 Vishal Verma|gender|584|3|12.5|United States|University of North Carolina at Chapel Hill
 Svetlana Lazebnik|gender|584|4|12.5|United States|UIUC
@@ -2165,9 +2165,9 @@ Han Liu|gender|587|2|6.5|United States|Johns Hopkins University
 Hao Zhang|gender|588|1|9.5|United States|University of Tennessee
 Richard Edwards|gender|588|2|9.5|United States|University of Tennessee
 Lynne Parker|gender|588|3|9.5|United States|University of Tennessee
-Benjamin Letham|gender|589|1|9.5|United States|MIT
-Katherine Heller|gender|589|2|9.5|United States|MIT
-Cynthia Rudin|gender|589|3|9.5|United States|MIT
+Benjamin Letham|gender|589|1|9.5|United States|Massachusetts Institute of Technology
+Katherine Heller|gender|589|2|9.5|United States|Massachusetts Institute of Technology
+Cynthia Rudin|gender|589|3|9.5|United States|Massachusetts Institute of Technology
 Roni Mittelman|gender|590|1|12.5|United States|University of Michigan
 Min Sun|gender|590|2|12.5|United States|University of Michigan
 Benjamin Kuipers|gender|590|3|12.5|United States|University of Michigan
@@ -2179,7 +2179,7 @@ Arthur Gretton|gender|592|1|26.5|unknown|Gatsby Unit
 Bharath Sriperumbudur|gender|592|2|26.5|unknown| Gatsby
 Dino Sejdinovic|gender|592|3|26.5|unknown|Gatsby Unit
 heiko Strathmann|gender|592|4|26.5|unknown|CSML
-Sivaraman Balakrishnan|gender|592|5|26.5|unknown|CMU
+Sivaraman Balakrishnan|gender|592|5|26.5|unknown|others
 Massimiliano Pontil|gender|592|6|26.5|unknown|University College London
 Kenji Fukumizu|gender|592|7|26.5|unknown|The Institute of Statistical Mathematics
 Andrew Stevens|gender|593|1|3.5|unknown|Pacific Northwest National Lab
@@ -2204,9 +2204,9 @@ Andrew Senior|gender|598|9|36.5|unknown| Google
 Paul Tucker|gender|598|10|36.5|unknown|others
 Ke Yang|gender|598|11|36.5|unknown|others
 Andrew Ng|gender|598|12|36.5|United States|Stanford Univ.
-Yanyan Lan|gender|599|1|12.5|unknown|ICT
+Yanyan Lan|gender|599|1|12.5|unknown|others
 Jiafeng Guo|gender|599|2|12.5|unknown|others
-Xueqi Cheng|gender|599|3|12.5|unknown|ICT
+Xueqi Cheng|gender|599|3|12.5|unknown|others
 Tie-Yan Liu|gender|599|4|12.5|unknown|Microsoft
 Hachem Kadri|gender|600|1|9.5|unknown|INRIA Lille
 Mohammad Ghavamzadeh|gender|600|2|9.5|unknown|INRIA Lille
@@ -2234,8 +2234,8 @@ Moo. K Chung|gender|608|4|18.5|United States|University of Wisconsin
 Sterling Johnson|gender|608|5|18.5|United States|University of Wisconsin
 Vikas Singh|gender|608|6|18.5|United States|University of Wisconsin
 Kartik Audhkhasi|gender|610|1|12.5|United States|Univ of Southern California
-Abhinav Sethy|gender|610|2|12.5|unknown|IBM
-Bhuvana Ramabhadran|gender|610|3|12.5|unknown|IBM
+Abhinav Sethy|gender|610|2|12.5|unknown|others
+Bhuvana Ramabhadran|gender|610|3|12.5|unknown|others
 Shrikanth Narayanan|gender|610|4|12.5|United States|University of Southern California
 Yoshua Bengio|gender|611|1|12.5|Canada|U. Montreal
 Gr?goire Mesnil|gender|611|2|12.5|unknown|U. Montreal
@@ -2251,7 +2251,7 @@ Longin Jan Latecki|gender|613|2|6.5|United States|Temple University
 Cong Li|gender|614|1|9.5|unknown|University of Central Florida
 Michael Georgiopoulos|gender|614|2|9.5|United States|University of Central Florida
 Georgios Anagnostopoulos|gender|614|3|9.5|United States|Florida Institute of Technology
-Aaron Defazio|gender|615|1|6.5|Australia|ANU
+Aaron Defazio|gender|615|1|6.5|Australia|Australian National University
 Tiberio Caetano|gender|615|2|6.5|unknown|NICTA Canberra
 Arnak Dalalyan|gender|616|1|6.5|France|ENPC
 Yin Chen|gender|616|2|6.5|France|Ecole Nationale des Ponts et Chausees
@@ -2260,9 +2260,9 @@ Abram Friesen|gender|617|2|15.5|United States|University of Washington
 Timothy Hanks|gender|617|3|15.5|United States|Princeton University
 Mike Shadlen|gender|617|4|15.5|United States|University of Washington
 Rajesh Rao|gender|617|5|15.5|United States|University of Washington
-Sinead Williamson|gender|618|1|9.5|unknown|CMU
+Sinead Williamson|gender|618|1|9.5|unknown|others
 Avinava Dubey|gender|618|2|9.5|United States|Carnegie Mellon University
-Eric Xing|gender|618|3|9.5|United States|CMU
+Eric Xing|gender|618|3|9.5|United States|Carnegie Mellon University
 Amin Karbasi|gender|619|1|9.5|unknown|Epfl
 Amir Hessam Salavati|gender|619|2|9.5|Switzerland|EPFL
 Amin Shokrollahi|gender|619|3|9.5|Switzerland|EPFL
@@ -2309,13 +2309,13 @@ Ashish Goel|gender|631|2|6.5|United States|Stanford University
 Yan Wu|gender|632|1|9.5|Canada|University of Waterloo
 Matthijs Van der Meer|gender|632|2|9.5|Canada|University of Waterloo
 Chris Eliasmith|gender|632|3|9.5|Canada|University of Waterloo
-Qi Chen|gender|633|1|9.5|unknown|NUS
-Gang Wang|gender|633|2|9.5|unknown|NTU
-Chew Lim Tan|gender|633|3|9.5|unknown|NUS
+Qi Chen|gender|633|1|9.5|unknown|others
+Gang Wang|gender|633|2|9.5|unknown|others
+Chew Lim Tan|gender|633|3|9.5|unknown|others
 Kosuke Fukumasu|gender|634|1|9.5|unknown|Kobe University
 Koji Eguchi|gender|634|2|9.5|unknown|Kobe University
-Eric Xing|gender|634|3|9.5|United States|CMU
-Jonathan Huggins|gender|635|1|6.5|United States|MIT
+Eric Xing|gender|634|3|9.5|United States|Carnegie Mellon University
+Jonathan Huggins|gender|635|1|6.5|United States|Massachusetts Institute of Technology
 Frank Wood|gender|635|2|6.5|United States|Columbia University
 Michael Hughes|gender|636|1|9.5|United States|Brown University
 Emily Fox|gender|636|2|9.5|United States|University of Pennsylvania
@@ -2324,8 +2324,8 @@ Xue-Xin Wei|gender|637|1|6.5|unknown|University of Pennsylvania
 Alan Stocker|gender|637|2|6.5|United States| U Penn
 Maksims Volkovs|gender|638|1|6.5|unknown|University of Toronto
 Rich Zemel|gender|638|2|6.5|unknown|University of Toronto
-Marius Pachitariu|gender|639|1|6.5|unknown|UCL
-Maneesh Sahani|gender|639|2|6.5|unknown|UCL
+Marius Pachitariu|gender|639|1|6.5|unknown|others
+Maneesh Sahani|gender|639|2|6.5|unknown|others
 Yichuan Tang|gender|640|1|9.5|unknown|Salakhutdinov
 Ruslan Salakhutdinov|gender|640|2|9.5|unknown|University of Toronto
 Geoff Hinton|gender|640|3|9.5|unknown|University of Toronto
@@ -2392,7 +2392,7 @@ Kyoung Mu Lee|gender|666|2|6.5|Korea, Republic of|Seoul National University
 Dimitri Ognibene|gender|667|1|3.5|unknown|Imperial college london
 Dani Yogatama|gender|668|1|9.5|United States|Carnegie Mellon University
 Bryan Routledge|gender|668|2|9.5|United States|Carnegie Mellon University
-Noah Smith|gender|668|3|9.5|United States|CMU
+Noah Smith|gender|668|3|9.5|United States|Carnegie Mellon University
 Yi Zhen|gender|669|1|3.5|Hong Kong|HKUST
 Xavier Bresson|gender|670|1|12.5|Hong Kong|City University of Hong Kong
 Thomas Laurent|gender|670|2|12.5|United States|UC Riverside
@@ -2434,13 +2434,13 @@ Tuo Zhang|gender|684|2|21.5|unknown|NWPU
 Hanbo Chen|gender|684|3|21.5|unknown|The University of Georgia
 Xi Jiang|gender|684|4|21.5|unknown|The University of Georgia
 Xiang Li|gender|684|5|21.5|United States|University of Georgia
-Jinglei Lv|gender|684|6|21.5|unknown|NPU
+Jinglei Lv|gender|684|6|21.5|unknown|others
 Tianming Liu|gender|684|7|21.5|unknown|uga.edu
 Wenkui Ding|gender|685|1|12.5|unknown|Tsinghua University
 Tao Qin|gender|685|2|12.5|unknown|Microsoft Research Asia
 Xu-Dong Zhang|gender|685|3|12.5|China|Tsinghua University
 Tie-Yan Liu|gender|685|4|12.5|unknown|Microsoft Research Asia
-Pierre Machart|gender|686|1|11.5|France|LIF
+Pierre Machart|gender|686|1|11.5|France|Université de Provence (Aix-Marseille I)
 Sandrine Anthoine|gender|686|2|11.5|France|LATP
 Luca Baldassarre|gender|686|3|11.5|unknown|others
 Dmitry Malioutov|gender|687|1|9.5|United States|DRW Holdings
@@ -2461,10 +2461,10 @@ Ruben Coen-cagli|gender|693|1|6.5|United States|Albert Einstein College of Med
 Odelia Schwartz|gender|693|2|6.5|United States|Albert Einstein College of Medicine
 Vasileios Christopoulos|gender|694|1|6.5|United States|Caltech
 Paul Schrater|gender|694|2|6.5|United States|University of Minnesota
-Dongzhen Piao|gender|695|1|12.5|unknown|CMU
-Ole Mengshoel|gender|695|2|12.5|United States|CMU
-Lu Zheng|gender|695|3|12.5|United States|CMU
-Xianheng Ma|gender|695|4|12.5|United States|CMU
+Dongzhen Piao|gender|695|1|12.5|unknown|others
+Ole Mengshoel|gender|695|2|12.5|United States|Carnegie Mellon University
+Lu Zheng|gender|695|3|12.5|United States|Carnegie Mellon University
+Xianheng Ma|gender|695|4|12.5|United States|Carnegie Mellon University
 Dinis Gokaydin|gender|696|1|12.5|Australia|University of Adelaide
 Daniel Navarro|gender|696|2|12.5|Australia|University of Adelaide
 Amy Perfors|gender|696|3|12.5|Australia|University of Adelaide
@@ -2498,7 +2498,7 @@ Yishay Mansour|gender|706|2|6.5|unknown|Tel-Aviv University
 Prateek Jain|gender|707|1|6.5|unknown|MSR Bangalore
 Abhradeep Thakurta|gender|707|2|6.5|United States|Penn State University
 Hongxing Wang|gender|708|1|6.5|Singapore|Nanyang Technological Univ
-Junsong Yuan|gender|708|2|6.5|Singapore|NTU
+Junsong Yuan|gender|708|2|6.5|Singapore|Nanyang Technological University
 Andre Barreto|gender|709|1|9.5|unknown|McGill University
 Doina Precup|gender|709|2|9.5|Canada|McGill Montreal
 Joelle Pineau|gender|709|3|9.5|Canada|McGill University
@@ -2548,7 +2548,7 @@ Jitkomut Songsiri|gender|727|1|3.5|Thailand|Chulalongkorn University
 Yao-Nan Chen|gender|728|1|6.5|unknown|National Taiwan University
 Hsuan-Tien Lin|gender|728|2|6.5|unknown|National Taiwan University
 Alekh Agarwal|gender|729|1|9.5|United States|UC Berkeley
-Sahand Negahban|gender|729|2|9.5|United States|MIT
+Sahand Negahban|gender|729|2|9.5|United States|Massachusetts Institute of Technology
 Martin Wainwright|gender|729|3|9.5|United States|U C Berkeley
 Weizhi Lu|gender|730|1|3.5|unknown|INSA-RENNES
 Ziqiang Shi|gender|731|1|15.5|China|Harbin Institute of Technology
@@ -2615,8 +2615,8 @@ Alan Fern|gender|750|5|15.5|United States|Oregon State University
 Qixia Jiang|gender|751|1|12.5|unknown|Tsinghua University
 Jun Zhu|gender|751|2|12.5|China|Tsinghua University
 Maosong Sun|gender|751|3|12.5|China|Tsinghua University
-Eric Xing|gender|751|4|12.5|United States|CMU
-Koichi Fujiwara|gender|752|1|9.5|unknown|NTT
+Eric Xing|gender|751|4|12.5|United States|Carnegie Mellon University
+Koichi Fujiwara|gender|752|1|9.5|unknown|others
 Hiroshi Sawada|gender|752|2|9.5|unknown|NTT Communication Science Laboratories
 Manabu Kano|gender|752|3|9.5|Japan|Kyoto University
 Xinxin Yang|gender|753|1|14.5|unknown|AMSS
@@ -2636,16 +2636,16 @@ Nicol? Cesa-Bianchi|gender|758|1|12.5|Italy|Univ. degli Studi di Milano
 Claudio Gentile|gender|758|2|12.5|Italy|University of Subria
 Fabio Vitale|gender|758|3|12.5|Italy|University of Milan
 Giovanni Zappella|gender|758|4|12.5|Italy|University of Milan
-Karim Rajaei|gender|759|1|18.5|unknown|SCS
-Masoud Ghodrati|gender|759|2|18.5|unknown|SCS
-Reza  Ebrahimpour|gender|759|3|18.5|unknown|SCS
+Karim Rajaei|gender|759|1|18.5|unknown|others
+Masoud Ghodrati|gender|759|2|18.5|unknown|others
+Reza  Ebrahimpour|gender|759|3|18.5|unknown|others
 Zhanglong Ji|gender|760|1|6.5|United States|UC San Diego
 Charles Elkan|gender|760|2|6.5|United States|UCSD
-Naonori Ueda|gender|761|1|9.5|unknown|NTT
+Naonori Ueda|gender|761|1|9.5|unknown|others
 yusuke tanaka|gender|761|2|9.5|Japan|Kyoto University
 Akinori Fujino|gender|761|3|9.5|unknown|others
 Seunghak Lee|gender|762|1|6.5|United States|Carnegie Mellon University
-Eric Xing|gender|762|2|6.5|United States|CMU
+Eric Xing|gender|762|2|6.5|United States|Carnegie Mellon University
 Danilo Vargas|gender|763|1|9.5|unknown|Kyushu University
 Hirotaka Takano|gender|763|2|9.5|unknown|others
 Junichi Murata|gender|763|3|9.5|unknown|others
@@ -2677,7 +2677,7 @@ Jean-Pascal Pfister|gender|770|2|6.5|Switzerland|Universität Bern
 Gregory Valiant|gender|771|1|6.5|unknown|UC Berkeley
 Paul Valiant|gender|771|2|6.5|unknown|UC Berkeley
 Jiwen Lu|gender|772|1|7.5|unknown|ADSC
-Gang Wang|gender|772|2|7.5|unknown|NTU
+Gang Wang|gender|772|2|7.5|unknown|others
 Risi Kondor|gender|773|1|7.5|United States|University of Chicago
 Walter Dempsey|gender|773|2|7.5|United States|University of Chicago
 Weihao Kong|gender|776|1|6.5|China|Shanghai Jiao Tong University
@@ -2700,9 +2700,9 @@ Pedro Domingos|gender|785|2|6.5|United States|U. Washington
 Hayato Kobayashi|gender|786|1|3.5|unknown|Toshiba Corporation
 Arthur Choi|gender|787|1|7.5|United States|University of California, Los Angeles
 Adnan Darwiche|gender|787|2|7.5|United States|UCLA
-Vincent Blondel|gender|788|1|10.5|unknown|UCL
+Vincent Blondel|gender|788|1|10.5|unknown|others
 Kyomin Jung|gender|788|2|10.5|unknown|Kaist
-Devavrat Shah|gender|788|3|10.5|United States|MIT
+Devavrat Shah|gender|788|3|10.5|United States|Massachusetts Institute of Technology
 Arancha Simon-Hurtado|gender|789|1|12.5|Spain|Universidad de Valladolid
 Esperanza Manso-Martinez|gender|789|2|12.5|Spain|Universidad de Valladolid
 Carlos Vivaracho-Pascual|gender|789|3|12.5|Spain|Universidad de Valladolid
@@ -2712,9 +2712,9 @@ Nuno Vasconcelos|gender|790|2|6.5|United States| UC San Diego
 Ning Chen|gender|791|1|9.5|unknown|Tsinghua University
 Jun Zhu|gender|791|2|9.5|China|Tsinghua University
 Fuchun Sun|gender|791|3|9.5|China|Tsinghua University
-Yasemin Bekiroglu|gender|792|1|13.5|Sweden|KTH
+Yasemin Bekiroglu|gender|792|1|13.5|Sweden|Royal lnstitute of Technology
 Dan Song|gender|792|2|13.5|Sweden|Royal Institute of Technology
-Lu Wang|gender|792|3|13.5|Sweden|KTH
+Lu Wang|gender|792|3|13.5|Sweden|Royal lnstitute of Technology
 Danica Kragic|gender|792|4|13.5|Sweden|Royal lnstitute of Technology
 JaeBong Yoo|gender|793|1|6.5|unknown|USC/ISI
 Jihie Kim|gender|793|2|6.5|unknown|USC/ISI
@@ -2752,7 +2752,7 @@ Hongjing Lu|gender|805|3|12.5|United States|UCLA
 Alan Yuille|gender|805|4|12.5|United States|UCLA
 Lars Buesing|gender|806|1|10.5|unknown|Gatsy Unit
 Jakob Macke|gender|806|2|10.5|unknown|Gatsby Unit
-Maneesh Sahani|gender|806|3|10.5|unknown|UCL
+Maneesh Sahani|gender|806|3|10.5|unknown|others
 Adel Javanmard|gender|807|1|6.5|United States|Stanford University
 Andrea Montanari|gender|807|2|6.5|United States|Stanford
 Laurent Perrinet|gender|808|1|6.5|France|CNRS
@@ -2765,10 +2765,10 @@ Tian Xia|gender|810|2|12.5|United States|Wright State University
 Ming Tan|gender|810|3|12.5|United States|Wright State University
 Shaojun Wang|gender|810|4|12.5|United States|Wright State University
 Tim Van Erven|gender|811|1|12.5|unknown|Universit? Paris-Sud
-Peter Gr?nwald|gender|811|2|12.5|unknown|CWI
+Peter Gr?nwald|gender|811|2|12.5|unknown|others
 Mark Reid|gender|811|3|12.5|Australia|Australian National University
 Robert Williamson|gender|811|4|12.5|Australia|NICTA
-Rahul Gupta|gender|812|1|9.5|United States|USC
+Rahul Gupta|gender|812|1|9.5|United States|University of Southern California
 Kartik Audhkhasi|gender|812|2|9.5|United States|Univ of Southern California
 Shrikanth Narayanan|gender|812|3|9.5|United States|University of Southern California
 Christian Mayr|gender|813|1|24.5|Germany|TU Dresden
@@ -2855,7 +2855,7 @@ Yuanyuan Liu|gender|1098|1|6.5|unknown|Key Laboratory of Intelligent
 Fanhua Shang|gender|1098|2|6.5|unknown|others
 Yudong Chen|gender|1100|1|9.5|United States|The University of Texas at Aus
 Sujay Sanghavi|gender|1100|2|9.5|United States|Univ. of Austin
-Huan Xu|gender|1100|3|9.5|Singapore|NUS
+Huan Xu|gender|1100|3|9.5|Singapore|National University of Singapore
 Jun Sakuma|gender|1101|1|9.5|Japan|Tsukuba University
 Hiromi Arai|gender|1101|2|9.5|unknown|Riken
 Junpei Kawamoto|gender|1101|3|9.5|unknown|University of Tsukuba
@@ -2874,11 +2874,11 @@ Ji Liu|gender|1107|1|9.5|United States|University Wisconsin-Madison
 Lei Yuan|gender|1107|2|9.5|United States|Arizona State University
 Jieping Ye|gender|1107|3|9.5|United States|Arizona State U.
 William Chan|gender|1108|1|12.5|United States|Carnegie Mellon University
-Ole Mengshoel|gender|1108|2|12.5|United States|CMU
+Ole Mengshoel|gender|1108|2|12.5|United States|Carnegie Mellon University
 Jason Lohn|gender|1108|3|12.5|United States|Carnegie Mellon University
 Xuerui Wang|gender|1108|4|12.5|unknown|Google
 Nicholas Foti|gender|1109|1|6.5|United States|Dartmouth College
-Sinead Williamson|gender|1109|2|6.5|unknown|CMU
+Sinead Williamson|gender|1109|2|6.5|unknown|others
 Yuan Fang|gender|1110|1|9.5|United States|UIUC
 Kevin Chang|gender|1110|2|9.5|United States|UIUC
 Hady Lauw|gender|1110|3|9.5|Singapore|Singapore Management University
@@ -2924,7 +2924,7 @@ Nisheeth Srivastava|gender|1123|1|6.5|unknown|University of Minnesota
 Paul Schrater|gender|1123|2|6.5|United States|University of Minnesota
 Michael Mitchley|gender|1124|1|9.5|unknown|University of the Witwatersran
 Dean Wookey|gender|1124|2|9.5|unknown|University of the Witwatersrand
-George Konidaris|gender|1124|3|9.5|United States|MIT
+George Konidaris|gender|1124|3|9.5|United States|Massachusetts Institute of Technology
 Christos Dimitrakakis|gender|1125|1|3.5|Switzerland|EPFL
 Hamid Maei|gender|1126|1|3.5|United States|Stanford University
 Mehmet Emre Sargin|gender|1127|1|12.5|unknown|Google Inc.
@@ -2953,7 +2953,7 @@ Vikash Gilja|gender|1134|3|21.5|United States|Stanford University
 Paul Nuyujukian|gender|1134|4|21.5|United States|Stanford University 
 Stephen Ryu|gender|1134|5|21.5|United States|Palo Alto Medical Foundation 
 Krishna Shenoy|gender|1134|6|21.5|United States|Stanford University
-Byron Yu|gender|1134|7|21.5|United States|CMU
+Byron Yu|gender|1134|7|21.5|United States|Carnegie Mellon University
 Tao Hu|gender|1135|1|8.5|unknown|JFRC
 Dmitri Chklovskii|gender|1135|2|8.5|unknown|JFRC
 Hiroki Terashima|gender|1136|1|6.5|unknown|The University of Tokyo / JSPS
@@ -2973,7 +2973,7 @@ Alireza Farhangfar|gender|1140|1|9.5|Canada|University of Alberta
 Russ Greiner|gender|1140|2|9.5|Canada|University of Alberta
 Csaba Szepervari|gender|1140|3|9.5|Canada|U. Alberta
 Oliver Kramer|gender|1141|1|3.5|Germany|University of Oldenburg
-Barnabas Poczos|gender|1142|1|6.5|United States|CMU
+Barnabas Poczos|gender|1142|1|6.5|United States|Carnegie Mellon University
 Jeff Schneider|gender|1142|2|6.5|United States|Carnegie Mellon University
 Frank McSherry|gender|1143|1|9.5|unknown|Microsoft Research
 Katrina Ligett|gender|1143|2|9.5|United States|Caltech
@@ -2988,17 +2988,17 @@ David Carlson|gender|1146|1|12.5|United States|Duke University
 Lawrence  Carin|gender|1146|2|12.5|United States|Duke University
 David Lue|gender|1146|3|12.5|United States|Duke University
 Raghav Padmanabhan|gender|1146|4|12.5|unknown|University of Houston
-Trung Nguyen|gender|1147|1|12.5|unknown|NUS
-Zhuoru Li|gender|1147|2|12.5|unknown|NUS
-Tomi Silander|gender|1147|3|12.5|unknown|NUS
-Tze Yun Leong|gender|1147|4|12.5|unknown|NUS
+Trung Nguyen|gender|1147|1|12.5|unknown|others
+Zhuoru Li|gender|1147|2|12.5|unknown|others
+Tomi Silander|gender|1147|3|12.5|unknown|others
+Tze Yun Leong|gender|1147|4|12.5|unknown|others
 Yunlong He|gender|1148|1|12.5|United States|Georgia Tech
 Yanjun Qi|gender|1148|2|12.5|unknown|NEC Labs America
 Koray Kavukcuoglu|gender|1148|3|12.5|unknown|NEC Laboratories America
 Haesun Park|gender|1148|4|12.5|United States|Georgia Tech
 Sanjeev Arora|gender|1149|1|13.5|United States|Princeton University
 Rong Ge|gender|1149|2|13.5|United States|Princeton University
-Ankur Moitra|gender|1149|3|13.5|unknown|IAS
+Ankur Moitra|gender|1149|3|13.5|unknown|others
 Sushant Sachdeva|gender|1149|4|13.5|United States|Princeton University
 Bipul Luitel|gender|1150|1|6.5|unknown|Clemson University
 Ganesh Venayagamoorthy|gender|1150|2|6.5|United States|Clemson University
@@ -3006,16 +3006,16 @@ Alex Schwing|gender|1151|1|12.5|Switzerland|ETH Zurich
 Tamir Hazan|gender|1151|2|12.5|unknown|Toyota Technological Institute Chicago
 Marc Pollefeys|gender|1151|3|12.5|Switzerland|ETH Zurich
 Raquel Urtasun|gender|1151|4|12.5|unknown|Toyota Technological Institute Chicago
-Leliane de Barros|gender|1152|1|15.5|unknown|USP
-Mijail Holguin|gender|1152|2|15.5|unknown|USP
-Karina Delgado|gender|1152|3|15.5|unknown|USP
+Leliane de Barros|gender|1152|1|15.5|unknown|others
+Mijail Holguin|gender|1152|2|15.5|unknown|others
+Karina Delgado|gender|1152|3|15.5|unknown|others
 Scott Sanner|gender|1152|4|15.5|unknown|NICTA
 Cheng Fang|gender|1152|5|15.5|Australia|University of Sydney
 Yu-Tseh Chi|gender|1153|1|12.5|United States|University of Florida
 Jeffrey Ho|gender|1153|2|12.5|United States|University of Florida
 Mohsen Ali|gender|1153|3|12.5|United States|University of Florida
 Muhammad Rushdi|gender|1153|4|12.5|United States|University of Florida
-David Silver|gender|1154|1|3.5|unknown|UCL
+David Silver|gender|1154|1|3.5|unknown|others
 Mikko Koivisto|gender|1155|1|6.5|Finland|University of Helsinki
 Teppo Niinim?ki|gender|1155|2|6.5|Finland|University of Helsinki
 MD. Ridwan Iqbal|gender|1156|1|3.5|unknown|American Intl. University
@@ -3025,13 +3025,13 @@ Anil Kumar Vullikanti|gender|1158|1|3.5|United States|Virginia Tech
 Aurelie Lozano|gender|1159|1|9.5|unknown| IBM Research
 Huijing Jiang|gender|1159|2|9.5|unknown|IBM Research
 Xinwei Deng|gender|1159|3|9.5|United States|Virginia Tech
-Sewoong Oh|gender|1160|1|9.5|unknown|MIT
-David Karger|gender|1160|2|9.5|United States|MIT
-Devavrat Shah|gender|1160|3|9.5|United States|MIT
-Matt Streeter|gender|1161|1|6.5|unknown|CMU
+Sewoong Oh|gender|1160|1|9.5|unknown|others
+David Karger|gender|1160|2|9.5|United States|Massachusetts Institute of Technology
+Devavrat Shah|gender|1160|3|9.5|United States|Massachusetts Institute of Technology
+Matt Streeter|gender|1161|1|6.5|unknown|others
 Brendan McMahan|gender|1161|2|6.5|unknown|Google
 Michael Gharbi|gender|1162|1|12.5|unknown|Adobe
-Tomasz Malisiewicz|gender|1162|2|12.5|United States|MIT
+Tomasz Malisiewicz|gender|1162|2|12.5|United States|Massachusetts Institute of Technology
 Sylvain Paris|gender|1162|3|12.5|unknown| Adobe
 Fredo Durand|gender|1162|4|12.5|United States|CSAIL MIT
 Landon Kraemer|gender|1163|1|6.5|United States|University of Southern Miss.
@@ -3041,7 +3041,7 @@ Youngkyoon Jang|gender|1164|2|12.5|unknown|others
 Woontack Woo|gender|1164|3|12.5|unknown|others
 Tae-Kyun Kim|gender|1164|4|12.5|unknown|others
 Siddharth Gopal|gender|1165|1|12.5|United States|Carnegie Mellon University
-Yiming Yang|gender|1165|2|12.5|United States|CMU
+Yiming Yang|gender|1165|2|12.5|United States|Carnegie Mellon University
 Bing Bai|gender|1165|3|12.5|unknown|NEC Laboratories America
 Alexandru Niculescu-Mizil|gender|1165|4|12.5|unknown|NEC Laboratories America
 Mert Pilanci|gender|1166|1|9.5|United States|UC Berkeley
@@ -3066,7 +3066,7 @@ Kohei Hayashi|gender|1174|1|6.5|unknown|The University of Tokyo
 Ryohei Fujimaki|gender|1174|2|6.5|unknown|NEC America
 Alexis Lechervy|gender|1175|1|9.5|France|ETIS
 philippe-henri Gosselin|gender|1175|2|9.5|France|Etis
-Fr?d?ric Precioso|gender|1175|3|9.5|France|I3S
+Fr?d?ric Precioso|gender|1175|3|9.5|France|Université de Nice-Sophia Antipolis
 Dan Lizotte|gender|1176|1|6.5|Canada| University of Waterloo
 Eric Laber|gender|1176|2|6.5|United States|North Carolina State University
 Ulugbek Kamilov|gender|1177|1|12.5|Switzerland|EPFL
@@ -3082,7 +3082,7 @@ Linus Gisslen|gender|1180|1|12.5|unknown|IDSIA
 Matthew Luciw|gender|1180|2|12.5|unknown|IDSIA
 Mark Ring|gender|1180|3|12.5|unknown|IDSIA
 Juergen Schmidhuber|gender|1180|4|12.5|unknown|IDSIA
-Aaditya Ramdas|gender|1181|1|6.5|United States|CMU
+Aaditya Ramdas|gender|1181|1|6.5|United States|Carnegie Mellon University
 Aarti Singh|gender|1181|2|6.5|United States|Carnegie Mellon University
 David Balduzzi|gender|1182|1|6.5|unknown|Max Planck Institute for Intelligent Systems
 Michel Besserve|gender|1182|2|6.5|unknown|MPI for Intelligent Systems
@@ -3091,11 +3091,11 @@ Michael Hirsch|gender|1183|2|10.5|unknown|Max Planck Institute Tuebingen
 Bernhard Sch?lkopf|gender|1183|3|10.5|unknown|Max Planck Institute for Intelligent Systems
 Jean Wu|gender|1184|1|14.5|United States|Stanford University
 Justine Kao|gender|1184|2|14.5|United States|Stanford University
-Leon Bergen|gender|1184|3|14.5|United States|MIT
+Leon Bergen|gender|1184|3|14.5|United States|Massachusetts Institute of Technology
 Noah Goodman|gender|1184|4|14.5|United States| Stanford
 Subhransu Maji|gender|1185|1|3.5|unknown|Toyota Technological Institute
 Juan Xu|gender|1186|1|10.5|Singapore|National University of Singapore
-Ming Jiang|gender|1186|2|10.5|Singapore|NUS
+Ming Jiang|gender|1186|2|10.5|Singapore|National University of Singapore
 Qi Zhao|gender|1186|3|10.5|Singapore|National University of Singapore
 Yoram Baram|gender|1187|1|4.5|Israel|Technion
 Matthew Blaschko|gender|1188|1|6.5|unknown|Ecole Centrale Paris
@@ -3108,9 +3108,9 @@ Aiyou Chen|gender|1190|1|14.5|unknown|Google
 Arash Amini|gender|1190|2|14.5|United States|University of Michigan
 Peter Bickel|gender|1190|3|14.5|United States|University of California
 Elizaveta Levina|gender|1190|4|14.5|United States|University of Michigan
-Lorenzo Rosasco|gender|1191|1|9.5|United States|MIT
+Lorenzo Rosasco|gender|1191|1|9.5|United States|Massachusetts Institute of Technology
 Guillermo Canas|gender|1191|2|9.5|unknown|IIT-MIT
-Tomaso  Poggio|gender|1191|3|9.5|United States|MIT
+Tomaso  Poggio|gender|1191|3|9.5|United States|Massachusetts Institute of Technology
 Pavel Kuksa|gender|1192|1|3.5|unknown|NEC Laboratories America
 Guillaume Bouchard|gender|1193|1|9.5|unknown|Xerox Research Centre Grenoble
 Dawei Yin|gender|1193|2|9.5|United States|Lehigh University
@@ -3124,13 +3124,13 @@ Yufei Liu|gender|1195|1|12.5|United States|University of Illinois at Urbana-Cham
 Xin Jin|gender|1195|2|12.5|United States|University of Illinois at Urbana-Champaign
 Feng Liang|gender|1195|3|12.5|United States|UIUC
 Jiawei Han|gender|1195|4|12.5|United States|University of Illinois at Urbana-Champaign
-Sahand Negahban|gender|1196|1|9.5|United States|MIT
-Sewoong Oh|gender|1196|2|9.5|unknown|MIT
-Devavrat Shah|gender|1196|3|9.5|United States|MIT
+Sahand Negahban|gender|1196|1|9.5|United States|Massachusetts Institute of Technology
+Sewoong Oh|gender|1196|2|9.5|unknown|others
+Devavrat Shah|gender|1196|3|9.5|United States|Massachusetts Institute of Technology
 Yaoliang Yu|gender|1197|1|9.5|Canada|University of Alberta
 Ozlem Aslan|gender|1197|2|9.5|Canada|University of Alberta
 Dale Schuurmans|gender|1197|3|9.5|Canada|University of Alberta
-Lorenzo Rosasco|gender|1198|1|6.5|United States|MIT
+Lorenzo Rosasco|gender|1198|1|6.5|United States|Massachusetts Institute of Technology
 Guillermo Canas|gender|1198|2|6.5|unknown|IIT-MIT
 Sean Gilpin|gender|1199|1|9.5|United States|UC Davis
 Ian Davidson|gender|1199|2|9.5|United States|Univ. of California Davis
@@ -3164,10 +3164,10 @@ Shay Cohen|gender|1208|1|6.5|United States|Columbia University
 Michael Collins|gender|1208|2|6.5|United States|Columbia Univ.
 Toke Hansen|gender|1209|1|6.5|unknown|DTU Informatics
 Michael Mahoney|gender|1209|2|6.5|United States|Stanford University
-Sinead Williamson|gender|1210|1|12.5|unknown|CMU
+Sinead Williamson|gender|1210|1|12.5|unknown|others
 Steven MacEachern|gender|1210|2|12.5|United States|Ohio State University
 Zoubin Ghahramani|gender|1210|3|12.5|unknown|University of Cambridge
-Eric Xing|gender|1210|4|12.5|United States|CMU
+Eric Xing|gender|1210|4|12.5|United States|Carnegie Mellon University
 Arnak Dalalyan|gender|1212|1|9.5|France|ENPC
 Alexandre Tsybakov|gender|1212|2|9.5|France|ENSAE ParisTech
 Yuri Ingster|gender|1212|3|9.5|unknown|others
@@ -3184,9 +3184,9 @@ Roman Garnett|gender|1216|2|9.5|unknown|others
 Jeff Schneider|gender|1216|3|9.5|United States|Carnegie Mellon University
 Mingyuan Zhou|gender|1217|1|6.5|United States|Duke University
 Lawrence Carin|gender|1217|2|6.5|United States|Duke
-Trung Nguyen|gender|1218|1|9.5|unknown|NUS
-Tomi Silander|gender|1218|2|9.5|unknown|NUS
-Tze Yun Leong|gender|1218|3|9.5|unknown|NUS
+Trung Nguyen|gender|1218|1|9.5|unknown|others
+Tomi Silander|gender|1218|2|9.5|unknown|others
+Tze Yun Leong|gender|1218|3|9.5|unknown|others
 Jason Pacheco|gender|1219|1|6.5|United States|Brown University
 Erik Sudderth|gender|1219|2|6.5|United States|Brown University
 Virgil Griffith|gender|1221|1|6.5|United States|California Institute of Techno
@@ -3208,7 +3208,7 @@ Kristoffer Madsen|gender|1225|5|27.5|unknown|Danish Research Centre for Magnetic
 Mark Lyksborg|gender|1225|6|27.5|Denmark|DTU Informatics
 Tim Dyrby|gender|1225|7|27.5|unknown|Danish Research Centre for Magnetic Resonance
 Hartwig Siebner|gender|1225|8|27.5|unknown|Danish Research Centre for Magnetic Resonance
-Lars-Kai Hansen|gender|1225|9|27.5|Denmark|DTU
+Lars-Kai Hansen|gender|1225|9|27.5|Denmark|Technical University of Denmark
 Christopher Archibald|gender|1226|1|9.5|unknown|University of Alberta
 Parisa Mazrooei|gender|1226|2|9.5|Canada|University of Alberta
 Michael Bowling|gender|1226|3|9.5|Canada|Alberta
@@ -3216,16 +3216,16 @@ Mihalis Nicolaou|gender|1227|1|9.5|unknown|Imperial College London
 Stefanos Zafeiriou|gender|1227|2|9.5|unknown|Imperial College London
 Maja Pantic|gender|1227|3|9.5|unknown|Imperial College London
 Peter Welinder|gender|1229|1|9.5|United States|Caltech
-Max Welling|gender|1229|2|9.5|United States|UCI
+Max Welling|gender|1229|2|9.5|United States|University of California, Irvine
 Pietro Perona|gender|1229|3|9.5|United States|Caltech
 Fredrik Lindsten|gender|1230|1|9.5|Sweden|Link?ping University
 Michael Jordan|gender|1230|2|9.5|United States|Berkley University
 Thomas Sch?n|gender|1230|3|9.5|Sweden|Link?ping University
 Charles Blundell|gender|1231|1|9.5|unknown|Gatsby Unit UCL
-Katherine Heller|gender|1231|2|9.5|unknown|MIT
+Katherine Heller|gender|1231|2|9.5|unknown|others
 Jeff Beck|gender|1231|3|9.5|unknown|others
 Marc Deisenroth|gender|1232|1|6.5|Germany|TU Darmstadt
-Shakir Mohamed|gender|1232|2|6.5|Canada|UBC
+Shakir Mohamed|gender|1232|2|6.5|Canada|University of British Columbia
 Stephen Becker|gender|1233|1|6.5|unknown|Paris 6 University
 Jalal Fadili|gender|1233|2|6.5|unknown|CNRS-ENSICAEN-Univ. Caen
 Sohrob Kazerounian|gender|1234|1|12.5|unknown|IDSIA/SUPSI
@@ -3233,7 +3233,7 @@ Marijn Stollenga|gender|1234|2|12.5|unknown|IDSIA
 Jan Koutnik|gender|1234|3|12.5|unknown|IDSIA
 Juergen Schmidhuber|gender|1234|4|12.5|unknown|IDSIA
 Abhay Harpale|gender|1235|1|6.5|unknown|Carnegie Mellon University
-Yiming Yang|gender|1235|2|6.5|United States|CMU
+Yiming Yang|gender|1235|2|6.5|United States|Carnegie Mellon University
 Demba Ba|gender|1236|1|12.5|United States|MIT/Harvard
 Behtash Babadi|gender|1236|2|12.5|United States|MIT/Harvard
 Patrick Purdon|gender|1236|3|12.5|United States|MIT/Harvard
@@ -3254,8 +3254,8 @@ Cosmin Paduraru|gender|1241|1|12.5|unknown|McGill University
 Gheorghe Comanici|gender|1241|2|12.5|Canada|McGill University
 Doina Precup|gender|1241|3|12.5|Canada|McGill Montreal
 Joelle Pineau|gender|1241|4|12.5|Canada|McGill University
-Steven Hoi|gender|1242|1|6.5|Singapore|NTU
-Jialei Wang|gender|1242|2|6.5|Singapore|NTU
+Steven Hoi|gender|1242|1|6.5|Singapore|Nanyang Technological University
+Jialei Wang|gender|1242|2|6.5|Singapore|Nanyang Technological University
 Ashish Kapoor|gender|1243|1|9.5|unknown|MSR Redmond
 Raajay Viswanathan|gender|1243|2|9.5|unknown|Microsoft Research Lab India
 Prateek Jain|gender|1243|3|9.5|unknown|MSR Bangalore
@@ -3355,11 +3355,11 @@ Yuri Grinberg|gender|1280|2|15.5|Canada|McGill University
 Amir massoud Farahmand|gender|1280|3|15.5|Canada|McGill University
 Doina Precup|gender|1280|4|15.5|Canada|McGill Montreal
 Joelle Pineau|gender|1280|5|15.5|Canada|McGill University
-Vikas Sindhwani|gender|1281|1|6.5|unknown|IBM
+Vikas Sindhwani|gender|1281|1|6.5|unknown|others
 Aurelie Lozano|gender|1281|2|6.5|unknown| IBM Research
-Youssef Mroueh|gender|1282|1|12.5|United States|MIT
-Tomaso  Poggio|gender|1282|2|12.5|United States|MIT
-Lorenzo Rosasco|gender|1282|3|12.5|United States|MIT
+Youssef Mroueh|gender|1282|1|12.5|United States|Massachusetts Institute of Technology
+Tomaso  Poggio|gender|1282|2|12.5|United States|Massachusetts Institute of Technology
+Lorenzo Rosasco|gender|1282|3|12.5|United States|Massachusetts Institute of Technology
 Jean-Jacques Slotine|gender|1282|4|12.5|United States|Massachusetts Institute of Technology
 Amr Ahmed|gender|1283|1|12.5|United States|Carnegie Mellon University
 Sujith Ravi|gender|1283|2|12.5|unknown|Yahoo! Research
@@ -3399,7 +3399,7 @@ luca Maria Gambardella|gender|1292|3|12.5|unknown|IDSIA
 Juergen Schmidhuber|gender|1292|4|12.5|unknown|IDSIA
 James Sharpnack|gender|1293|1|9.5|United States|Carnegie Mellon
 Aarti Singh|gender|1293|2|9.5|United States|Carnegie Mellon University
-Alessandro Rinaldo|gender|1293|3|9.5|United States|CMU
+Alessandro Rinaldo|gender|1293|3|9.5|United States|Carnegie Mellon University
 Lloyd Elliott|gender|1294|1|6.5|unknown|Gatsby Unit UCL
 Yee Whye Teh|gender|1294|2|6.5|unknown|Gatsby
 Joe Suzuki|gender|1295|1|3.5|unknown|Osaka University
@@ -3426,7 +3426,7 @@ Lei Han|gender|1302|1|12.5|unknown|Peking University
 Guojie Song|gender|1302|2|12.5|unknown|Peking University
 Xiabing Zhou|gender|1302|3|12.5|China|Peking University
 kunqing Xie|gender|1302|4|12.5|unknown|others
-Byungik Ahn|gender|1303|1|3.5|unknown|KT
+Byungik Ahn|gender|1303|1|3.5|unknown|others
 Peter Orchard|gender|1304|1|9.5|unknown|University of Edinburgh
 Felix Agakov|gender|1304|2|9.5|unknown|Pharmatics Ltd
 Amos Storkey|gender|1304|3|9.5|United Kingdom|University of Edinburgh
@@ -3435,7 +3435,7 @@ Colin Fyfe|gender|1305|2|9.5|unknown|others
 Malcolm Crowe|gender|1305|3|9.5|unknown|others
 Mark Herbster|gender|1306|1|9.5|unknown|University College London
 Fabio Vitale|gender|1306|2|9.5|Italy|University of Milan
-Stephen Pasteris|gender|1306|3|9.5|unknown|UCL
+Stephen Pasteris|gender|1306|3|9.5|unknown|others
 Wenwu He|gender|1307|1|6.5|unknown|Fujian University of Technolog
 James Kwok|gender|1307|2|6.5|Hong Kong|Hong Kong University of Science and Technology
 Frederic Koriche|gender|1308|1|9.5|unknown|CRIL - Universit? Arras
@@ -3453,15 +3453,15 @@ Cong Li|gender|1312|1|9.5|unknown|University of Central Florida
 Michael Georgiopoulos|gender|1312|2|9.5|United States|University of Central Florida
 Georgios Anagnostopoulos|gender|1312|3|9.5|United States|Florida Institute of Technology
 Daniel Vainsencher|gender|1313|1|9.5|Israel|Technion - Israel Institute of Technology
-Huan Xu|gender|1313|2|9.5|Singapore|NUS
+Huan Xu|gender|1313|2|9.5|Singapore|National University of Singapore
 Shie Mannor|gender|1313|3|9.5|Israel|Technion
 James Hensman|gender|1314|1|9.5|unknown|The University of Sheffield
 Neil Lawrence|gender|1314|2|9.5|United Kingdom|U. Sheffield
 Magnus Rattray|gender|1314|3|9.5|United Kingdom|The University of Sheffield
-Bonnie Kirkpatrick|gender|1315|1|6.5|Canada|UBC
+Bonnie Kirkpatrick|gender|1315|1|6.5|Canada|University of British Columbia
 Alexandre Bouchard-C?t?|gender|1315|2|6.5|Canada|U. British Columbia
 Trine Abrahamsen|gender|1316|1|6.5|Denmark|DTU Informatics
-Lars-Kai Hansen|gender|1316|2|6.5|Denmark|DTU
+Lars-Kai Hansen|gender|1316|2|6.5|Denmark|Technical University of Denmark
 Jasmine Nirody|gender|1317|1|11.5|United States|UC Berkeley
 Bartlett Moore|gender|1317|2|11.5|United States|University of California
 Ralph Freeman|gender|1317|3|11.5|United States|University of California
@@ -3504,12 +3504,12 @@ Wendelin B?hmer|gender|1329|2|15.5|Germany|TU Berlin
 Tobias Sommer|gender|1329|3|15.5|Germany|University Medical Center Hamburg-Eppendorf
 Christian B?chel|gender|1329|4|15.5|Germany|University Medical Center Hamburg-Eppendorf
 Klaus Obermayer|gender|1329|5|15.5|Germany|TU Berlin
-Misha Denil|gender|1330|1|6.5|Canada|UBC
-Nando de Freitas|gender|1330|2|6.5|Canada|UBC
+Misha Denil|gender|1330|1|6.5|Canada|University of British Columbia
+Nando de Freitas|gender|1330|2|6.5|Canada|University of British Columbia
 Abdul-Saboor Sheikh|gender|1331|1|9.5|Germany|FIAS
 Jacquelyn Shelton|gender|1331|2|9.5|Germany|FIAS
 Joerg Luecke|gender|1331|3|9.5|Germany|FIAS
-Eyal Dechter|gender|1332|1|9.5|United States|MIT
+Eyal Dechter|gender|1332|1|9.5|United States|Massachusetts Institute of Technology
 Scott Linderman|gender|1332|2|9.5|United States|Harvard University
 Ryan Adams|gender|1332|3|9.5|United States|Harvard University
 Zheng Wang|gender|1333|1|3.5|unknown|Arizona State University
@@ -3537,7 +3537,7 @@ Minje Kim|gender|1341|2|6.5|United States|University of Illinois
 Siddharth Srivastava|gender|1343|1|9.5|United States|UC Berkeley
 Stuart Russell|gender|1343|2|9.5|United States|UC Berkeley
 Avi Pfeffer|gender|1343|3|9.5|unknown|Charles River Analytics
-Dijun Luo|gender|1344|1|9.5|unknown|UTA
+Dijun Luo|gender|1344|1|9.5|unknown|others
 Chris Ding|gender|1344|2|9.5|United States|University of Texas at Arlington
 Heng Huang|gender|1344|3|9.5|United States|University of Texas Arlington
 Ziming Zhang|gender|1345|1|6.5|United Kingdom|Oxford Brookes University
@@ -3547,14 +3547,14 @@ Mateusz Malinowski|gender|1346|2|6.5|unknown|MPI Informatics
 Rashish Tandon|gender|1347|1|6.5|United States|Univeristy of Texas at Austin
 Pradeep Ravikumar|gender|1347|2|6.5|United States|University of Texas-Austin
 Levi Boyles|gender|1348|1|6.5|unknown|University of California Irvin
-Max Welling|gender|1348|2|6.5|United States|UCI
+Max Welling|gender|1348|2|6.5|United States|University of California, Irvine
 James Sharpnack|gender|1349|1|9.5|United States|Carnegie Mellon
 Aarti Singh|gender|1349|2|9.5|United States|Carnegie Mellon University
-Akshay Krishnamurthy|gender|1349|3|9.5|United States|CMU
-Sungjin Ahn|gender|1350|1|12.5|United States|UCI
-Anoop Korattikara|gender|1350|2|12.5|United States|UCI
+Akshay Krishnamurthy|gender|1349|3|9.5|United States|Carnegie Mellon University
+Sungjin Ahn|gender|1350|1|12.5|United States|University of California, Irvine
+Anoop Korattikara|gender|1350|2|12.5|United States|University of California, Irvine
 Yutian Chen|gender|1350|3|12.5|United States|UC Irvine
-Max Welling|gender|1350|4|12.5|United States|UCI
+Max Welling|gender|1350|4|12.5|United States|University of California, Irvine
 Yu Zhou|gender|1351|1|12.5|unknown|Huazhong Univ.of Sci. & Tech. 
 Xiang Bai|gender|1351|2|12.5|unknown|Huazhong Univ. of Sci. & Tech.
 Wenyu Liu|gender|1351|3|12.5|unknown|Huazhong Univ. of Sci. & Tech.
@@ -3605,7 +3605,7 @@ Bernardo Avila Pires|gender|1370|1|9.5|Canada|University of Alberta
 Csaba Szepervari|gender|1370|2|9.5|Canada|U. Alberta
 Mohammad Ghavamzadeh|gender|1370|3|9.5|unknown|INRIA Lille
 Yudong Chen|gender|1371|1|9.5|United States|The University of Texas at Aus
-Huan Xu|gender|1371|2|9.5|Singapore|NUS
+Huan Xu|gender|1371|2|9.5|Singapore|National University of Singapore
 Sujay Sanghavi|gender|1371|3|9.5|United States|Univ. of Austin
 Hubert Cecotti|gender|1372|1|3.5|unknown|UCSB
 Andrea Vattani|gender|1373|1|12.5|United States|UC San Diego
@@ -3619,12 +3619,12 @@ Rui Costa|gender|1375|1|11.5|United Kingdom|IANC
 P. Jesper Sj?str?m|gender|1375|2|11.5|Canada|McGill University
 Mark van Rossum|gender|1375|3|11.5|unknown|University of Edinburgh
 Gregory Sanders|gender|1377|1|11.5|United States|University of Maryland
-Samir Khuller|gender|1377|2|11.5|United States|UMD
+Samir Khuller|gender|1377|2|11.5|United States|University of Maryland, College Park
 Hal Daume III|gender|1377|3|11.5|United States|University of Maryland
-Taha Bahadori|gender|1378|1|7.5|United States|USC
+Taha Bahadori|gender|1378|1|7.5|United States|University of Southern California
 Yan Liu|gender|1378|2|7.5|United States|University of Southern California
 Ofer Meshi|gender|1379|1|9.5|unknown|Hebrew University
-Tommi Jaakkola|gender|1379|2|9.5|United States|MIT
+Tommi Jaakkola|gender|1379|2|9.5|United States|Massachusetts Institute of Technology
 Amir Globerson|gender|1379|3|9.5|unknown|Hebrew University
 Madalina Fiterau|gender|1380|1|6.5|United States|Carnegie Mellon University
 Artur Dubrawski|gender|1380|2|6.5|United States|Carnegie Mellon University
@@ -3636,25 +3636,25 @@ Xiaoran Yan|gender|1383|1|25.5|United States|University of New Mexico
 Jacob  Jensen|gender|1383|2|25.5|unknown|Columbia University
 Florent Krzakala|gender|1383|3|25.5|unknown|CNRS and ESPCI ParisTech
 Cristopher Moore|gender|1383|4|25.5|unknown|Santa Fe Institute and University of New Mexico
-Cosma Shalizi|gender|1383|5|25.5|United States|CMU
+Cosma Shalizi|gender|1383|5|25.5|United States|Carnegie Mellon University
 Pan Zhang|gender|1383|6|25.5|unknown|CNRS and ESPCI ParisTech
 Lenka Zdeborov?|gender|1383|7|25.5|unknown|Institute de Physique Th?orique
 Yaojia Zhu|gender|1383|8|25.5|unknown|University of New Mexico
-Tetsuro Morimura|gender|1384|1|9.5|unknown|IBM
+Tetsuro Morimura|gender|1384|1|9.5|unknown|others
 Takayuki Osogami|gender|1384|2|9.5|unknown|IBM Research - Tokyo
 Tomoyuki Shirai|gender|1384|3|9.5|Japan|Kyushu University
 Faiza Khattak|gender|1385|1|6.5|United States|Columbia University
 Ansaf  Salleb-Aouissi|gender|1385|2|6.5|United States|Columbia University
 Bj?rn Jensen|gender|1386|1|9.5|Denmark|Technical University of Denmar
 Jens Nielsen|gender|1386|2|9.5|Denmark|Technical University of Denmark
-Jan Larsen|gender|1386|3|9.5|Denmark|DTU
+Jan Larsen|gender|1386|3|9.5|Denmark|Technical University of Denmark
 Liu Yang|gender|1387|1|6.5|United States|Carnegie Mellon University
 Jaime Carbonell|gender|1387|2|6.5|United States|Carnegie Mellon University
 Herke van Hoof|gender|1388|1|6.5|unknown|TU Darmstadt
 jan peters|gender|1388|2|6.5|Germany|Tu Darmstadt
 Matthew Golub|gender|1389|1|9.5|United States|Carnegie Mellon University
 Steven Chase|gender|1389|2|9.5|United States|Carnegie Mellon University
-Byron Yu|gender|1389|3|9.5|United States|CMU
+Byron Yu|gender|1389|3|9.5|United States|Carnegie Mellon University
 Qi Lou|gender|1390|1|12.5|unknown|Oregon State University
 Raviv Raich|gender|1390|2|12.5|United States|Oregon State University
 Forrest Briggs|gender|1390|3|12.5|United States|Oregon State University
@@ -3665,7 +3665,7 @@ Dennis Hong|gender|1392|3|12.5|United States|Virginia Tech
 Daniel Lee|gender|1392|4|12.5|United States|University of Pennsylvania
 Yan Karklin|gender|1393|1|10.5|United States|New York University
 Chaitanya Ekanadham|gender|1393|2|10.5|United States|Courant Institute
-Eero Simoncelli|gender|1393|3|10.5|United States|NYU
+Eero Simoncelli|gender|1393|3|10.5|United States|New York University
 MOHAMMAD NAGHSHVAR|gender|1394|1|9.5|United States|University of California San D
 Kamalika Chaudhuri|gender|1394|2|9.5|United States|UC San Diego
 Tara Javidi|gender|1394|3|9.5|United States|University of California San Diego
@@ -3683,7 +3683,7 @@ Steven Brumby|gender|1398|3|9.5|unknown|Los Alamos National Laboratory
 KU LEUVEN|gender|1399|1|9.5|unknown|wannes.meert@cs.kuleuven.be
 KU Leuven|gender|1399|2|9.5|unknown|jesse.davis@cs.kuleuven.be
 KU LEUVEN|gender|1399|3|9.5|unknown|jesse.davis@cs.kuleuven.be
-Aastha Jain|gender|1400|1|9.5|United States|JHU
+Aastha Jain|gender|1400|1|9.5|United States|Johns Hopkins University
 Shaunak Chatterjee|gender|1400|2|9.5|United States|University of California, Berkeley
 Rene Vidal|gender|1400|3|9.5|United States|Johns Hopkins University
 Ravi Ganti|gender|1401|1|6.5|United States|Georgia Institute of Technology
@@ -3701,13 +3701,13 @@ Marina Meila|gender|1404|2|6.5|unknown|others
 Denver Dash|gender|1405|1|6.5|unknown|Intel/CMU
 Mark Voortman|gender|1405|2|6.5|unknown|University of Pittsburgh
 Jeff Beck|gender|1406|1|9.5|unknown|others
-Katherine Heller|gender|1406|2|9.5|unknown|MIT
+Katherine Heller|gender|1406|2|9.5|unknown|others
 Alexandre Pouget|gender|1406|3|9.5|United States|University of Rochester
 Daniel Acuna|gender|1407|1|15.5|United States|Northwestern University
 Navid Aghasadeghi|gender|1407|2|15.5|United States|University of Illinois at Urbana Champaign
-Levi  Hargrove|gender|1407|3|15.5|United States|RIC
-Eric Perreault|gender|1407|4|15.5|United States|RIC
-Konrad Kording|gender|1407|5|15.5|United States|RIC
+Levi  Hargrove|gender|1407|3|15.5|United States|Northwestern University
+Eric Perreault|gender|1407|4|15.5|United States|Northwestern University
+Konrad Kording|gender|1407|5|15.5|United States|Northwestern University
 Dongho Kim|gender|1408|1|9.5|United Kingdom|University of Cambridge
 Kee-Eung Kim|gender|1408|2|9.5|unknown|KAIST
 Pascal Poupart|gender|1408|3|9.5|Canada|University of Waterloo
@@ -3723,12 +3723,12 @@ Adrian Weller|gender|1411|1|6.5|United States|Columbia University
 Tony Jebara|gender|1411|2|6.5|United States|Columbia
 Mohammad Rastegari|gender|1412|1|9.5|unknown|Disney Research
 Hannaneh Hajishirzi|gender|1412|2|9.5|unknown|Disney Research
-Ali Farhadi|gender|1412|3|9.5|United States|CMU
+Ali Farhadi|gender|1412|3|9.5|United States|Carnegie Mellon University
 Julien Chiquet|gender|1413|1|10.5|unknown|University d'?vry
 Yves Grandvalet|gender|1413|2|10.5|France|Universit? de Technologie de Compi?gne
 Christophe Ambroise|gender|1413|3|10.5|unknown|Laboratoire "Statistique et G?nome" (UMR CNRS 8071
-Christopher Amato|gender|1414|1|6.5|United States|MIT
-Emma Brunskill|gender|1414|2|6.5|unknown|CMU
+Christopher Amato|gender|1414|1|6.5|United States|Massachusetts Institute of Technology
+Emma Brunskill|gender|1414|2|6.5|unknown|others
 Hua Wang|gender|1416|1|9.5|unknown|Univ. of Texas at Arlington
 Feiping Nie|gender|1416|2|9.5|unknown|University of Texas at Arlington
 Heng Huang|gender|1416|3|9.5|United States|University of Texas Arlington
@@ -3769,7 +3769,7 @@ New York University|gender|1432|3|12.5|unknown|eero@cns.nyu.edu
 New York University; HHMI|gender|1432|4|12.5|unknown|eero@cns.nyu.edu
 Xiaoye Wu|gender|1433|1|6.5|United States|UMASS Amherst
 David Smith|gender|1433|2|6.5|United States|UMASS Amherst
-Alexander Rush|gender|1434|1|12.5|United States|MIT
+Alexander Rush|gender|1434|1|12.5|United States|Massachusetts Institute of Technology
 Karl Stratos|gender|1434|2|12.5|unknown|others
 Michael Collins|gender|1434|3|12.5|United States|Columbia Univ.
 Shay Cohen|gender|1434|4|12.5|United States|Columbia University
@@ -3793,8 +3793,8 @@ Hyekyoung Lee|gender|1441|1|12.5|unknown|Seoul National University
 Hyejin Kang|gender|1441|2|12.5|Korea, Republic of|Seoul National University
 Bung-Nyun Kim|gender|1441|3|12.5|Korea, Republic of|Seoul National University
 Dong Soo Lee|gender|1441|4|12.5|Korea, Republic of|Seoul National University
-Dimitris Papailiopoulos|gender|1442|1|6.5|unknown|USC
-Alexandros Dimakis|gender|1442|2|6.5|United States|USC
+Dimitris Papailiopoulos|gender|1442|1|6.5|unknown|others
+Alexandros Dimakis|gender|1442|2|6.5|United States|University of Southern California
 Kristiaan Pelckmans|gender|1443|1|6.5|Sweden|Uppsala University
 Yang Liu|gender|1443|2|6.5|Sweden|Uppsala University
 Byoung-Tak Zhang|gender|1444|1|12.5|unknown|Seoul National University
@@ -3811,8 +3811,8 @@ Philipp Batz|gender|1447|1|9.5|Germany|TU Berlin
 Andreas Ruttor|gender|1447|2|9.5|Germany|TU Berlin
 Manfred Opper|gender|1447|3|9.5|Germany|TU Berlin
 Emtiyaz Khan|gender|1448|1|9.5|Canada|University of British Columbia
-Shakir Mohamed|gender|1448|2|9.5|Canada|UBC
-Kevin Murphy|gender|1448|3|9.5|Canada|UBC
+Shakir Mohamed|gender|1448|2|9.5|Canada|University of British Columbia
+Kevin Murphy|gender|1448|3|9.5|Canada|University of British Columbia
 He He|gender|1449|1|10.5|United States|Univ. of Maryland
 College Park|gender|1449|2|10.5|unknown|hal@umiacs.umd.edu
 University of Maryland|gender|1449|3|10.5|unknown|jason@cs.jhu.edu
@@ -3824,7 +3824,7 @@ Alok Choudhary|gender|1450|5|15.5|United States|Northwestern University
 Johanni Brea|gender|1452|1|9.5|Switzerland|University of Bern
 Walter Senn|gender|1452|2|9.5|Switzerland|Universitaet Bern
 Jean-Pascal Pfister|gender|1452|3|9.5|Switzerland|Universität Bern
-James Foulds|gender|1453|1|6.5|United States|UCI
+James Foulds|gender|1453|1|6.5|United States|University of California, Irvine
 Padhraic Smyth|gender|1453|2|6.5|United States|UC Irvine
 Ke Jiang|gender|1454|1|9.5|unknown|The Ohio State University
 Brian Kulis|gender|1454|2|9.5|unknown|Ohio State U.
@@ -3832,7 +3832,7 @@ Michael Jordan|gender|1454|3|9.5|United States|Berkley University
 Rodolphe Jenatton|gender|1455|1|12.5|unknown|INRIA
 Nicolas Le Roux|gender|1455|2|12.5|unknown|INRIA
 Antoine Bordes|gender|1455|3|12.5|France|Universit? de Technologie de Compi?gne
-Guillaume Obozinski|gender|1455|4|12.5|France|ENS
+Guillaume Obozinski|gender|1455|4|12.5|France|Ecole Normale Supérieure de Paris
 Ping Li|gender|1456|1|6.5|United States|Cornell
 Cun-Hui Zhang|gender|1456|2|6.5|United States|Rutgers
 Piyush Rai|gender|1458|1|10.5|United States|Utah
@@ -3846,9 +3846,9 @@ Kibeom Kim|gender|1460|1|9.5|United States|New York University
 Taemin Cho|gender|1460|2|9.5|United States|NYU MARL Lab
 Juan Bello|gender|1460|3|9.5|United States|NYU MARL Lab
 Xiaolin Yang|gender|1461|1|3.5|United States|Carnegie Mellon Universityoo 
-Jing  Fang|gender|1462|1|9.5|Canada|UBC
-Mareija Eskelinen|gender|1462|2|9.5|Canada|UBC
-Nando de Freitas|gender|1462|3|9.5|Canada|UBC
+Jing  Fang|gender|1462|1|9.5|Canada|University of British Columbia
+Mareija Eskelinen|gender|1462|2|9.5|Canada|University of British Columbia
+Nando de Freitas|gender|1462|3|9.5|Canada|University of British Columbia
 Eyrun Eyjolfsdottir|gender|1463|1|9.5|United States|Caltech
 Steve Branson|gender|1463|2|9.5|United States|UCSD
 Pietro Perona|gender|1463|3|9.5|United States|Caltech
@@ -3869,7 +3869,7 @@ Ziyu Wang|gender|1468|1|15.5|Canada|University of British Columbia
 Frank Hutter|gender|1468|2|15.5|Canada|University of British Columbia
 david Matheson|gender|1468|3|15.5|Canada|University of British Columbia
 masrour Zoghi|gender|1468|4|15.5|Canada|University of British Columbia
-Nando de Freitas|gender|1468|5|15.5|Canada|UBC
+Nando de Freitas|gender|1468|5|15.5|Canada|University of British Columbia
 Pavel Laskov|gender|1469|1|15.5|Germany|U. Tuebingen
 Blaine Nelson|gender|1469|2|15.5|unknown|University of Tuebingen
 Nedim  Srndic|gender|1469|3|15.5|Germany|University of Tuebingen
@@ -3890,12 +3890,12 @@ Dapo Omidiran|gender|1475|1|3.5|United States|UC Berkeley
 Eleanor Wong|gender|1476|1|9.5|United States|University of Utah
 Suyash Awate|gender|1476|2|9.5|United States|University of Utah
 P. Thomas Fletcher|gender|1476|3|9.5|United States|University of Utah
-Matthew Coudron|gender|1477|1|6.5|United States|MIT
+Matthew Coudron|gender|1477|1|6.5|United States|Massachusetts Institute of Technology
 Gilad Lerman|gender|1477|2|6.5|United States|University of Minnesota
-Joel Leibo|gender|1478|1|12.5|United States|MIT
-Fabio Anselmi|gender|1478|2|12.5|United States|MIT
-Jim Mutch|gender|1478|3|12.5|United States|MIT
-Tomaso  Poggio|gender|1478|4|12.5|United States|MIT
+Joel Leibo|gender|1478|1|12.5|United States|Massachusetts Institute of Technology
+Fabio Anselmi|gender|1478|2|12.5|United States|Massachusetts Institute of Technology
+Jim Mutch|gender|1478|3|12.5|United States|Massachusetts Institute of Technology
+Tomaso  Poggio|gender|1478|4|12.5|United States|Massachusetts Institute of Technology
 Balaji Lakshminarayanan|gender|1479|1|7.5|unknown|Gatsby Unit
 Yee Whye Teh|gender|1479|2|7.5|unknown|Gatsby
 Aggeliki Tsoli|gender|1481|1|6.5|unknown|MPI for Intelligent Systems
@@ -3909,9 +3909,9 @@ James Norton|gender|1485|2|9.5|United States|University of Illinois at Urbana-Ch
 Timothy Bretl|gender|1485|3|9.5|United States|University of Illinois at Urbana-Champaign
 Hannes Schulz|gender|1486|1|6.5|Germany|U Bonn
 Sven Behnke|gender|1486|2|6.5|Germany|University Bonn
-George Chen|gender|1487|1|9.5|United States|MIT
-Christian Wachinger|gender|1487|2|9.5|United States|MIT
-Polina Golland|gender|1487|3|9.5|United States|MIT
+George Chen|gender|1487|1|9.5|United States|Massachusetts Institute of Technology
+Christian Wachinger|gender|1487|2|9.5|United States|Massachusetts Institute of Technology
+Polina Golland|gender|1487|3|9.5|United States|Massachusetts Institute of Technology
 Felipe Trevizan|gender|1488|1|6.5|United States|Carnegie Mellon University
 Manuela Veloso|gender|1488|2|6.5|United States|Carnegie Mellon University
 Taesup Moon|gender|1489|1|6.5|unknown|UC Berkeley
@@ -3931,7 +3931,7 @@ Guy Lebanon|gender|1494|3|12.5|United States|Georgia Tech
 Cristian Sminchisescu|gender|1494|4|12.5|Germany|Univ. Bonn
 Roman Yangarber|gender|1495|1|3.5|Finland|University of Helsinki
 Ekaterina Abramova|gender|1496|1|13.5|unknown|Imperial College
-Luke Dickens|gender|1496|2|13.5|unknown|DoC
+Luke Dickens|gender|1496|2|13.5|unknown|others
 Daniel Kuhn|gender|1496|3|13.5|unknown|others
 Aldo Faisal|gender|1496|4|13.5|unknown|Imperial College London
 Qifeng Qiao|gender|1497|1|6.5|unknown|University of Virginia
@@ -3957,9 +3957,9 @@ Oluwasanmi Koyejo|gender|1505|1|4.5|unknown|University of Texas
 Raghuram Ramanujan|gender|1506|1|9.5|United States|Cornell University
 Ashish Sabharwal|gender|1506|2|9.5|unknown|IBM Watson Research Center
 Bart Selman|gender|1506|3|9.5|United States|Cornell University
-Matt Hoffman|gender|1507|1|9.5|Canada|UBC
-Bobak Shahriari|gender|1507|2|9.5|Canada|UBC
-Nando de Freitas|gender|1507|3|9.5|Canada|UBC
+Matt Hoffman|gender|1507|1|9.5|Canada|University of British Columbia
+Bobak Shahriari|gender|1507|2|9.5|Canada|University of British Columbia
+Nando de Freitas|gender|1507|3|9.5|Canada|University of British Columbia
 Praneeth Vepakomma|gender|1508|1|6.5|unknown| Rutgers University
 Ahmed  Elgammal|gender|1508|2|6.5|unknown|Rutgers University
 Nicolas Della Penna|gender|1510|1|9.5|unknown|ANU / NICTA
@@ -3985,7 +3985,7 @@ Haesun Park|gender|1517|3|9.5|United States|Georgia Tech
 Xianjie Chen|gender|1518|1|6.5|unknown|UCLA
 Alan Yuille|gender|1518|2|6.5|United States|UCLA
 Dao Lam|gender|1519|1|3.5|United States|Missouri University S&T 
-George Konidaris|gender|1520|1|9.5|United States|MIT
+George Konidaris|gender|1520|1|9.5|United States|Massachusetts Institute of Technology
 Scott Niekum|gender|1520|2|9.5|unknown|UMass Amherst
 Philip Thomas|gender|1520|3|9.5|United States|UMass Amherst
 Armand Prieditis|gender|1521|1|9.5|unknown|Neustar
@@ -4005,8 +4005,8 @@ Dominique Perrault-Joncas|gender|1529|1|6.5|United States|University of Washingt
 Marina Meila|gender|1529|2|6.5|United States|Univ. Washington
 Yao Zhu|gender|1530|1|12.5|United States|Purdue University
 Qi Alan|gender|1530|2|12.5|United States|Purdue University
-Lusann Yang|gender|1530|3|12.5|United States|MIT
-Gerbrand Ceder|gender|1530|4|12.5|United States|MIT
+Lusann Yang|gender|1530|3|12.5|United States|Massachusetts Institute of Technology
+Gerbrand Ceder|gender|1530|4|12.5|United States|Massachusetts Institute of Technology
 Kevin Swersky|gender|1531|1|18.5|unknown|others
 Danny Tarlow|gender|1531|2|18.5|unknown|University of Toronto
 Ilya Sutskever|gender|1531|3|18.5|unknown|University of Toronto
@@ -4014,8 +4014,8 @@ Rich Zemel|gender|1531|4|18.5|unknown|University of Toronto
 Ruslan Salakhutdinov|gender|1531|5|18.5|unknown|University of Toronto
 Ryan Adams|gender|1531|6|18.5|United States|Harvard University
 Dong-Yan Huang|gender|1533|1|3.5|unknown|Institute for Infocomm Researc
-Hao Xia|gender|1534|1|6.5|Singapore|NTU
-Steven Hoi|gender|1534|2|6.5|Singapore|NTU
+Hao Xia|gender|1534|1|6.5|Singapore|Nanyang Technological University
+Steven Hoi|gender|1534|2|6.5|Singapore|Nanyang Technological University
 Joshua Hernandez|gender|1535|1|9.5|unknown|UCLA Mathematics
 Nikos Karianakis|gender|1535|2|9.5|unknown|UCLA Computer Science
 Stefano Soatto|gender|1535|3|9.5|unknown|UCLA Computer Science
