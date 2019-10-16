@@ -222,24 +222,33 @@ if sys.argv[3]=='prepare':
                 dict_bucket_corpus[bucket_result]=data
             f.close()
             
-    n_features=5000
+    n_features=20000
     #vocabulary= text_processing(full_corpus)
 
     print('length of full corpus before processing ', len(full_corpus))
+    
+    full_corpus = re.sub('[^A-Za-z0-9]+', ' ', str(full_corpus))
+    full_corpus=re.sub(r'[0-9]+', ' ', str(full_corpus))
+
     #text_processing(full_corpus)    
     print('length of full corpus after processing ', len(full_corpus))
-    tf_vectorizer=TfidfVectorizer(norm='l2', use_idf=True,strip_accents='unicode',stop_words='english' ,smooth_idf=False, sublinear_tf=True, max_features=n_features)
+    
+    #min_df = 0.01 means "ignore terms that appear in less than 1% of the documents".
+    #min_df = 5 means "ignore terms that appear in less than 5 documents"
+    
+    tf_vectorizer=TfidfVectorizer(norm='l2', use_idf=True,min_df= 0.3,strip_accents='unicode',stop_words='english' ,smooth_idf=False, sublinear_tf=True, max_features=n_features)
     
     #print('shape of full corpus ', full_corpus.shape)
     print('type of full corpus ', type(full_corpus),'shape of it is ', len(full_corpus))
     #print('full corpus is: ', full_corpus)
     z=tf_vectorizer.fit_transform([full_corpus])
-  #  print('features are: ', tf_vectorizer.get_feature_names()[:-30])
+    print('features are: ', tf_vectorizer.get_feature_names()[:-30])
     l=[]
     for b in sorted(dict_bucket_corpus.keys()):
         corpus= dict_bucket_corpus[b]
        # corpus=text_processing(corpus)
-        
+        corpus=re.sub('[^A-Za-z0-9]+', ' ', str(corpus))
+        corpus= re.sub(r'[0-9]+', ' ', str(corpus))
         y=tf_vectorizer.transform([corpus])
        
         l.append(y)
@@ -265,4 +274,7 @@ if sys.argv[3]=='prepare':
     print(cosine_sim)
     
     sns.heatmap(cosine_sim, annot=True, cmap=plt.cm.Reds)
+    plt.ylabel('buckets from 1 to 5')
+    plt.xlabel('buckets from 1 to 5')
+    plt.title('Heatmap cosine similarities Uni buckets-full paper')
     plt.show()
