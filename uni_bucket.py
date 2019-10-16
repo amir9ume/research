@@ -7,6 +7,17 @@ from functools import partial
 import operator
 import csv
 import sys
+import os
+from sklearn.feature_extraction.text import TfidfVectorizer
+import gensim
+import gensim.corpora as corpora
+from gensim.utils import simple_preprocess
+import seaborn as sns
+import statsmodels.api as sm
+import matplotlib
+import matplotlib.pyplot as plt
+
+
 
 file = open('ranking_uni.pkl', 'rb')
 rankings = pickle.load(file)
@@ -161,62 +172,97 @@ elif sys.argv[1]=='first':
 print('number of sids in each bucket')
 print(u_final.groupby('bucket')['sid'].count() )
 
+dict_sid_to_bucket= pd.Series(u_final.bucket.values,index=u_final.sid).to_dict()
+dict_bucket_corpus={}
 
+def text_processing(corpus):
+    for sen in range(0, len(corpus)):
+        # Remove all the special characters
+        document = re.sub(r'\W', ' ', str(corpus[sen]))
+        
+        # remove all single characters
+        document = re.sub(r'\s+[a-zA-Z]\s+', ' ', document)
+        
+        # Remove single characters from the start
+        document = re.sub(r'\^[a-zA-Z]\s+', ' ', document) 
+        #removes numbers
+        document = re.sub(r'[0-9]+', ' ', document)
 
-"""
-import pandas as pd
-filepath= './data_info/author_uni_ranking_bucket'
-author= pd.read_csv(filepath)
-#print(author)
-print(author.columns)
-#[' Submission ID', ' Author Position', ' Country', ' Univeristy',
-#       'ranking', 'bucket']
-author.columns=['Name','sid','author_pos','country','university','ranking','bucket']
-print(author.head())
-
-fpath= './data_info/abstracts_processed'
-abstracts= pd.read_csv(fpath)
-#print(abstracts)
-print(abstracts.columns)
-
-abstracts_with_bucket= pd.merge(abstracts, author, how='left', on='sid')
-print(abstracts_with_bucket.head())
-print(abstracts_with_bucket.columns)
-
-
-max_author= abstracts_with_bucket.groupby('sid', sort= False)['author_pos'].max()
-abstracts_with_bucket_max_author= pd.merge(abstracts_with_bucket,max_author, how='left',on='sid')
-
-abstracts_with_bucket_max_author.columns= ['sid', 'title', 'abstract', 'Name', 'author_pos', 'country',
-       'university', 'ranking', 'bucket', 'max_author_pos']
-print(abstracts_with_bucket_max_author.head(20))
-#ab= abstracts_with_bucket.loc[abstracts_with_bucket['author_pos']==1]
-
-ab_for_max_author= abstracts_with_bucket_max_author.loc[abstracts_with_bucket_max_author['author_pos']==abstracts_with_bucket_max_author['max_author_pos']]
-print(ab_for_max_author.head())
-
-def write_abstracts(ab,bin):
+        # Substituting multiple spaces with single space
+        document = re.sub(r'\s+', ' ', document, flags=re.I)
     
-    fname='./data_info/uni_bin_abstracts_max_author/bin_'+str(bin)+'_uni_abstract'
-    cols_to_keep=['title','abstract']
-    ab[cols_to_keep].to_csv(fname, index= False)
+    
+if sys.argv[3]=='prepare':
+    list_files= sorted(os.listdir('../submitted_papers/'))
+  
+#    full_corpus=[]
+    full_corpus=''
+    c=0
+    for filename in list_files:
+        if len(filename.split('paper',1))>1:
+            fname=filename.split('paper',1)[1]
+            print(fname)
+            sid=fname.split('.')[0]
+            if int(sid) in dict_sid_to_bucket:
+                bucket_result= dict_sid_to_bucket[int(sid)]
+            else :
+                bucket_result=6
+                c+=1
+            print('sid is ', sid,' bucket is ', bucket_result)
+            f=open('../submitted_papers/'+filename)
+            content=f.read()
+            #data= content.splitlines()
+            data=content
+            #full_corpus.extend(data)
+            full_corpus=full_corpus+data
+            if bucket_result in dict_bucket_corpus:
+                dict_bucket_corpus[bucket_result]+data
 
-#careful with the line below. all the writing is done using below data frame only 
-abstracts_with_bucket= ab_for_max_author
-print(abstracts_with_bucket.head())
+            else:
+                dict_bucket_corpus[bucket_result]=data
+            f.close()
+            
+    n_features=5000
+    #vocabulary= text_processing(full_corpus)
 
-a1= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==1]
-write_abstracts(a1,1)
+    print('length of full corpus before processing ', len(full_corpus))
+    #text_processing(full_corpus)    
+    print('length of full corpus after processing ', len(full_corpus))
+    tf_vectorizer=TfidfVectorizer(norm='l2', use_idf=True,strip_accents='unicode',stop_words='english' ,smooth_idf=False, sublinear_tf=True, max_features=n_features)
+    
+    #print('shape of full corpus ', full_corpus.shape)
+    print('type of full corpus ', type(full_corpus),'shape of it is ', len(full_corpus))
+    #print('full corpus is: ', full_corpus)
+    z=tf_vectorizer.fit_transform([full_corpus])
+  #  print('features are: ', tf_vectorizer.get_feature_names()[:-30])
+    l=[]
+    for b in sorted(dict_bucket_corpus.keys()):
+        corpus= dict_bucket_corpus[b]
+       # corpus=text_processing(corpus)
+        
+        y=tf_vectorizer.transform([corpus])
+       
+        l.append(y)
+        print('key in dictionary',b)
+    
+    #print((dict_bucket_corpus))
 
-a2= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==2]
-write_abstracts(a2,2)
-
-a3= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==3]
-write_abstracts(a3,3)
-
-a4= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==4]
-write_abstracts(a4,4)
-
-a5= abstracts_with_bucket.loc[abstracts_with_bucket['bucket']==5]
-write_abstracts(a5,5)
-"""
+    #print(tf_vectorizer.get_feature_names()[:10])
+    from sklearn.metrics.pairwise import cosine_similarity
+    from sklearn.metrics.pairwise import paired_cosine_distances as pcd
+    cosine_sim=np.zeros((5,5))
+    for i in range(len(l)-1):
+        c_sim=[]
+        for j in range(len(l)-1):
+          
+            cc=cosine_similarity(l[i],l[j])    
+         #   print('Cosine similarity between ',i,' and ',j,cc)
+            c_sim.append(cc)
+        #c_sim=np.asarray(c_sim)    
+        #print(1- pcd(l[i], l[j]))
+        cosine_sim[i]=c_sim
+    #cosine_sim=np.asarray(cosine_sim)
+    print(cosine_sim)
+    
+    sns.heatmap(cosine_sim, annot=True, cmap=plt.cm.Reds)
+    plt.show()
