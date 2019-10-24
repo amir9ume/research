@@ -1,6 +1,4 @@
 from gensim.models import FastText
-#sentences_ted='He has a bad disease. malaria is curable but dysentritis is not'
-import lxml
 import numpy as np
 import os
 from random import shuffle
@@ -29,13 +27,13 @@ for filename in list_files:
 input_text=full_corpus
 input_text_noparens = re.sub(r'\([^)]*\)', '', input_text)
 # store as list of sentences
-sentences_strings_ted = []
+sentences_submitted_papers = []
 for line in input_text_noparens.split('\n'):
     m = re.match(r'^(?:(?P<precolon>[^:]{,20}):)?(?P<postcolon>.*)$', line)
-    sentences_strings_ted.extend(sent for sent in m.groupdict()['postcolon'].split('.') if sent)
+    sentences_submitted_papers.extend(sent for sent in m.groupdict()['postcolon'].split('.') if sent)
 # store as list of lists of words
 sentences_ted = []
-for sent_str in sentences_strings_ted:
+for sent_str in sentences_submitted_papers:
     tokens = re.sub(r"[^a-z0-9]+", " ", sent_str.lower()).split()
     sentences_ted.append(tokens)
 
@@ -53,19 +51,15 @@ print(len(sentences_ted[0]))
 # more threads = faster training with multicore machines
 #i dont know whether we need the negative sampling or not here
 
-model_ted = FastText(sentences_ted, size=100, window=5, min_count=2, workers=4,sg=1)
-z=model_ted.wv.most_similar("tensor")
+model = FastText(sentences_ted, size=100, window=5, min_count=2, workers=4,sg=1)
+z=model.wv.most_similar("tensor")
 print(z) 
-total_words = model_ted.corpus_total_words
+total_words = model.corpus_total_words
 print('total words used in this corpus for fast text :', total_words)
 
-#persisting the model to disk with this
-from gensim.test.utils import get_tmpfile
-
-#fname= get_tmpfile('trained_fasttext_nips.model')
 fname='trained_fasttext_nips.model'
 print('fname used is : ', fname )
-model_ted.save(fname)
+model.save(fname)
 
 
 
