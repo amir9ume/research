@@ -74,46 +74,47 @@ u_final= pd.read_csv("bucketing_file_for_uni_sid")
 dict_sid_to_bucket= pd.Series(u_final.bucket.values,index=u_final.sid).to_dict()
 dict_bucket_corpus={}
 for_panda_row_lists=[]   
-if sys.argv[1]=='prepare':
-    list_files= sorted(os.listdir('../submitted_papers/'))
-    #list_files=['paper1407.txt', 'paper168.txt']
+
+list_files= sorted(os.listdir('../submitted_papers/'))
+#list_files=['paper1407.txt', 'paper168.txt']
 #    full_corpus=[]
-    full_corpus=''
-    c=0
-    for filename in list_files:
-        if len(filename.split('paper',1))>1:
-            fname=filename.split('paper',1)[1]
-            print(fname)
-            sid=fname.split('.')[0]
-            if int(sid) in dict_sid_to_bucket:
-                bucket_result= dict_sid_to_bucket[int(sid)]
-            else :
-                bucket_result=6
-                c+=1
-            print('sid is ', sid,' bucket is ', bucket_result)
-            f=open('../submitted_papers/'+filename)
-            content=f.read()
-            #data= content.splitlines()
-            data=content
-            #full_corpus.extend(data)
-            full_corpus=full_corpus+data
-            if bucket_result in dict_bucket_corpus:
-                dict_bucket_corpus[bucket_result]+data
+full_corpus=''
+c=0
+for filename in list_files:
+    if len(filename.split('paper',1))>1:
+        fname=filename.split('paper',1)[1]
+        print(fname)
+        sid=fname.split('.')[0]
+        if int(sid) in dict_sid_to_bucket:
+            bucket_result= dict_sid_to_bucket[int(sid)]
+        else :
+            bucket_result=6
+            c+=1
+        print('sid is ', sid,' bucket is ', bucket_result)
+        f=open('../submitted_papers/'+filename)
+        content=f.read()
+        #data= content.splitlines()
+        data=content
+        #full_corpus.extend(data)
+        full_corpus=full_corpus+data
+        if bucket_result in dict_bucket_corpus:
+            dict_bucket_corpus[bucket_result]+data
 
-            else:
-                dict_bucket_corpus[bucket_result]=data
-            f.close()
+        else:
+            dict_bucket_corpus[bucket_result]=data
+        f.close()
 
-            preprocess=True
-            if preprocess==True:
-                data = re.sub('[^A-Za-z0-9]+', ' ', str(data))
-                data=re.sub(r'[0-9]+', ' ', str(data))
-            dict_row={'sid':sid,'bucket':bucket_result,'text':data}
-            for_panda_row_lists.append(dict_row)
+        preprocess=True
+        if preprocess==True:
+            data = re.sub('[^A-Za-z0-9]+', ' ', str(data))
+            data=re.sub(r'[0-9]+', ' ', str(data))
+        dict_row={'sid':sid,'bucket':bucket_result,'text':data}
+        for_panda_row_lists.append(dict_row)
 
     df=pd.DataFrame(for_panda_row_lists)
 print(df.head())
 
+print('for sid 54',df.loc[df['sid']=='54'])
 trainDataVecs = getAvgFeatureVecs( df['text'], model, num_features )
 print('type of this train data vecs ', type(trainDataVecs))
 print(len(trainDataVecs))
@@ -121,9 +122,16 @@ print(len(trainDataVecs[3]))
 print('--------------------')
 print(len(trainDataVecs[5]))
 
+
 print('y labels for this are ')
-y_buckets= pd.Series(u_final.bucket.values)
-print(y_buckets.head())
+y_buckets= u_final['bucket'].to_numpy()
+print(y_buckets[22])
+
+
+y_sid= u_final['sid'].to_numpy()
+print(y_sid[22])
+
+
 
 #print "Creating average feature vecs for test reviews"
 
