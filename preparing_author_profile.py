@@ -21,11 +21,12 @@ b = db.read_text(folder+'*.txt').map(json.loads)
 #     print(yyy['h_index'])
 
 z=b.filter(lambda record: 'orgs' in record and 'name' in record and 'h_index' in record ) 
-print(z.take(2))
+#print(z.take(2))
 
 def flatten(record):
     
     return {
+        'id':record['id'],
         'name': record['name'],
         'orgs': record['orgs'],
         #'org': record['org'],
@@ -40,8 +41,8 @@ def computer_department_name_checker(dept):
     d=[j for sub in d for j in sub]
     
     if 'computer science ' in d  or 'computer' in d :
-        print('True')
-        print(d)
+        #print('True')
+        #print(d)
         return True
     else:
        # print('False')
@@ -49,9 +50,9 @@ def computer_department_name_checker(dept):
 
 df['computer_check']= df['orgs'].apply(computer_department_name_checker )
 
-print(df.head())
+#print(df.head())
 #print('number of rows here',df.shape[0].compute())
 
 x=df.loc[df['computer_check']==True].compute()
-print(x.head())
-x.to_csv('computer_science_profs',index=False)
+#print(x.head())
+x.to_csv('computer_science_profs2',index=False)
