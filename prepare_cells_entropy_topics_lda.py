@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import utilities
 
 '''
 The code below is for finding out entropy values of papers based on topic probabilities on each of the 25 topics
@@ -15,13 +16,12 @@ Commenting out sections of the code , for ease of making changes
 
 '''
 
-def calculate_entropy_element(p):
-#log base 2 for bits in information
-#sum_i - p_i log_p_i
-    #if p>0:
+
+
+def calculate_entropy_element(p): 
+    
     return -1 * p * np.log2(p) 
-    # else:
-    #     return 0
+
 
 # doc_vecs= pd.read_csv('./data_info/document_vectors_full_papers_nov')
 # doc_vecs['entropy_vals']= (doc_vecs.iloc[:, 1:].apply(lambda x : calculate_entropy_element(x))).fillna(0).sum(axis = 1, skipna = True)
@@ -42,6 +42,7 @@ reviewers_lda_topics= pd.read_csv('../reviewers_lda.csv', header=None)
 #assumption is that reviewer ids are same as index ids here
 reviewers_lda_topics['entropy_vals']= reviewers_lda_topics.apply(lambda x: calculate_entropy_element(x)).fillna(0).sum(axis=1, skipna=True)
 
+print('entropy of reviewers')
 print(reviewers_lda_topics.head())
 
 #reviewers_lda_topics.to_csv('./data_info/reviewers_lda_entropy')
@@ -51,13 +52,7 @@ This section of code finds out the top 3 topics for each person, and checks if t
 or the niche research areas
 '''
 
-print(reviewers_lda_topics)
 del reviewers_lda_topics['entropy_vals']
-
-import utilities
-
-
-
 
 reviewers_with_topics_of_interest= reviewers_lda_topics.apply(lambda x: utilities.get_max_index(x,5),axis= 1)
 reviewers_with_topics_of_interest=pd.DataFrame(reviewers_with_topics_of_interest)
@@ -77,48 +72,54 @@ found average of top 5 max assignment scores for each reviewer
 '''
 top_k=5
 
-avg_of_max_assignment_scores_each_reviewer= scores_lda.apply(lambda x: utilities.get_average_of_max_values(x,top_k),axis= 1)
-avg_of_max_assignment_scores_each_reviewer=pd.DataFrame(avg_of_max_assignment_scores_each_reviewer)
+def investigate_reviewers_return_var_avg_topk(scores_lda, top_k):
+    print('----- Now investigating reviewers -----')
+    avg_of_max_assignment_scores_each_reviewer= scores_lda.apply(lambda x: utilities.get_average_of_max_values(x,top_k),axis= 1)
+    avg_of_max_assignment_scores_each_reviewer=pd.DataFrame(avg_of_max_assignment_scores_each_reviewer)
 
-scores_lda['rid'] = scores_lda.index
+    avg_of_max_assignment_scores_each_reviewer['rid']=avg_of_max_assignment_scores_each_reviewer.index
+    avg_of_max_assignment_scores_each_reviewer.columns=['max_avg','rid']
+    print('avg_of_max_assignment_scores_each_reviewer')
+    print(avg_of_max_assignment_scores_each_reviewer)
 
-avg_of_max_assignment_scores_each_reviewer['rid']=avg_of_max_assignment_scores_each_reviewer.index
-avg_of_max_assignment_scores_each_reviewer.columns=['max_avg','rid']
-print('avg_of_max_assignment_scores_each_reviewer')
-print(avg_of_max_assignment_scores_each_reviewer)
+    
+    print('finding variance of top 5 max assignment scores for the each reviewer')
+    var_of_max_assignment_scores_each_reviewer= scores_lda.apply(lambda x: utilities.get_var_of_max_values(x,top_k),axis=1)
+    var_of_max_assignment_scores_each_reviewer=pd.DataFrame(var_of_max_assignment_scores_each_reviewer)
+    
+    print('var of max scores reviewers')
+    var_of_max_assignment_scores_each_reviewer['rid']= var_of_max_assignment_scores_each_reviewer.index
+    var_of_max_assignment_scores_each_reviewer.columns=['var_topk','rid']
+    print(var_of_max_assignment_scores_each_reviewer.tail())
 
-'''
-finding variance of top 5 max assignment scores for the each reviewer
-'''
+    return var_of_max_assignment_scores_each_reviewer, avg_of_max_assignment_scores_each_reviewer
 
-del scores_lda['rid']
-var_of_max_assignment_scores_each_reviewer= scores_lda.apply(lambda x: utilities.get_var_of_max_values(x,top_k),axis=1)
-var_of_max_assignment_scores_each_reviewer=pd.DataFrame(var_of_max_assignment_scores_each_reviewer)
-# var_of_max_assignment_scores_each_reviewer['rid']=var_of_max_assignment_scores_each_reviewer.index
-# var_of_max_assignment_scores_each_reviewer.columns=['var_of_max','rid']
-
-print('var of max scores reviewers')
-print(var_of_max_assignment_scores_each_reviewer.tail())
-
-
-print('----now investigating for papers -------')
-
-scores_lda=scores_lda.T
-print(scores_lda)
-var_of_max_assign_each_paper=scores_lda.apply(lambda x: utilities.get_var_of_max_values(x,top_k),axis=1)
-var_of_max_assign_each_paper=pd.DataFrame(var_of_max_assign_each_paper)
-print('var of max scores papers ,taking top-',top_k)
-var_of_max_assign_each_paper['pid']=var_of_max_assign_each_paper.index
-var_of_max_assign_each_paper.columns=['var_topk','pid']
-print(var_of_max_assign_each_paper)
+var_of_max_assignment_scores_each_reviewer, avg_of_max_assignment_scores_each_reviewer= investigate_reviewers_return_var_avg_topk(scores_lda,top_k)
 
 
-avg_of_max_assignment_scores_each_paper=scores_lda.apply(lambda x: utilities.get_average_of_max_values(x,top_k),axis=1)
-avg_of_max_assignment_scores_each_paper=pd.DataFrame(avg_of_max_assignment_scores_each_paper)
-print('avg of max scores papers, taking top- ',top_k)
-avg_of_max_assignment_scores_each_paper['pid']=avg_of_max_assignment_scores_each_paper.index
-avg_of_max_assignment_scores_each_paper.columns=['avg_topk','pid']
-print(avg_of_max_assignment_scores_each_paper)
+def investigate_papers_return_var_avg_topk(scores_lda, top_k):
+    print('----now investigating for papers -------')
+    scores_lda=scores_lda.T
+    print('score lda is:')
+    print(scores_lda)
+    var_of_max_assign_each_paper=scores_lda.apply(lambda x: utilities.get_var_of_max_values(x,top_k),axis=1)
+    var_of_max_assign_each_paper=pd.DataFrame(var_of_max_assign_each_paper)
+    print('var of max scores papers ,taking top-',top_k)
+    var_of_max_assign_each_paper['pid']=var_of_max_assign_each_paper.index
+    var_of_max_assign_each_paper.columns=['var_topk','pid']
+    print(var_of_max_assign_each_paper)
+
+
+    avg_of_max_assignment_scores_each_paper=scores_lda.apply(lambda x: utilities.get_average_of_max_values(x,top_k),axis=1)
+    avg_of_max_assignment_scores_each_paper=pd.DataFrame(avg_of_max_assignment_scores_each_paper)
+    print('avg of max scores papers, taking top- ',top_k)
+    avg_of_max_assignment_scores_each_paper['pid']=avg_of_max_assignment_scores_each_paper.index
+    avg_of_max_assignment_scores_each_paper.columns=['avg_topk','pid']
+    print(avg_of_max_assignment_scores_each_paper)
+
+    return var_of_max_assign_each_paper, avg_of_max_assignment_scores_each_paper
+
+var_of_max_assign_each_paper, avg_of_max_assignment_scores_each_paper= investigate_papers_return_var_avg_topk(scores_lda,top_k)
 
 top_k_paper_stat= pd.merge(avg_of_max_assignment_scores_each_paper,var_of_max_assign_each_paper,how='left',on='pid')
 print('for each paper, looking at assignment stats, taking top-',top_k)
@@ -167,6 +168,7 @@ def cell_write(record):
     else:
         return 1
 
+'''
 top_k_paper_stat['cell']= top_k_paper_stat.apply(lambda x: cell_write_from_values(x),axis=1)
 
 print(top_k_paper_stat[:20])
@@ -179,6 +181,7 @@ print('avg of avg max scores topk is ', top_k_paper_stat['avg_topk'].mean())
 print('avg of var max scores topk is ', top_k_paper_stat['var_topk'].mean())
 print('number of papers in each cell')
 print(top_k_paper_stat.groupby('cell')['pid'].count())
+'''
 
 '''
 print('---investigating what the top matching reviewers are working on ')
