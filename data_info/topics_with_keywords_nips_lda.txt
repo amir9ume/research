@@ -1,0 +1,398 @@
+topic 12
+1406 --- inst 
+579 --- shawe 
+1006 --- amse 
+982 --- deterministically 
+921 --- cvprw 
+1070 --- project 
+657 --- rhodes 
+383 --- mba 
+363 --- czech 
+711 --- assigns 
+topic 13
+1009 --- leighton 
+275 --- boardman 
+892 --- provably 
+825 --- thore 
+467 --- performant 
+221 --- saying 
+1328 --- baby 
+572 --- tableaux 
+752 --- tvl 
+828 --- tricks 
+topic number is  0
+140 --- ingrid 
+63 --- stere 
+807 --- russ 
+135 --- sixteen 
+791 --- bubble 
+283 --- fra 
+64 --- dnf 
+1139 --- manasse 
+540 --- retrieve 
+206 --- csisz 
+928 --- sikh 
+1147 --- czos 
+------
+topic number is  
+ 1
+867 --- sang 
+259 --- irt 
+218 --- tech 
+486 --- undergone 
+1066 --- tree 
+488 --- readability 
+226 --- tempted 
+702 --- technology 
+233 --- kinase 
+519 --- professors 
+1197 --- needell 
+1260 --- broaden 
+------
+topic number is  
+ 2
+330 --- appropriately 
+1366 --- insight 
+1124 --- rifai 
+584 --- rehab 
+31 --- feasibility 
+1361 --- presuppose 
+430 --- amplification 
+888 --- gandy 
+577 --- formulates 
+616 --- nonexpansive 
+806 --- dirty 
+432 --- underlining 
+------
+topic number is  
+ 3
+136 --- hlmann 
+632 --- simplistic 
+70 --- dnk 
+748 --- seating 
+322 --- refit 
+35 --- consenting 
+147 --- adaptivity 
+439 --- choice 
+227 --- cheaply 
+952 --- installed 
+601 --- zou 
+1423 --- orchestrates 
+------
+topic number is  
+ 4
+96 --- travel 
+847 --- causes 
+876 --- itive 
+750 --- tvp 
+550 --- lagrangian 
+126 --- fik 
+1368 --- yamaguchi 
+874 --- quicker 
+733 --- haystack 
+290 --- frr 
+1079 --- timator 
+327 --- quinonero 
+------
+topic number is  
+ 5
+288 --- rgb 
+680 --- photon 
+567 --- saving 
+1192 --- mouth 
+1393 --- unwieldy 
+225 --- precompute 
+231 --- clicked 
+536 --- didn 
+817 --- formulation 
+1166 --- explainable 
+1146 --- parents 
+381 --- maxwell 
+------
+topic number is  
+ 6
+596 --- sankar 
+950 --- signa 
+1263 --- broader 
+534 --- sorted 
+919 --- negativity 
+220 --- purged 
+50 --- svmtorch 
+1026 --- guarding 
+83 --- locked 
+594 --- underlines 
+219 --- portilla 
+690 --- single 
+------
+topic number is  
+ 7
+1327 --- babu 
+708 --- otte 
+353 --- rescales 
+710 --- neuromimetic 
+1179 --- behave 
+1277 --- padded 
+1165 --- alexandra 
+1309 --- daitch 
+613 --- phil 
+1149 --- cormack 
+832 --- scm 
+446 --- minute 
+------
+topic number is  
+ 8
+1176 --- sharma 
+1289 --- multimedia 
+273 --- extent 
+1245 --- suppression 
+1389 --- matrix 
+994 --- airway 
+1017 --- interviewed 
+1390 --- disassortative 
+169 --- portmanteau 
+434 --- scovanner 
+1416 --- enforcement 
+1388 --- witness 
+------
+topic number is  
+ 9
+1369 --- perfect 
+442 --- knapsack 
+1029 --- sell 
+1084 --- objects 
+143 --- isyn 
+481 --- digamma 
+178 --- seizures 
+769 --- padmanabhan 
+552 --- seriously 
+628 --- dictating 
+267 --- ird 
+836 --- sch 
+------
+topic number is  
+ 10
+441 --- rationality 
+595 --- ramanan 
+234 --- luby 
+1160 --- alexandru 
+338 --- hao 
+970 --- kaushik 
+589 --- turned 
+511 --- sandbox 
+487 --- neurodynamics 
+1303 --- psychometrika 
+894 --- cordelia 
+526 --- jin 
+------
+topic number is  
+ 11
+1406 --- inst 
+579 --- shawe 
+1006 --- amse 
+982 --- deterministically 
+921 --- cvprw 
+1070 --- project 
+657 --- rhodes 
+383 --- mba 
+363 --- czech 
+711 --- assigns 
+1150 --- burkhardt 
+1088 --- acted 
+------
+topic number is  
+ 12
+1009 --- leighton 
+275 --- boardman 
+892 --- provably 
+825 --- thore 
+467 --- performant 
+221 --- saying 
+1328 --- baby 
+572 --- tableaux 
+752 --- tvl 
+828 --- tricks 
+713 --- maeda 
+852 --- norb 
+------
+topic number is  
+ 13
+988 --- weightings 
+315 --- cavanaugh 
+314 --- principals 
+960 --- neuropsychological 
+333 --- portrayed 
+54 --- alternatingly 
+1410 --- vickers 
+454 --- neuroprosthetics 
+410 --- sponding 
+980 --- fication 
+809 --- rust 
+947 --- bocce 
+------
+topic number is  
+ 14
+458 --- patient 
+716 --- edges 
+1408 --- motorbikes 
+324 --- tomkins 
+556 --- anoop 
+1294 --- icassp 
+669 --- constant 
+881 --- investment 
+501 --- mirrors 
+1259 --- guessing 
+1313 --- gregor 
+312 --- vipin 
+------
+topic number is  
+ 15
+499 --- oscillator 
+1204 --- spam 
+133 --- effects 
+173 --- kashima 
+731 --- generator 
+437 --- jerk 
+662 --- flipper 
+986 --- operation 
+215 --- singer 
+378 --- acos 
+1378 --- concave 
+490 --- gredilla 
+------
+topic number is  
+ 16
+245 --- platt 
+1092 --- imperfections 
+22 --- bringing 
+260 --- iri 
+289 --- enumerative 
+103 --- recombination 
+851 --- ahmadian 
+181 --- ddms 
+297 --- dave 
+211 --- metrics 
+1187 --- majorizing 
+580 --- snatch 
+------
+topic number is  
+ 17
+1143 --- gopalan 
+268 --- ire 
+858 --- cynthia 
+138 --- disconnection 
+1096 --- marginals 
+271 --- nature 
+651 --- fir 
+339 --- advancement 
+893 --- joliot 
+1174 --- ijk 
+896 --- prior 
+55 --- ueber 
+------
+topic number is  
+ 18
+1055 --- columns 
+622 --- aggressive 
+401 --- vadrevu 
+1152 --- lrtdp 
+575 --- tamara 
+160 --- corrects 
+743 --- sume 
+411 --- roll 
+778 --- sensitively 
+1329 --- iain 
+323 --- suppes 
+983 --- neurology 
+------
+topic number is  
+ 19
+1243 --- hoaglin 
+695 --- squeezed 
+224 --- halpern 
+1298 --- ibid 
+1020 --- chapelle 
+153 --- probabil 
+1129 --- knn 
+1123 --- captioned 
+23 --- harville 
+661 --- concentrates 
+1171 --- gentleboost 
+170 --- loudness 
+------
+topic number is  
+ 20
+729 --- spatiotemporal 
+547 --- disasters 
+1134 --- kns 
+1136 --- composed 
+879 --- pass 
+507 --- harmon 
+1229 --- chai 
+1241 --- korsrilabutr 
+1359 --- kersten 
+1000 --- loglinear 
+1025 --- nikolaj 
+1282 --- crook 
+------
+topic number is  
+ 21
+387 --- altitude 
+168 --- martijn 
+901 --- pling 
+1318 --- givens 
+257 --- shunting 
+1099 --- adaptable 
+520 --- structuring 
+100 --- assimilated 
+429 --- ballet 
+1126 --- toutanova 
+274 --- butions 
+12 --- sprague 
+------
+topic number is  
+ 22
+1278 --- fewer 
+629 --- windowed 
+1367 --- naish 
+13 --- labelsets 
+151 --- combinatorial 
+525 --- jia 
+331 --- psychometrics 
+1319 --- pencil 
+757 --- strogatz 
+1067 --- slanting 
+453 --- pseudoboolean 
+1354 --- yft 
+------
+topic number is  
+ 23
+1330 --- customer 
+177 --- kfm 
+1043 --- ambiguities 
+920 --- grundlehren 
+830 --- homepages 
+61 --- stern 
+416 --- yellowstone 
+1350 --- comedy 
+527 --- jim 
+292 --- retrospect 
+1191 --- deserves 
+111 --- concurrency 
+------
+topic number is  
+ 24
+856 --- midwest 
+1131 --- knd 
+469 --- natsoulis 
+190 --- vinciarelli 
+1399 --- initialize 
+1238 --- furnas 
+953 --- resorts 
+1033 --- recognizing 
+1154 --- emanating 
+625 --- transact 
+263 --- irn 
+1322 --- siegelmann 
+------
+topic number is  
+------
