@@ -22,3 +22,17 @@ print('sum each row')
 print(cp.sum(assignment, axis=1).value)
 print('t value')
 print(t.value)
+"""
+printed values
+
+[[0.3 0.9]
+ [0.1 0.2]]
+status  optimal
+[[-1.04596911e-11  1.00000000e+00]
+ [-1.87566149e-11  1.00000000e+00]]
+sum each row
+[0.9 0.2]
+t value
+[0.2]
+
+"""
