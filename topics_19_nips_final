@@ -1,0 +1,240 @@
+topic 21::
+game
+regret
+strategy
+player
+σ
+ii
+q
+equilibrium
+------
+topic 3::
+gradient
+stochastic
+prox
+convergence
+convex
+nonconvex
+β
+sgd
+------
+topic 1::
+φ
+prior
+θ
+calibration
+log
+kernel
+bayesian
+uncertainty
+------
+topic 23::
+language
+sentence
+word
+text
+representation
+sequence
+token
+bert
+------
+topic 13::
+teacher
+student
+submodular
+quantization
+distillation
+layer
+greedy
+knowledge
+------
+topic 18::
+adversarial
+attack
+robustness
+perturbation
+robust
+classifier
+defense
+accuracy
+------
+topic 24::
+latent
+generative
+image
+generator
+adversarial
+gan
+vae
+encoder
+------
+topic 6::
+gradient
+sgd
+communication
+node
+distributed
+compression
+local
+stochastic
+------
+topic 10::
+q
+lstm
+recurrent
+tree
+prediction
+sequence
+temporal
+series
+------
+topic 4::
+θ
+bound
+π
+regret
+σ
+δ
+β
+q
+------
+topic 19::
+policy
+reward
+action
+agent
+reinforcement
+environment
+st
+trajectory
+------
+topic 7::
+causal
+variable
+option
+graph
+theorem
+structure
+observed
+control
+------
+topic 17::
+gradient
+manifold
+matrix
+sgd
+momentum
+batch
+cifar
+normalization
+------
+topic 0::
+matrix
+noise
+signal
+speech
+measurement
+rank
+sparse
+map
+------
+topic 12::
+bound
+optimal
+µ
+xt
+δ
+convex
+regret
+γ
+------
+topic 8::
+word
+metric
+score
+constraint
+job
+fairness
+distance
+candidate
+------
+topic 2::
+layer
+architecture
+convolution
+accuracy
+weight
+convolutional
+pruning
+recognition
+------
+topic 15::
+architecture
+class
+transfer
+layer
+accuracy
+memory
+dataset
+continual
+------
+topic 22::
+graph
+node
+domain
+representation
+label
+embedding
+structure
+classification
+------
+topic 11::
+θ
+uncertainty
+variational
+gaussian
+posterior
+likelihood
+q
+bayesian
+------
+topic 5::
+θ
+xi
+bound
+q
+generalization
+kernel
+layer
+theorem
+------
+topic 16::
+image
+object
+video
+vision
+computer
+detection
+instance
+recognition
+------
+topic 20::
+image
+layer
+class
+label
+visual
+noise
+representation
+face
+------
+topic 9::
+query
+log
+q
+dialogue
+index
+search
+end
+acm
+------
