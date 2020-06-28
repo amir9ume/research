@@ -176,19 +176,17 @@ W_V= nn.Linear(hidden_size,num_topics)
 
 
 def Attention_forward(self , new_paper, reviewer_papers_concat):
-    #old state assumed at (hidden x 1)
+    
     Q= W_Q * new_paper.T  # Q becomes  (hidden x hidden) x (hidden x 1) = hidden x 1
     K=  W_K * reviewer_papers_concat.T # K becomes hidden x 1
     V=  W_V * reviewer_papers_concat.T # V becomes hidden x 1  
 
-    #check how to do dot product in pytorch
-    alignment_scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
-    #so how to send all papers of a reviewer ??
-    y= nn.Softmax(x) #so how exactly softamx happen if x is scalar value
-    z= y. V # should be hidden x 1 values??
+    scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
+    alignment_scores= nn.Softmax(scores) 
+    #so now use these al
+    z= alignment_scores. V # should be hidden x 1 values??
 
-    #now use this z as you deem suitable. I dont think there is clear definition for this one.
-    #there should be a sum module available here. maybe you can do 
+    #for now using these z values (nr dim), to send information about which paper to focus on.
     u= torch.cat (z, old_state_reviewer)
     return torch.sum(u, dim=0)
 
