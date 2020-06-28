@@ -164,27 +164,16 @@ print("predict (after training)", 4, model(new_var).item())
 ATTENTION MODULE
 '''
 
-#We are going to learn this weights W_Q, W_K and W_V
-#attempt at attention module
-hidden_size=50
-num_topics=25
-
-#you are going to error propagate through these W_qkv Values, as you want to learn these weights. they are your simple attention modules
-W_Q= nn.Linear(hidden_size,hidden_size)
-W_K= nn.Linear(hidden_size,num_topics)
-W_V= nn.Linear(hidden_size,num_topics)
-
 
 def Attention_forward(self , new_paper, reviewer_papers_concat):
     
-    Q= W_Q * new_paper.T  # Q becomes  (hidden x hidden) x (hidden x 1) = hidden x 1
-    K=  W_K * reviewer_papers_concat.T # K becomes hidden x 1
-    V=  W_V * reviewer_papers_concat.T # V becomes hidden x 1  
+    Q= W_Q * new_paper.T  
+    K=  W_K * reviewer_papers_concat.T 
+    V=  W_V * reviewer_papers_concat.T   
 
     scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
     alignment_scores= nn.Softmax(scores) 
-    #so now use these al
-    z= alignment_scores. V # should be hidden x 1 values??
+        z= alignment_scores. V # should be hidden x 1 values??
 
     #for now using these z values (nr dim), to send information about which paper to focus on.
     u= torch.cat (z, reviewer_papers_concat)
