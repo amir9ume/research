@@ -187,7 +187,7 @@ def Attention_forward(self , new_paper, reviewer_papers_concat):
     z= alignment_scores. V # should be hidden x 1 values??
 
     #for now using these z values (nr dim), to send information about which paper to focus on.
-    u= torch.cat (z, old_state_reviewer)
+    u= torch.cat (z, reviewer_papers_concat)
     return torch.sum(u, dim=0)
 
 
