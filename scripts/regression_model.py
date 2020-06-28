@@ -84,6 +84,10 @@ class Match_Classify(nn.Module):
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim = reviewer_emb_dim
         
+        #you need self.num_topics for now. You can call it embedding space size in future
+        self.num_topics= 25
+        self.attention_matrix_size= 40
+
         self.hidden_size=20
         rnn = nn.LSTM(input_size=25, hidden_size=20, num_layers=2)
 
@@ -93,6 +97,9 @@ class Match_Classify(nn.Module):
         self.combined = nn.Linear(self.submitter_emb_dim, 25)
         self.out= nn.Linear(25, n_classes)
 
+        W_Q= nn.Linear(self.attention_matrix_size , self.num_topics)
+        W_K= nn.Linear(self.attention_matrix_size, self.num_topics)
+        W_V= nn.Linear(self.attention_matrix_size, self.num_topics)
         
         #forward is actually defining the equation
         #U_i, P_j combination
@@ -168,14 +175,14 @@ W_K= nn.Linear(hidden_size,num_topics)
 W_V= nn.Linear(hidden_size,num_topics)
 
 
-def Attention_forward(self , new_paper, old_state_reviewer):
+def Attention_forward(self , new_paper, reviewer_papers_concat):
     #old state assumed at (hidden x 1)
-    Q= W_K * old_state_reviewer  # Q becomes  (hidden x hidden) x (hidden x 1) = hidden x 1
-    K=  W_K * new_paper.T # K becomes hidden x 1
-    V=  W_V * new_paper.T # V becomes hidden x 1  
+    Q= W_Q * new_paper.T  # Q becomes  (hidden x hidden) x (hidden x 1) = hidden x 1
+    K=  W_K * reviewer_papers_concat.T # K becomes hidden x 1
+    V=  W_V * reviewer_papers_concat.T # V becomes hidden x 1  
 
     #check how to do dot product in pytorch
-    x= Q.K # 1 scalar value, right? basically you would want to do a softmax over all the papers of the reviewer.
+    alignment_scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
     #so how to send all papers of a reviewer ??
     y= nn.Softmax(x) #so how exactly softamx happen if x is scalar value
     z= y. V # should be hidden x 1 values??
