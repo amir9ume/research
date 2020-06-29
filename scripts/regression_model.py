@@ -167,6 +167,8 @@ epochs=100
 losses= []
 for e_num in range(epochs):
     loss_ep = 0
+    correct=0
+    wrong=0
     for i in range(0, len(y_train), batch_size):
         mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size) 
         optimizer.zero_grad()
@@ -176,36 +178,39 @@ for e_num in range(epochs):
         loss_ep += loss.item()
         loss.backward()         # backpropagation, compute gradients
         optimizer.step()
-       
+
+        class_label = prediction.argmax(dim=1)
+        trg_label = y.argmax()
+        if class_label == trg_label:
+            correct += 1
+        else:
+            wrong += 1
+    
     losses.append(loss_ep/batch_size)
-    print("Epoch:", e_num, " Loss:", losses[-1])
+    print("Epoch:", e_num, " Loss:", losses[-1], ": Train Accuracy:", correct/len(y_train))
 
 
 #code for evaluation part goes here
-
-
-new_var = Variable(torch.Tensor([[4.0]])) 
-pred = model(new_var) 
-print("predict (after training)", 4, model(new_var).item())
-
-
-'''
-ATTENTION MODULE
-'''
-
-
-def Attention_forward(self , new_paper, reviewer_papers_concat):
+with torch.no_grad():
+    model.eval()
+    correct=0
+    wrong=0
+    for i in range(0, len(y_test)):
+        #mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(test_sub, test_rev, y_test, i, batch_size) 
+        prediction = model(test_sub[i], test_rev[i]).float()
+        # loss = criterion(prediction, y.argmax(dim=1))
+        loss = criterion(prediction, y.float())
+        loss_test += loss.item()
     
-    Q= W_Q * new_paper.T  
-    K=  W_K * reviewer_papers_concat.T 
-    V=  W_V * reviewer_papers_concat.T   
+        class_label = prediction.argmax(dim=1)
+        trg_label = y.argmax()
+        if class_label == trg_label:
+            correct += 1
+        else:
+            wrong += 1
 
-    scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
-    alignment_scores= nn.Softmax(scores) 
-    z= alignment_scores. V # should be hidden x 1 values??
+    print("Test Loss:", loss_test/len(y_test), ": Test Accuracy:", correct/len(y_test))
 
-    #for now using these z values (nr dim), to send information about which paper to focus on.
-    u= torch.cat (z, reviewer_papers_concat)
-    return torch.sum(u, dim=0)
+
 
 
