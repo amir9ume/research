@@ -88,7 +88,7 @@ class Match_Classify(nn.Module):
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim = reviewer_emb_dim
         
-        #you need self.num_topics for now. You can call it embedding space size in future
+        #you need self.num_topics for now. You can call it in semantic embedding space  in future
         self.num_topics= 25
         self.attention_matrix_size= 40
 
@@ -104,8 +104,8 @@ class Match_Classify(nn.Module):
         
         self.w_submitted= nn.Linear(self.num_topics,self.num_topics)
         self.w_out= nn.Linear(self.num_topics, n_classes)
-        #forward is actually defining the equation
-    
+
+    #forward is actually defining the equation
     def forward(self, submitter_emb, reviewer_emb):    
 
         Q= torch.matmul (self.W_Q,submitter_emb)
@@ -119,12 +119,6 @@ class Match_Classify(nn.Module):
         z=(softm(s))
         z= torch.sum(z * V,dim=0)
 
-        #i= z * reviewer_emb
-        #print(i.shape)
-        #print(i)
-
-    #    combine= self.combined((submitter_emb + reviewer_emb).float())
-    #    x= torch.matmul (z,reviewer_emb.permute(1,0)).unsqueeze(dim=0)
         try:
             x= torch.matmul (z,reviewer_emb.T).unsqueeze(dim=0)
             
@@ -133,12 +127,10 @@ class Match_Classify(nn.Module):
     
         combine= x + self.w_submitted(submitter_emb.T)
         out= self.w_out(combine)
-        #remember to bound your softmax between [0 to 3]. pure softmax just puts it between [0 to 1]
         op = F.softmax(self.out(combine),dim=1)
         return op
 
 
-#get your data ready here
 #wonder what the shapes of submitter hid and reviewer hid can be::
 data_sub, data_rev, data_y, submitter_ids, reviewer_ids = prepare_data(paper_representation, reviewer_representation, df)
 train_ratio = int(0.8*len(data_sub))
@@ -154,7 +146,7 @@ y_train = data_y[:train_ratio]
 y_test = data_y[train_ratio:]
 
 
-"Changing batch size to 1 for now. Careful"
+"CHANGING BATCH SIZE TO 1 FOR NOW . CAREFUL. IT IS PURE SGD"
 batch_size=1
 model = Match_Classify(25,25,batch_size,4) 
   
@@ -173,7 +165,7 @@ for e_num in range(epochs):
         mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size) 
         optimizer.zero_grad()
         prediction = model(mini_batch_submitted_paper, mini_batch_reviewer_paper).float()
-       # loss = criterion(prediction, y.argmax(dim=1))
+    
         loss = criterion(prediction, y.float())
         loss_ep += loss.item()
         loss.backward()         # backpropagation, compute gradients
@@ -190,16 +182,14 @@ for e_num in range(epochs):
     print("Epoch:", e_num, " Loss:", losses[-1], ": Train Accuracy:", correct/len(y_train))
 
 
-#code for evaluation part goes here
+#code for evaluation part 
 with torch.no_grad():
     model.eval()
     correct=0
     wrong=0
     loss_test=0
     for i in range(0, len(y_test)):
-        #mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(test_sub, test_rev, y_test, i, batch_size) 
         prediction = model(test_sub[i].float(), test_rev[i].T.float()).float()
-        # loss = criterion(prediction, y.argmax(dim=1))
         loss = criterion(prediction, y.float())
         loss_test += loss.item()
     
