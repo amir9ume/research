@@ -66,12 +66,15 @@ def prepare_data(submitter, reviewer, df, gpu_flag=False):
     return train_data_sub, train_data_rev, labels, submitter_ids, reviewer_ids
 
 def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size):
-    paper_lines = Variable(torch.stack(paper_emb[idx:idx+batch_size]).squeeze(), requires_grad=True)
-    review_emb = Variable(torch.stack(rev_emb[idx:idx+batch_size]).squeeze(), requires_grad=True)
+   # paper_lines = Variable(torch.stack(paper_emb[idx:idx+batch_size]).squeeze(), requires_grad=True)
+    paper_lines = Variable(torch.stack(paper_emb[idx:idx+batch_size]), requires_grad=True).permute(1,0)
+    #review_emb = Variable(torch.stack(rev_emb[idx:idx+batch_size]).squeeze(), requires_grad=True)
     #review_emb = Variable(torch.cat(rev_emb[idx:idx+batch_size],dim=0), requires_grad=True)
     #torch.cat(data,dim=0)
+    reviewer_paper= torch.tensor(rev_emb[idx:idx+batch_size][-1],requires_grad=True).squeeze().permute(1,0)
     trg = torch.stack(trg_value[idx:idx+batch_size]).squeeze()
-    return paper_lines, review_emb, trg    
+  #  return paper_lines, review_emb, trg
+    return paper_lines.float(), reviewer_paper.float(), trg    
 
 
 
@@ -88,22 +91,34 @@ class Match_Classify(nn.Module):
         self.num_topics= 25
         self.attention_matrix_size= 40
 
-        self.hidden_size=20
-        rnn = nn.LSTM(input_size=25, hidden_size=20, num_layers=2)
-
         self.n_classes = n_classes
         self.batch_size = batch_size        
         
         self.combined = nn.Linear(self.submitter_emb_dim, 25)
         self.out= nn.Linear(25, n_classes)
 
-        W_Q= nn.Linear(self.attention_matrix_size , self.num_topics)
-        W_K= nn.Linear(self.attention_matrix_size, self.num_topics)
-        W_V= nn.Linear(self.attention_matrix_size, self.num_topics)
-        
+        self.W_Q= Variable(torch.rand(self.attention_matrix_size, self.num_topics), requires_grad=True)
+        self.W_K= Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
+        self.W_V = Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
+
         #forward is actually defining the equation
-        #U_i, P_j combination
+    
     def forward(self, submitter_emb, reviewer_emb):    
+
+        Q= torch.matmul (self.W_Q,submitter_emb)
+
+        K= torch.matmul (self.W_K, reviewer_emb)
+        
+        V= torch.matmul( self.W_V, reviewer_emb)
+
+        s= torch.matmul(Q.transpose(1,0),K).squeeze()
+        softm= torch.nn.Softmax()
+        z=(softm(s))
+        z= torch.sum(z * V,dim=0)
+
+        i= z * reviewer_emb
+        print(i.shape)
+        print(i)
 
         combine= self.combined((submitter_emb + reviewer_emb).float())      
         
@@ -127,7 +142,9 @@ test_rev = data_rev[train_ratio:]
 y_train = data_y[:train_ratio]
 y_test = data_y[train_ratio:]
 
-batch_size=25
+
+"Changing batch size to 1 for now. Careful"
+batch_size=1
 model = Match_Classify(25,25,batch_size,4) 
   
 criterion = torch.nn.MSELoss(size_average = False) 
@@ -140,9 +157,9 @@ losses= []
 for e_num in range(epochs):
     loss_ep = 0
     for i in range(0, len(y_train), batch_size):
-        tr_sub, tr_rev, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size) 
+        mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size) 
         optimizer.zero_grad()
-        prediction = model(tr_sub, tr_rev).float()
+        prediction = model(mini_batch_submitted_paper, mini_batch_reviewer_paper).float()
        # loss = criterion(prediction, y.argmax(dim=1))
         loss = criterion(prediction, y.float())
         loss_ep += loss.item()
@@ -173,7 +190,7 @@ def Attention_forward(self , new_paper, reviewer_papers_concat):
 
     scores= Q.K # nr alignment scores, where nr is number of reviewer papers for reviewer R_j
     alignment_scores= nn.Softmax(scores) 
-        z= alignment_scores. V # should be hidden x 1 values??
+    z= alignment_scores. V # should be hidden x 1 values??
 
     #for now using these z values (nr dim), to send information about which paper to focus on.
     u= torch.cat (z, reviewer_papers_concat)
