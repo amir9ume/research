@@ -95,13 +95,12 @@ class Match_Classify(nn.Module):
         self.n_classes = n_classes
         self.batch_size = batch_size        
         
-        self.combined = nn.Linear(self.submitter_emb_dim, 25)
-        self.out= nn.Linear(25, n_classes)
 
         self.W_Q= Variable(torch.rand(self.attention_matrix_size, self.num_topics), requires_grad=True)
         self.W_K= Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
         self.W_V = Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
         
+        self.combined = nn.Linear(self.submitter_emb_dim, 25)
         self.w_submitted= nn.Linear(self.num_topics,self.num_topics)
         self.w_out= nn.Linear(self.num_topics, n_classes)
 
@@ -127,7 +126,7 @@ class Match_Classify(nn.Module):
     
         combine= x + self.w_submitted(submitter_emb.T)
         out= self.w_out(combine)
-        op = F.softmax(self.out(combine),dim=1)
+        op = F.softmax(out,dim=1)
         return op
 
 
@@ -155,7 +154,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr = 0.01)
   
 
 epochs=10
-
+#TRAINING MODULE
 losses= []
 for e_num in range(epochs):
     loss_ep = 0
@@ -190,11 +189,11 @@ with torch.no_grad():
     loss_test=0
     for i in range(0, len(y_test)):
         prediction = model(test_sub[i].float(), test_rev[i].T.float()).float()
-        loss = criterion(prediction, y.float())
+        loss = criterion(prediction, y_test[i].float())
         loss_test += loss.item()
     
         class_label = prediction.argmax(dim=1)
-        trg_label = y.argmax()
+        trg_label = y_test[i].argmax()
         if class_label == trg_label:
             correct += 1
         else:
