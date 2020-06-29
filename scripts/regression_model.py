@@ -114,7 +114,7 @@ class Match_Classify(nn.Module):
         
         V= torch.matmul( self.W_V, reviewer_emb)
 
-        s= torch.matmul(Q.transpose(1,0),K).squeeze()
+        s= torch.matmul(Q.T,K).squeeze()
         softm= torch.nn.Softmax()
         z=(softm(s))
         z= torch.sum(z * V,dim=0)
@@ -131,7 +131,7 @@ class Match_Classify(nn.Module):
         except RuntimeError:
             x= (z*reviewer_emb.T).unsqueeze(dim=0)       
     
-        combine= x + self.w_submitted(submitter_emb.permute(1,0))
+        combine= x + self.w_submitted(submitter_emb.T)
         out= self.w_out(combine)
         #remember to bound your softmax between [0 to 3]. pure softmax just puts it between [0 to 1]
         op = F.softmax(self.out(combine),dim=1)
@@ -162,7 +162,7 @@ criterion = torch.nn.MSELoss(size_average = False)
 optimizer = torch.optim.SGD(model.parameters(), lr = 0.01) 
   
 
-epochs=100
+epochs=10
 
 losses= []
 for e_num in range(epochs):
@@ -195,9 +195,10 @@ with torch.no_grad():
     model.eval()
     correct=0
     wrong=0
+    loss_test=0
     for i in range(0, len(y_test)):
         #mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(test_sub, test_rev, y_test, i, batch_size) 
-        prediction = model(test_sub[i], test_rev[i]).float()
+        prediction = model(test_sub[i].float(), test_rev[i].T.float()).float()
         # loss = criterion(prediction, y.argmax(dim=1))
         loss = criterion(prediction, y.float())
         loss_test += loss.item()
