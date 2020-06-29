@@ -71,7 +71,8 @@ def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size):
     #review_emb = Variable(torch.stack(rev_emb[idx:idx+batch_size]).squeeze(), requires_grad=True)
     #review_emb = Variable(torch.cat(rev_emb[idx:idx+batch_size],dim=0), requires_grad=True)
     #torch.cat(data,dim=0)
-    reviewer_paper= torch.tensor(rev_emb[idx:idx+batch_size][-1],requires_grad=True).squeeze().permute(1,0)
+    reviewer_paper= torch.tensor(rev_emb[idx:idx+batch_size][-1],requires_grad=True).squeeze().T#permute(1,0)
+
     trg = torch.stack(trg_value[idx:idx+batch_size]).squeeze()
   #  return paper_lines, review_emb, trg
     return paper_lines.float(), reviewer_paper.float(), trg    
@@ -100,7 +101,9 @@ class Match_Classify(nn.Module):
         self.W_Q= Variable(torch.rand(self.attention_matrix_size, self.num_topics), requires_grad=True)
         self.W_K= Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
         self.W_V = Variable(torch.rand(self.attention_matrix_size, self.num_topics),requires_grad=True)
-
+        
+        self.w_submitted= nn.Linear(self.num_topics,self.num_topics)
+        self.w_out= nn.Linear(self.num_topics, n_classes)
         #forward is actually defining the equation
     
     def forward(self, submitter_emb, reviewer_emb):    
@@ -116,14 +119,22 @@ class Match_Classify(nn.Module):
         z=(softm(s))
         z= torch.sum(z * V,dim=0)
 
-        i= z * reviewer_emb
-        print(i.shape)
-        print(i)
+        #i= z * reviewer_emb
+        #print(i.shape)
+        #print(i)
 
-        combine= self.combined((submitter_emb + reviewer_emb).float())      
-        
+    #    combine= self.combined((submitter_emb + reviewer_emb).float())
+    #    x= torch.matmul (z,reviewer_emb.permute(1,0)).unsqueeze(dim=0)
+        try:
+            x= torch.matmul (z,reviewer_emb.T).unsqueeze(dim=0)
+            
+        except RuntimeError:
+            x= (z*reviewer_emb.T).unsqueeze(dim=0)       
+    
+        combine= x + self.w_submitted(submitter_emb.permute(1,0))
+        out= self.w_out(combine)
         #remember to bound your softmax between [0 to 3]. pure softmax just puts it between [0 to 1]
-        op = F.softmax(self.out(combine))
+        op = F.softmax(self.out(combine),dim=1)
         return op
 
 
@@ -165,6 +176,7 @@ for e_num in range(epochs):
         loss_ep += loss.item()
         loss.backward()         # backpropagation, compute gradients
         optimizer.step()
+       
     losses.append(loss_ep/batch_size)
     print("Epoch:", e_num, " Loss:", losses[-1])
 
