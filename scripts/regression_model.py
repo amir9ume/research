@@ -36,7 +36,7 @@ paper_representation = pickle.load( open( data_path + 'dict_paper_lda_vectors.pi
 bds_path='~/arcopy/neurips19_anon/anon_bids_file'
 df= utilities.get_bids_data_filtered(bds_path)
 # df= pd.read_csv('~/arcopy/neurips19_anon/fake_small_data')
-
+df= utilities.get_equal_sized_data(df)
 size= len(df.index)
 
 #df= df[:int(0.01 * size)]
@@ -75,17 +75,19 @@ def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size):
     return paper_lines.float(), reviewer_papers_padded.float(), trg    
 
 
-class Match_Classify(nn.Module):
+
+
+class Match_Regression(nn.Module):
     def __init__(self,submitter_emb_dim, reviewer_emb_dim,
                  batch_size, n_classes,):
-        super(Match_Classify, self).__init__()
+        super(Match_Regression, self).__init__()
         
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim = reviewer_emb_dim
         
         #you need self.num_topics for now. You can call it in semantic embedding space  in future
         self.num_topics= 25
-        self.attention_matrix_size= 40
+        self.attention_matrix_size= 10
 
         self.n_classes = n_classes
         self.batch_size = batch_size        
@@ -97,10 +99,20 @@ class Match_Classify(nn.Module):
         self.w_submitted= nn.Linear(self.num_topics,self.attention_matrix_size)
         #for now treat it as a regression problem , instead of a class prediction problem
         self.w_out= nn.Linear(self.attention_matrix_size,1)
+        self.init_weights()
+
+    def init_weights(self):
+        initrange = 0.1
+        self.W_K.weight.data.uniform_(-initrange, initrange)
+        self.W_Q.weight.data.uniform_(-initrange, initrange)
+        self.W_V.weight.data.uniform_(-initrange, initrange)
+        
+    #    self.w_out.weight.data.uniform_(0,3)
+        self.w_out.bias.data.fill_(1)
 
 
     #this tanh activation could be squashing everything. And hence no gradient flow beyond it
-    def mapping_to_target_range( self, x, target_min=0, target_max=3.1 ) :
+    def mapping_to_target_range( self, x, target_min=-0.5, target_max=3.41 ) :
         x02 = torch.tanh(x) + 1 # x in range(0,2)
         scale = ( target_max-target_min )/2.
         return  x02 * scale + target_min
@@ -123,9 +135,9 @@ class Match_Classify(nn.Module):
 
         softm= torch.nn.Softmax(dim=2)
         z=softm(s)
-        u= torch.bmm(z,V)
+        attn_output= torch.bmm(z,V)
 
-        combine= torch.cat((u,self.w_submitted(submitter_emb).unsqueeze(dim=1)),dim=1 )
+        combine= torch.cat((attn_output,self.w_submitted(submitter_emb).unsqueeze(dim=1)),dim=1 )
         aggregate= torch.sum(combine, dim=1) #kind of aggregating information over the concatenated dimension
         out= self.w_out(aggregate)
         out= self.mapping_to_target_range(out)
@@ -152,11 +164,11 @@ y_test = data_y[train_length+val_length:]
 
 
 batch_size=32
-model = Match_Classify(25,25,batch_size,4) 
+model = Match_Regression(25,25,batch_size,4) 
   
 criterion = torch.nn.MSELoss(size_average = False) 
 #optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9) 
-learning_rate = 1e-5
+learning_rate = 1e-3
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
 
 epochs=80
