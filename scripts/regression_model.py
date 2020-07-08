@@ -74,7 +74,21 @@ def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size):
     trg = torch.stack(trg_value[idx:idx+batch_size]).squeeze()
     return paper_lines.float(), reviewer_papers_padded.float(), trg    
 
+class Weighting_Model(nn.Module):
+    def __init__ (self, batch_size, n_classes):
+        super(Weighting_Model,self).__init__()
+        self.num_topics= 25
+    
+        self.n_classes = n_classes
+        self.batch_size = batch_size        
+        
+        self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
+    
+    def forward(self, submitter_emb, reviewer_emb):    
 
+        Q= self.W_Q(submitter_emb)
+        K= self.W_K(reviewer_emb)
+    
 
 
 class Match_Regression(nn.Module):
@@ -87,7 +101,7 @@ class Match_Regression(nn.Module):
         
         #you need self.num_topics for now. You can call it in semantic embedding space  in future
         self.num_topics= 25
-        self.attention_matrix_size= 10
+        self.attention_matrix_size= 80
 
         self.n_classes = n_classes
         self.batch_size = batch_size        
@@ -96,16 +110,18 @@ class Match_Regression(nn.Module):
         self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
         self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
         
+        self.batch_norm= torch.nn.BatchNorm1d(self.attention_matrix_size)
+
         self.w_submitted= nn.Linear(self.num_topics,self.attention_matrix_size)
         #for now treat it as a regression problem , instead of a class prediction problem
-        self.w_out= nn.Linear(self.attention_matrix_size,1)
-        self.init_weights()
+        self.w_out= nn.Linear(self.attention_matrix_size*2,1)
+    #    self.init_weights()
 
     def init_weights(self):
         initrange = 0.1
-        self.W_K.weight.data.uniform_(-initrange, initrange)
-        self.W_Q.weight.data.uniform_(-initrange, initrange)
-        self.W_V.weight.data.uniform_(-initrange, initrange)
+        # self.W_K.weight.data.uniform_(-initrange, initrange)
+        # self.W_Q.weight.data.uniform_(-initrange, initrange)
+        # self.W_V.weight.data.uniform_(-initrange, initrange)
         
     #    self.w_out.weight.data.uniform_(0,3)
         self.w_out.bias.data.fill_(1)
@@ -126,20 +142,20 @@ class Match_Regression(nn.Module):
     def forward(self, submitter_emb, reviewer_emb):    
 
         Q= self.W_Q(submitter_emb)
+        Q=self.batch_norm(Q)
         K= self.W_K(reviewer_emb)
         V= self.W_V(reviewer_emb)
 
         #matrix multiplication QxK.T , same as in the paper
         normalizing_factor= (math.sqrt(self.attention_matrix_size))
-        s= torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1))/normalizing_factor
-
+        e= torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1))/normalizing_factor
         softm= torch.nn.Softmax(dim=2)
-        z=softm(s)
-        attn_output= torch.bmm(z,V)
-
-        combine= torch.cat((attn_output,self.w_submitted(submitter_emb).unsqueeze(dim=1)),dim=1 )
-        aggregate= torch.sum(combine, dim=1) #kind of aggregating information over the concatenated dimension
-        out= self.w_out(aggregate)
+        a=softm(e)
+        attn_output= torch.bmm(a,V)
+        x= torch.sum(attn_output,dim=1)
+        x=self.batch_norm(x)
+        combine= torch.cat((x,self.w_submitted(submitter_emb)),dim=1 )        
+        out= self.w_out(combine)
         out= self.mapping_to_target_range(out)
         return out.squeeze(dim=1)
 
