@@ -55,9 +55,9 @@ class Match_LR(nn.Module):
     def forward(self, submitter_emb, reviewer_emb):
         #submitter_f = self.fc_submitter(submitter_emb)
         #reviewer_f = self.fc_reviewer(reviewer_emb)
-        add = submitter_emb.unsqueeze(dim=1) + self.fc2(reviewer_emb)
-        diff = submitter_emb.unsqueeze(dim=1) - self.fc2(reviewer_emb)
-        multi = submitter_emb.unsqueeze(dim=1) * (self.fc2(reviewer_emb))
+        add = submitter_emb + self.fc2(reviewer_emb)
+        diff = submitter_emb - self.fc2(reviewer_emb)
+        multi = submitter_emb * (self.fc2(reviewer_emb))
          
         combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
         combo= torch.sum(combo,dim=1)
@@ -113,6 +113,9 @@ class Match_Regression(nn.Module):
         x /= x.max()
         return x * 3
 
+    def scale_sigmoid(self,x):
+        return 3*torch.sigmoid(x)
+
     #forward is actually defining the equation
     def forward(self, submitter_emb, reviewer_emb):    
 
@@ -132,5 +135,5 @@ class Match_Regression(nn.Module):
         x=self.batch_norm(x)
         combine= torch.cat((x,self.w_submitted(submitter_emb)),dim=1 )        
         out= self.w_out(combine)
-        out= self.mapping_to_target_range(out)
+        out= self.scale_sigmoid(out)
         return out.squeeze(dim=1)
