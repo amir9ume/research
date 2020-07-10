@@ -24,7 +24,7 @@ import utilities
 
 torch.manual_seed(1)
 
-from reviewer_expertise.models import Match_LR,Match_Regression
+from reviewer_expertise.models import Match_LR,Regression_Attention_Over_docs,Regression_Simple
 from reviewer_expertise.utilities_model import format_time, make_plot_training
 r= os.getcwd()
 print(os.getcwd())
@@ -43,7 +43,7 @@ df= utilities.get_bids_data_filtered(bds_path)
 df= utilities.get_equal_sized_data(df)
 size= len(df.index)
 
-#df= df[:int(0.001 * size)]
+df= df[:int(0.001 * size)]
 print('data size is ', len(df.index))
 print(df.sample(3))
 
@@ -71,12 +71,16 @@ def prepare_data(submitter, reviewer, df, gpu_flag=False):
             reviewer_ids.append(df.iloc[i]['anon_id'])
     return train_data_sub, train_data_rev, labels, submitter_ids, reviewer_ids
 
-def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size):
+def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size,padding):
     paper_lines = Variable(torch.stack(paper_emb[idx:idx+batch_size]), requires_grad=True)#.permute(1,0)
     rev_papers=rev_emb[idx:idx+batch_size]
-    reviewer_papers_padded = pad_sequence(rev_papers, batch_first=True, padding_value=0) # padding as different reviewers can have different number of papers
+    if padding ==True:
+        reviewer_papers = pad_sequence(rev_papers, batch_first=True, padding_value=0) # padding as different reviewers can have different number of papers
+    elif padding==False:
+        reviewer_papers = torch.stack([torch.mean(r,dim=0) for r in rev_papers])
     trg = torch.stack(trg_value[idx:idx+batch_size]).squeeze()
-    return paper_lines.float(), reviewer_papers_padded.float(), trg    
+    
+    return paper_lines.float(), reviewer_papers.float(), trg    
 
 
 #wonder what the shapes of submitter hid and reviewer hid can be::
@@ -101,20 +105,23 @@ y_test = data_y[train_length+val_length:]
 
 
 batch_size=16
-#model = Match_Regression(25,25,batch_size,4) 
+
+#model_name="Regression_Attention_Over_docs"
 #model_name="Match_LR"
-model_name= "Match_Regression"
-if model_name=="Match_LR":
+model_name= "Regression_Simple"
+if model_name=="Match_LR": #Match LR is Meghana's model
     model= Match_LR(25,25,batch_size,4)
-elif model_name=="Match_Regression":
-    model=Match_Regression(25,25,batch_size,4)
+elif model_name=="Regression_Attention_Over_docs":
+    model=Regression_Attention_Over_docs(25,25,batch_size,4)
+elif model_name=="Regression_Simple":
+    model= Regression_Simple(25,25,batch_size,4,"mean")
   
 criterion = torch.nn.MSELoss(reduction='sum') 
-#optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9) 
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9) 
 learning_rate = 1e-5
-optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
+#optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
 
-epochs=20
+epochs=40
 #TRAINING MODULE
 losses= []
 training_stats = []
@@ -128,7 +135,7 @@ for e_num in range(epochs):
 
     model.train()
     for i in range(0, len(y_train), batch_size):
-        mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size) 
+        mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size,model.padding) 
         if len(y.shape)>1:
             optimizer.zero_grad()
             if model_name=="Match_LR":
@@ -164,7 +171,10 @@ for e_num in range(epochs):
         wrong=0
         loss_val=0
         for i in range(0, len(y_val)):
-            prediction = model(val_sub[i].unsqueeze(dim=0).float(), val_rev[i].unsqueeze(dim=0).float()).float()
+            if model_name=="Regression_Simple":
+                prediction = model(val_sub[i].unsqueeze(dim=0).float(), torch.mean(val_rev[i].unsqueeze(dim=0),dim=1).float()).float()
+            else:        
+                prediction = model(val_sub[i].unsqueeze(dim=0).float(), val_rev[i].unsqueeze(dim=0).float()).float()
             loss = criterion(prediction, y_val[i].argmax(dim=0).float())
             loss_val += loss.item()
             
@@ -198,27 +208,25 @@ df_stats = df_stats.set_index('epoch')
 print(df_stats)
 make_plot_training(df_stats,epochs)
 
-"""
-#code for test set evaluation part 
+
+# #Test after each epoch
+model.eval()
 with torch.no_grad():
-    model.eval()
     correct=0
     wrong=0
     loss_test=0
     for i in range(0, len(y_test)):
-        prediction = model(test_sub[i].unsqueeze(dim=1).float(), test_rev[i].T.float()).float()
-        loss = criterion(prediction, y_test[i].float())
+        prediction = model(test_sub[i].unsqueeze(dim=0).float(), test_rev[i].unsqueeze(dim=0).float()).float()
+        loss = criterion(prediction, y_test[i].argmax(dim=0).float())
         loss_test += loss.item()
-    
-        class_label = torch.round(prediction).squeeze(dim=0)
-        trg_label = y_test[i].argmax()
-        if class_label == trg_label:
-            correct += 1
-        else:
-            wrong += 1
-
+        
+        class_label = torch.round(prediction).squeeze(dim=0)#.argmax(dim=1)
+        trg_label = y_test[i].argmax(dim=0)
+        correct = correct + torch.sum(class_label==trg_label).item()
+        
     print("Test Loss:", loss_test/len(y_test), ": Test Accuracy:", correct/len(y_test))
-"""
+    print("========================================================")
+
 
 
 
