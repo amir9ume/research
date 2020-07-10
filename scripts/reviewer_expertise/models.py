@@ -30,6 +30,7 @@ class Match_LR(nn.Module):
                  batch_size,
                  n_classes,):
         super(Match_LR, self).__init__()
+        self.padding=False
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim = reviewer_emb_dim
         self.n_classes = n_classes
@@ -66,11 +67,12 @@ class Match_LR(nn.Module):
     
 
 
-class Match_Regression(nn.Module):
+class Regression_Attention_Over_docs(nn.Module):
     def __init__(self,submitter_emb_dim, reviewer_emb_dim,
                  batch_size, n_classes,):
-        super(Match_Regression, self).__init__()
+        super(Regression_Attention_Over_docs, self).__init__()
         
+        self.padding=True
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim = reviewer_emb_dim
         
@@ -137,3 +139,33 @@ class Match_Regression(nn.Module):
         out= self.w_out(combine)
         out= self.scale_sigmoid(out)
         return out.squeeze(dim=1)
+
+
+class Regression_Simple(nn.Module):
+    def __init__(self,submitter_emb_dim, reviewer_emb_dim,
+                 batch_size, n_classes,mode):
+
+        super(Regression_Simple, self).__init__()
+          
+        self.num_topics= 25
+        self.batch_size = batch_size
+        self.W= nn.Linear(1,1)        
+        self.mode=mode
+        self.padding=False
+
+    def bdot(self,a, b):
+        B = a.shape[0]
+        S = a.shape[1]
+        return torch.bmm(a.view(B, 1, S), b.view(B, S, 1)).reshape(-1)
+
+    def forward(self, submitter_emb, reviewer_emb):
+        #do the dot product thing you were doing before
+        # if self.mode=="mean":
+        #     rev= torch.mean(reviewer_emb,dim=1)
+        # elif self.mode=="max":
+        #     rev= torch.max(reviewer_emb,dim=1)
+            
+        x= self.bdot (submitter_emb, reviewer_emb)
+
+        y= self.W(x.unsqueeze(dim=1))
+        return (y.squeeze(dim=1))
