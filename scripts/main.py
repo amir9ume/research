@@ -38,12 +38,12 @@ paper_representation = pickle.load( open( data_path + 'dict_paper_lda_vectors.pi
 #df= pd.read_csv('../../neurips19_anon/anon_bids_file')
 
 bds_path='~/arcopy/neurips19_anon/anon_bids_file'
-df= utilities.get_bids_data_filtered(bds_path)
+df= utilities.get_bids_area_chair(bds_path)
 # df= pd.read_csv('~/arcopy/neurips19_anon/fake_small_data')
-df= utilities.get_equal_sized_data(df)
+#df= utilities.get_equal_sized_data(df)
 size= len(df.index)
 
-df= df[:int(0.001 * size)]
+#df= df[:int(0.001 * size)]
 print('data size is ', len(df.index))
 print(df.sample(3))
 
@@ -121,7 +121,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9)
 learning_rate = 1e-5
 #optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
 
-epochs=40
+epochs=200
 #TRAINING MODULE
 losses= []
 training_stats = []
