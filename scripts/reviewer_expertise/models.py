@@ -58,23 +58,20 @@ class Match_LR(nn.Module):
         #reviewer_f = self.fc_reviewer(reviewer_emb)
         add = submitter_emb + self.fc2(reviewer_emb)
         diff = submitter_emb - self.fc2(reviewer_emb)
-        multi = submitter_emb * (self.fc2(reviewer_emb))
-         
-        combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
-        combo= torch.sum(combo,dim=1)
+        multi = submitter_emb * (self.fc2(reviewer_emb))     
+     #   combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
+        combo = self.combined((self.weights_add * add) + (self.weights_diff * diff) + (self.weights_multi * multi))
         op = 3*torch.sigmoid(self.output(combo))
         return op.view(-1)
     
 
 
 class Regression_Attention_Over_docs(nn.Module):
-    def __init__(self,submitter_emb_dim, reviewer_emb_dim,
-                 batch_size, n_classes,):
+    def __init__(self,
+                 batch_size, n_classes,attn_flag=True, test_flag=True):
         super(Regression_Attention_Over_docs, self).__init__()
         
         self.padding=True
-        self.submitter_emb_dim = submitter_emb_dim
-        self.reviewer_emb_dim = reviewer_emb_dim
         
         #you need self.num_topics for now. You can call it in semantic embedding space  in future
         self.num_topics= 25
@@ -83,6 +80,9 @@ class Regression_Attention_Over_docs(nn.Module):
         self.n_classes = n_classes
         self.batch_size = batch_size        
         
+        self.attn_flag= attn_flag
+        self.test_flag= test_flag
+
         self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
         self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
         self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
@@ -120,22 +120,32 @@ class Regression_Attention_Over_docs(nn.Module):
 
     #forward is actually defining the equation
     def forward(self, submitter_emb, reviewer_emb):    
+        if self.attn_flag:
+            Q= self.W_Q(submitter_emb)
+        #    Q=self.batch_norm(Q)
+            K= self.W_K(reviewer_emb)
+            V= self.W_V(reviewer_emb)
+            
 
-        Q= self.W_Q(submitter_emb)
-        Q=self.batch_norm(Q)
-        K= self.W_K(reviewer_emb)
-        V= self.W_V(reviewer_emb)
+            #matrix multiplication QxK.T , same as in the paper
+            normalizing_factor= (math.sqrt(self.attention_matrix_size))
+            e= torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1))/normalizing_factor
+            
+            if self.test_flag:
+                ww=torch.bmm(e, reviewer_emb)
+                x= self.W_V(ww).squeeze(dim=1)
+            else:
+                softm= torch.nn.Softmax(dim=2)
+                a=softm(e)
+                attn_output= torch.bmm(a,V)
+                x= torch.sum(attn_output,dim=1)
+            #    x=self.batch_norm(x)
+            combine= torch.cat((x,self.w_submitted(submitter_emb)),dim=1 )
+        else:
+            x= torch.mean(reviewer_emb,dim=1)
+            combine= torch.cat((self.W_V(x),self.w_submitted(submitter_emb)),dim=1 )
         
-
-        #matrix multiplication QxK.T , same as in the paper
-        normalizing_factor= (math.sqrt(self.attention_matrix_size))
-        e= torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1))/normalizing_factor
-        softm= torch.nn.Softmax(dim=2)
-        a=softm(e)
-        attn_output= torch.bmm(a,V)
-        x= torch.sum(attn_output,dim=1)
-        x=self.batch_norm(x)
-        combine= torch.cat((x,self.w_submitted(submitter_emb)),dim=1 )        
+                
         out= self.w_out(combine)
         out= self.scale_sigmoid(out)
         return out.squeeze(dim=1)
@@ -159,13 +169,6 @@ class Regression_Simple(nn.Module):
         return torch.bmm(a.view(B, 1, S), b.view(B, S, 1)).reshape(-1)
 
     def forward(self, submitter_emb, reviewer_emb):
-        #do the dot product thing you were doing before
-        # if self.mode=="mean":
-        #     rev= torch.mean(reviewer_emb,dim=1)
-        # elif self.mode=="max":
-        #     rev= torch.max(reviewer_emb,dim=1)
-            
         x= self.bdot (submitter_emb, reviewer_emb)
-
         y= self.W(x.unsqueeze(dim=1))
         return (y.squeeze(dim=1))
