@@ -21,7 +21,11 @@ import os
 #%matplotlib inline
 import sys
 sys.path.insert(1, '../')
+
 import utilities
+
+from reviewer_expertise.pytorchtools import EarlyStopping
+
 
 torch.manual_seed(1)
 
@@ -31,11 +35,12 @@ r= os.getcwd()
 print(os.getcwd())
 data_path = '../data_info/loaded_pickles_nips19/'
 
+flag_early_stopping=False
 
 rep='LDA'
 #rep='BOW'
-#model_name="Regression_Attention_Over_docs"
-model_name="Match_LR"
+model_name="Regression_Attention_Over_docs"
+#model_name="Match_LR"
 #model_name= "Regression_Simple"
 
 if rep=='BOW':
@@ -52,12 +57,10 @@ else:
 bds_path='~/arcopy/neurips19_anon/anon_bids_file'
 bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
 df= pd.read_csv(bds_path)
-# df= pd.read_csv('~/arcopy/neurips19_anon/fake_small_data')
 #df= utilities.get_equal_sized_data(df)
 df=df.sample(frac=1)
 size= len(df.index)
 
-#df= df[:int(0.001 * size)]
 print('data size is ', len(df.index))
 print(df.sample(3))
 
@@ -125,7 +128,6 @@ def get_batch_eval(paper_emb, rev_emb, trg_value, idx, batch_size,padding):
     return paper_lines.float(), reviewer_papers.float(), trg    
 
 
-#wonder what the shapes of submitter hid and reviewer hid can be::
 if rep=="BOW":
     data_sub, data_rev, data_y, submitter_ids, reviewer_ids = prepare_data_bow(paper_representation, reviewer_representation, df)
 else:
@@ -147,54 +149,48 @@ y_train = data_y[:train_length]
 y_val= data_y[train_length:(train_length+val_length)]
 y_test = data_y[train_length+val_length:]
 
-"""
-# Calculate the number of samples to include in each set.
-train_size = int(0.7 * len(data_sub))
-val_size= int(0.15* len(data_sub))
-test_size = len(data_sub) - train_size - val_size
-
-
-# Divide the dataset by randomly selecting samples.
-from torch.utils.data import TensorDataset, random_split
-
-train_sub, val_sub, test_sub = random_split(data_sub, [train_size, val_size, test_size])
-train_rev, val_rev, test_rev = random_split(data_rev, [train_size, val_size, test_size])
-
-print('{:>5,} training samples'.format(train_size))
-print('{:>5,} validation samples'.format(val_size))
-print('{:>5,} test samples'.format(test_size))
-
-y_train = data_y[:train_size]
-y_val= data_y[train_size:(train_size+val_size)]
-y_test = data_y[train_size+val_size:]
-"""
 
 batch_size=16
+patience=5
+
+flag_attn= True
 
 if model_name=="Match_LR": #Match LR is Meghana's model
     model= Match_LR(25,25,batch_size,4)
 elif model_name=="Regression_Attention_Over_docs":
-    model=Regression_Attention_Over_docs(25,25,batch_size,4)
+    model=Regression_Attention_Over_docs(batch_size,4,flag_attn,True)
 elif model_name=="Regression_Simple":
     model= Regression_Simple(25,25,batch_size,4,"mean")
-  
-criterion = torch.nn.MSELoss(reduction='sum') 
-optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9) 
-learning_rate = 1e-5
-#optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
 
-epochs=5
+
+
+criterion = torch.nn.MSELoss(reduction='sum') 
+ 
+if model_name in ["Regression_Attention_Over_docs"]:
+   # learning_rate = 1e-5
+   # optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
+    optimizer = torch.optim.SGD(model.parameters(), lr = 0.0001,momentum=0.9)
+    epochs=30
+else:
+    optimizer = torch.optim.SGD(model.parameters(), lr = 0.001,momentum=0.9)
+    epochs=80
+
+
+
 #TRAINING MODULE
 losses= []
 training_stats = []
-print('Model Name ',model_name)
+print('Model Name ',model_name, ' -- representation used --', rep)
+
+PATH=rep+'_'+model_name+'_flag_attn_'+str(flag_attn)+'_epochs_'+str(epochs)
+
 for e_num in range(epochs):
     loss_ep = 0
     correct=0
     wrong=0
     # Measure how long the training epoch takes.
     t0 = time.time()
-
+    early_stopping = EarlyStopping(patience=patience, verbose=True)
     model.train()
     for i in range(0, len(y_train), batch_size):
         mini_batch_submitted_paper, mini_batch_reviewer_paper, y = get_batch_eval(train_sub, train_rev, y_train, i, batch_size,model.padding) 
@@ -213,17 +209,10 @@ for e_num in range(epochs):
             trg_label = y.argmax(dim=1)
             correct = correct + torch.sum(class_label==trg_label).item()
 
-            #checking gradients
-            # for name, param in model.named_parameters():
-            #     if param.requires_grad:
-            #         print(name , '===========\gradient', param.grad)
-            #     #    print(name, '=========\weight',param)
                     
     losses.append(loss_ep/len(y_train))
-         #   losses.append(loss_ep)
     # Measure how long this epoch took.
     training_time = format_time(time.time() - t0)
-
     print("Epoch:", e_num, " Loss:", losses[-1], ": Train Accuracy:", correct/len(y_train), "  Training epcoh took: {:}".format(training_time))
 
     # #Validate after each epoch
@@ -246,12 +235,26 @@ for e_num in range(epochs):
             
             class_label = torch.round(prediction).squeeze(dim=0)#.argmax(dim=1)
             trg_label = y_val[i].argmax(dim=0)
-            correct = correct + torch.sum(class_label==trg_label).item()
+            if rep=="LDA" and model_name=="Match_LR":
+                if class_label==trg_label:
+                    correct= correct+1
+            else:      
+                correct = correct + torch.sum(class_label==trg_label).item()
             
         print("Validation Loss:", loss_val/len(y_val), ": Validation Accuracy:", correct/len(y_val))
         print("========================================================")
-        
-        
+        # early_stopping needs the validation loss to check if it has decresed, 
+        # and if it has, it will make a checkpoint of the current model
+        if flag_early_stopping:
+            early_stopping(loss_val/len(y_val), model)
+            
+            if early_stopping.early_stop:
+                print("Early stopping")
+                break
+            
+            # load the last checkpoint with the best model
+            model.load_state_dict(torch.load('checkpoint.pt'))
+            
         training_stats.append(
         {
             'epoch': e_num ,
@@ -262,6 +265,11 @@ for e_num in range(epochs):
             }
     )
 
+PATH=rep+'_'+model_name+'_flag_attn_'+str(flag_attn)+'_epochs_'+str(epochs)
+torch.save(model.state_dict(), PATH)
+
+model = Regression_Attention_Over_docs(batch_size,4,flag_attn,True)
+model.load_state_dict(torch.load(PATH))
 
 
 # Display floats with two decimal places.
@@ -303,12 +311,17 @@ with torch.no_grad():
         y_true[i]=class_label
         y_pred[i]= trg_label
         
-        correct = correct + torch.sum(class_label==trg_label).item()
+        if class_label==trg_label:
+            correct= correct+1
+        else:
+            correct = correct + torch.sum(class_label==trg_label).item()
         
     print("Test Loss:", loss_test/len(y_test), ": Test Accuracy:", correct/len(y_test))
     print("========================================================")
     cm=confusion_matrix(y_true,y_pred)
     print(cm)
+
+
 
 
 
