@@ -24,25 +24,35 @@ torch.manual_seed(1)
 
 
 class Match_LR(nn.Module):
-    def __init__(self,
-                 submitter_emb_dim,
-                 reviewer_emb_dim,
-                 batch_size,
-                 n_classes,):
+    def __init__(self,batch_size,submitter_emb_dim,reviewer_emb_dim,
+                 n_classes,attn_over_docs=True):
         super(Match_LR, self).__init__()
+        self.attn_over_docs=attn_over_docs
         self.padding=False
-        self.submitter_emb_dim = submitter_emb_dim
-        self.reviewer_emb_dim = reviewer_emb_dim
         self.n_classes = n_classes
         self.batch_size = batch_size
+        self.submitter_emb_dim = submitter_emb_dim
+        self.reviewer_emb_dim= reviewer_emb_dim
+        
         self.weights_add = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
         self.weights_diff = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
         self.weights_multi = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
         
         self.fc2 = nn.Linear(self.reviewer_emb_dim, self.reviewer_emb_dim)
         self.output = nn.Linear(128, 1)
-        self.combined = nn.Linear(self.submitter_emb_dim, 128)
-    
+        self.combined = nn.Linear(self.submitter_emb_dim, 128)   
+        
+        self.dropout= nn.Dropout(p=0.2)
+
+        if self.attn_over_docs:
+            self.padding=True
+            #For now num_topics dim is hardcoded. but change it to shape of hidden/embedding in future
+            self.num_topics= 25
+            self.attention_matrix_size= 20
+            self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
+            self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
+            self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
+            self.padding=True
         self.init_weights()
         
     def init_weights(self):
@@ -52,20 +62,45 @@ class Match_LR(nn.Module):
         self.weights_add.data.uniform_(-initrange, initrange)
         self.weights_diff.data.uniform_(-initrange, initrange)
         self.weights_multi.data.uniform_(-initrange, initrange)
-        
+
+    def element_wise_mul(self,input1, input2):
+        feature_list = []
+        for feature_1, feature_2 in zip(input1, input2):
+            #feature_2 = feature_2.unsqueeze(1).expand_as(feature_1)
+            feature = feature_1 * feature_2
+            feature_list.append(feature.unsqueeze(0))
+        output = torch.cat(feature_list, 0)
+        return torch.sum(output, 2)
+
+
+    def attention_weighted_average(self, submitter_emb, reviewer_emb):
+        Q= self.W_Q(submitter_emb)
+        K= self.W_K(reviewer_emb)
+        #K= self.dropout(K)
+        normalizing_factor= (math.sqrt(self.attention_matrix_size))
+        e= (torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1)) /normalizing_factor )
+      #  e= self.dropout(e)           
+        ww= self.element_wise_mul(e,reviewer_emb.permute(0,2,1))
+        return ww
+
+
     def forward(self, submitter_emb, reviewer_emb):
-        #submitter_f = self.fc_submitter(submitter_emb)
-        #reviewer_f = self.fc_reviewer(reviewer_emb)
+        if self.attn_over_docs==True:
+            reviewer_emb= self.attention_weighted_average(submitter_emb, reviewer_emb)
+
         add = submitter_emb + self.fc2(reviewer_emb)
         diff = submitter_emb - self.fc2(reviewer_emb)
         multi = submitter_emb * (self.fc2(reviewer_emb))     
-     #   combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
-        combo = self.combined((self.weights_add * add) + (self.weights_diff * diff) + (self.weights_multi * multi))
+        
+        #commenting out multi term for the moment
+      #  combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
+        combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff)) #+ nn.Tanh()(self.weights_multi * multi))
         op = 3*torch.sigmoid(self.output(combo))
         return op.view(-1)
     
+        
 
-
+    
 class Regression_Attention_Over_docs(nn.Module):
     def __init__(self,
                  batch_size, n_classes,attn_flag=True, test_flag=True):
@@ -102,18 +137,6 @@ class Regression_Attention_Over_docs(nn.Module):
         
     #    self.w_out.weight.data.uniform_(0,3)
         self.w_out.bias.data.fill_(1)
-
-
-    #this tanh activation could be squashing everything. And hence no gradient flow beyond it
-    def mapping_to_target_range( self, x, target_min=-0.5, target_max=3.41 ) :
-        x02 = torch.tanh(x) + 1 # x in range(0,2)
-        scale = ( target_max-target_min )/2.
-        return  x02 * scale + target_min
-
-    def scaling_different(self, x):
-        x -= x.min()
-        x /= x.max()
-        return x * 3
 
     def scale_sigmoid(self,x):
         return 3*torch.sigmoid(x)
