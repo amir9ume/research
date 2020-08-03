@@ -174,3 +174,78 @@ def make_plot_training(df_stats,epochs):
 
     plt.show()
 
+
+def prepare_fake_data(submitter, reviewer, df, gpu_flag=False):
+    train_data_sub = []
+    train_data_rev = []
+    submit = submitter.keys()
+    submitter_ids = []
+    reviewer_ids = []
+    rev = reviewer.keys()
+    labels = []
+    for i in range(len(df)):
+        pid_curr= str(df.iloc[i]['pid'])
+        rev_curr=    str(df.iloc[i]['anon_id']) 
+        if pid_curr  in submit and rev_curr in reviewer:
+            #maybe just sample 1 of the reviewer papers, as sub paper
+            np.random.shuffle(reviewer[rev_curr])
+            train_data_sub.append(torch.tensor(reviewer[rev_curr][0],requires_grad=True))#.cuda()
+            train_data_rev.append(torch.tensor(reviewer[rev_curr], requires_grad=True))#.cuda()
+            idx = int(df.iloc[i]['bid'])
+            #and make sure you change this bid value to 2 or 3
+            temp = torch.LongTensor([0, 0, 0, 1])#.cuda()            
+            # for i in range(4):
+            #     if i == idx:
+            #         temp[i] = 1
+            labels.append(temp)
+            submitter_ids.append(df.iloc[i]['pid'])
+            reviewer_ids.append(df.iloc[i]['anon_id'])
+    return train_data_sub, train_data_rev, labels, submitter_ids, reviewer_ids
+
+
+
+
+def get_fake_train_test_data_from_hidden_representations(rep,data_path):
+
+    if rep=='BOW':
+        folder='reviewer_expertise/summary_models/'
+        reviewer_representation= pickle.load( open( folder+ 'ac_reviewer_bag_words_tensor_nips19', "rb" ))
+        paper_representation= pickle.load(open(folder+'submitted_paper_bag_words_tensor_nips19','rb'))
+    else:
+        reviewer_representation = pickle.load( open( data_path+ 'dict_all_reviewer_lda_vectors.pickle', "rb" ))
+        paper_representation = pickle.load( open( data_path + 'dict_paper_lda_vectors.pickle', "rb" ))
+
+
+    bds_path='~/arcopy/neurips19_anon/anon_bids_file'
+    bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
+    df= pd.read_csv(bds_path)
+    df=df.sample(frac=1)
+    size= len(df.index)
+
+    print('data size is ', len(df.index))
+    print(df.sample(3))
+
+
+    if rep=="BOW":
+        "print can't do this BOW data for now"
+    else:
+        data_sub, data_rev, data_y, submitter_ids, reviewer_ids = prepare_fake_data(paper_representation, reviewer_representation, df)
+
+
+    train_length = int(0.7*len(data_sub))
+    val_length= int(.15*len(data_sub))
+    test_length = len(data_sub) - train_length - val_length 
+
+    train_sub = data_sub[:train_length]
+    val_sub= data_sub[train_length: (train_length+val_length)]
+    test_sub = data_sub[train_length+val_length:]
+
+    train_rev = data_rev[:train_length]
+    val_rev= data_rev[train_length: (train_length+val_length)]
+    test_rev = data_rev[train_length+val_length:]
+
+    y_train = data_y[:train_length]
+    y_val= data_y[train_length:(train_length+val_length)]
+    y_test = data_y[train_length+val_length:]
+
+    return train_sub,val_sub,test_sub, train_rev,val_rev,test_rev,y_train,y_val,y_test
