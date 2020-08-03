@@ -29,8 +29,10 @@ else:
     batch_size=int(params[-1])
 
     data_path = '../data_info/loaded_pickles_nips19/'
-    train_sub,val_sub,test_sub, train_rev,val_rev,test_rev,y_train,y_val,y_test=get_train_test_data_from_hidden_representations(rep,data_path)
-
+    test_sub= torch.load('test_sub.pt')
+    test_rev=torch.load('test_rev.pt')
+    y_test=torch.load('y_test.pt')
+     
     
     model = Match_LR(batch_size,25,25,4,Attention_over_docs)
     model.load_state_dict(torch.load(model_path))
