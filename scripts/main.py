@@ -4,6 +4,7 @@ from torch.autograd import Variable
 import math
 import torch.nn.functional as F
 import numpy as np
+import pandas as pd
 import os
 import time
 import datetime
@@ -31,12 +32,17 @@ flag_early_stopping=False
 
 rep='LDA'
 #rep='BOW'
-#model_name="Regression_Attention_Over_docs"
-model_name="Match_LR"
+model_name="Regression_Attention_Over_docs"
+#model_name="Match_LR"
 #model_name= "Regression_Simple"
 
 
 train_sub,val_sub,test_sub, train_rev,val_rev,test_rev,y_train,y_val,y_test= get_train_test_data_from_hidden_representations(rep,data_path)
+
+#saving test data, for later evaluation
+torch.save(test_sub, 'test_sub.pt')
+torch.save(test_rev, 'test_rev.pt')
+torch.save(y_test, 'y_test.pt')
 
 batch_size=16
 patience=5
@@ -58,7 +64,7 @@ if model_name in ["Regression_Attention_Over_docs"]:
   #  learning_rate = 1e-5
   #  optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
     optimizer = torch.optim.SGD(model.parameters(), lr = 0.0001,momentum=0.9)
-    epochs=30
+    epochs=3
 else:
    # learning_rate = 1e-5
    # optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  
@@ -71,8 +77,11 @@ else:
 losses= []
 training_stats = []
 print('Model Name ',model_name, ' -- representation used --', rep)
-
-PATH=rep+'_'+model_name+'_flag_attn_'+str(Attention_over_docs)+'_epochs_'+str(epochs)
+use_pre_trained_attention=False
+if use_pre_trained_attention:
+    path_pre_trained=""
+    #pass pre-trained weights to a particular layer. see how to do this.
+    torch.load()
 
 for e_num in range(epochs):
     loss_ep = 0
@@ -161,7 +170,7 @@ for e_num in range(epochs):
             }
     )
 
-PATH=rep+'_'+model_name+'_flag_attn_'+str(Attention_over_docs)+'_epochs_'+str(epochs)
+PATH=rep+'-'+model_name+'-flag_attn-'+str(Attention_over_docs)+'-epochs-'+str(epochs)+'-batch_size-'+str(batch_size)
 torch.save(model.state_dict(), PATH)
 
 # model = Match_LR(batch_size,25,25,4,Attention_over_docs)
@@ -179,44 +188,6 @@ df_stats = df_stats.set_index('epoch')
 
 print(df_stats)
 make_plot_training(df_stats,epochs)
-
-
-model.eval()
-y_true= np.zeros(len(y_test))
-y_pred= np.zeros(len(y_test))
-with torch.no_grad():
-    correct=0
-    wrong=0
-    loss_test=0
-    for i in range(0, len(y_test)):
-        if model_name=="Regression_Simple" and rep!="BOW":
-                prediction = model(test_sub[i].unsqueeze(dim=0).float(), torch.mean(test_rev[i].unsqueeze(dim=0),dim=1).float()).float()
-        elif rep=="BOW":
-            prediction = model(test_sub[i].unsqueeze(dim=0).float(), test_rev[i].unsqueeze(dim=0).float()).float()
-        elif rep=="LDA" and model_name=="Match_LR" and model.padding==False:
-            prediction = model(test_sub[i].unsqueeze(dim=0).float(), torch.mean(test_rev[i].unsqueeze(dim=0),dim=1).float()).float()[0]
-        else:        
-            prediction = model(test_sub[i].unsqueeze(dim=0).float(), test_rev[i].unsqueeze(dim=0).float()).float()        
-        loss = criterion(prediction, y_test[i].argmax(dim=0).float())
-        loss_test += loss.item()
-        
-        class_label = torch.round(prediction).squeeze(dim=0)#.argmax(dim=1)
-        trg_label = y_test[i].argmax(dim=0)
-        
-        y_true[i]=class_label
-        y_pred[i]= trg_label
-        
-        if class_label==trg_label:
-            correct= correct+1
-        else:
-            correct = correct + torch.sum(class_label==trg_label).item()
-        
-    print("Test Loss:", loss_test/len(y_test), ": Test Accuracy:", correct/len(y_test))
-    print("========================================================")
-    cm=confusion_matrix(y_true,y_pred)
-    print(cm)
-
-
 
 
 
