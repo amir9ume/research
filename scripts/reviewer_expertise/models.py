@@ -130,63 +130,27 @@ class Regression_Attention_Over_docs(nn.Module):
         self.padding=True
         self.num_topics= 25
         self.attention_matrix_size= 20
-
-#        self.n_classes = n_classes
         self.batch_size = batch_size        
         
         self.attn_flag= attn_flag
         self.test_flag= test_flag
-
-        self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
-        self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
-        self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
-        
-        self.batch_norm= torch.nn.BatchNorm1d(self.attention_matrix_size)
+    
         self.w_submitted= nn.Linear(self.num_topics,self.attention_matrix_size)
-        self.w_out= nn.Linear(self.attention_matrix_size*2,1)
- 
-    def init_weights(self):
-        initrange = 0.1
-        # self.W_K.weight.data.uniform_(-initrange, initrange)
-        # self.W_Q.weight.data.uniform_(-initrange, initrange)
-        # self.W_V.weight.data.uniform_(-initrange, initrange)
-        
-    #    self.w_out.weight.data.uniform_(0,3)
-        self.w_out.bias.data.fill_(1)
+        self.w_out= nn.Linear(self.num_topics*2,1)
+        if self.attn_flag:
+            self.attention_module=Attention_Module(self.num_topics, self.attention_matrix_size)
+    
 
-    def scale_sigmoid(self,x):
-        return 3*torch.sigmoid(x)
-
-    #forward is actually defining the equation
     def forward(self, submitter_emb, reviewer_emb):    
         if self.attn_flag:
-            Q= self.W_Q(submitter_emb)
-        #    Q=self.batch_norm(Q)
-            K= self.W_K(reviewer_emb)
-            V= self.W_V(reviewer_emb)
-            
-
-            #matrix multiplication QxK.T , same as in the paper
-            normalizing_factor= (math.sqrt(self.attention_matrix_size))
-            e= torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1))/normalizing_factor
-            
-            if self.test_flag:
-                ww=torch.bmm(e, reviewer_emb)
-                x= self.W_V(ww).squeeze(dim=1)
-            else:
-                softm= torch.nn.Softmax(dim=2)
-                a=softm(e)
-                attn_output= torch.bmm(a,V)
-                x= torch.sum(attn_output,dim=1)
-            #    x=self.batch_norm(x)
-            combine= torch.cat((x,self.w_submitted(submitter_emb)),dim=1 )
+            x=self.attention_module(submitter_emb,reviewer_emb)
+            combine= torch.cat((x,(submitter_emb)),dim=1 )
         else:
             x= torch.mean(reviewer_emb,dim=1)
             combine= torch.cat((self.W_V(x),self.w_submitted(submitter_emb)),dim=1 )
-        
-                
+                        
         out= self.w_out(combine)
-        out= self.scale_sigmoid(out)
+        out= 3*torch.sigmoid(out)
         return out.squeeze(dim=1)
 
 
