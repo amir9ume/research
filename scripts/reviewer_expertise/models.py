@@ -21,6 +21,34 @@ import os
 
 torch.manual_seed(1)
 
+class Attention_Module(nn.Module):
+    def __init__(self,num_topics,attention_matrix_size,dropout):
+        super(Attention_Module,self).__init__()
+        self.num_topics= num_topics
+        self.attention_matrix_size= attention_matrix_size
+        self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
+        self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
+        self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
+        self.padding=True
+        self.dropout=dropout
+
+    def element_wise_mul(self,input1, input2):
+        feature_list = []
+        for feature_1, feature_2 in zip(input1, input2):
+            #feature_2 = feature_2.unsqueeze(1).expand_as(feature_1)
+            feature = feature_1 * feature_2
+            feature_list.append(feature.unsqueeze(0))
+        output = torch.cat(feature_list, 0)
+        return torch.sum(output, 2)
+
+    def forward(self, submitter_emb, reviewer_emb):
+        Q= self.W_Q(submitter_emb)
+        K= self.W_K(reviewer_emb)
+        K= self.dropout(K)
+        normalizing_factor= (math.sqrt(self.attention_matrix_size))
+        e= (torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1)) /normalizing_factor )
+        ww= self.element_wise_mul(e,reviewer_emb.permute(0,2,1))
+        return ww
 
 
 class Match_LR(nn.Module):
@@ -46,14 +74,8 @@ class Match_LR(nn.Module):
 
         if self.attn_over_docs:
             self.padding=True
-            #For now num_topics dim is hardcoded. but change it to shape of hidden/embedding in future
-            self.num_topics= 25
-            self.attention_matrix_size= 20
-            self.W_Q= nn.Linear(self.num_topics,self.attention_matrix_size )
-            self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
-            self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
-            self.padding=True
-        self.init_weights()
+            self.attention_module= Attention_Module(25,20,self.dropout)#num_topics,attention_matrix_size
+            self.init_weights()
         
     def init_weights(self):
         initrange = 4.0
@@ -63,31 +85,11 @@ class Match_LR(nn.Module):
         self.weights_diff.data.uniform_(-initrange, initrange)
         self.weights_multi.data.uniform_(-initrange, initrange)
 
-    def element_wise_mul(self,input1, input2):
-        feature_list = []
-        for feature_1, feature_2 in zip(input1, input2):
-            #feature_2 = feature_2.unsqueeze(1).expand_as(feature_1)
-            feature = feature_1 * feature_2
-            feature_list.append(feature.unsqueeze(0))
-        output = torch.cat(feature_list, 0)
-        return torch.sum(output, 2)
-
-
-    def attention_weighted_average(self, submitter_emb, reviewer_emb):
-        Q= self.W_Q(submitter_emb)
-        K= self.W_K(reviewer_emb)
-        #K= self.dropout(K)
-        normalizing_factor= (math.sqrt(self.attention_matrix_size))
-        e= (torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1)) /normalizing_factor )
-      #  e= self.dropout(e)           
-        ww= self.element_wise_mul(e,reviewer_emb.permute(0,2,1))
-        return ww
-
-
+    
     def forward(self, submitter_emb, reviewer_emb):
         if self.attn_over_docs==True:
-            reviewer_emb= self.attention_weighted_average(submitter_emb, reviewer_emb)
-
+            reviewer_emb= self.attention_module(submitter_emb, reviewer_emb)
+       
         add = submitter_emb + self.fc2(reviewer_emb)
         diff = submitter_emb - self.fc2(reviewer_emb)
         multi = submitter_emb * (self.fc2(reviewer_emb))     
@@ -98,9 +100,7 @@ class Match_LR(nn.Module):
         op = 3*torch.sigmoid(self.output(combo))
         return op.view(-1)
     
-        
-
-    
+            
 class Regression_Attention_Over_docs(nn.Module):
     def __init__(self,
                  batch_size, n_classes,attn_flag=True, test_flag=True):
