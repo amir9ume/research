@@ -14,15 +14,11 @@ import pickle
 import numpy as np
 from scipy.stats import entropy
 import os
-#%matplotlib inline
-# import sys
-# sys.path.insert(1, '../')
-# import utilities
 
 torch.manual_seed(1)
 
 class Attention_Module(nn.Module):
-    def __init__(self,num_topics,attention_matrix_size,dropout):
+    def __init__(self,num_topics,attention_matrix_size):
         super(Attention_Module,self).__init__()
         self.num_topics= num_topics
         self.attention_matrix_size= attention_matrix_size
@@ -30,7 +26,9 @@ class Attention_Module(nn.Module):
         self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
         self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
         self.padding=True
-        self.dropout=dropout
+       # self.dropout=dropout
+
+   # def init_weights(self):
 
     def element_wise_mul(self,input1, input2):
         feature_list = []
@@ -41,14 +39,36 @@ class Attention_Module(nn.Module):
         output = torch.cat(feature_list, 0)
         return torch.sum(output, 2)
 
+
     def forward(self, submitter_emb, reviewer_emb):
         Q= self.W_Q(submitter_emb)
         K= self.W_K(reviewer_emb)
-        K= self.dropout(K)
+     #   K= self.dropout(K)
         normalizing_factor= (math.sqrt(self.attention_matrix_size))
         e= (torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1)) /normalizing_factor )
         ww= self.element_wise_mul(e,reviewer_emb.permute(0,2,1))
         return ww
+
+class Multi_Head_Attention(nn.Module):
+    def __init__(self,number_attention_heads,num_topics,attention_matrix_size):
+        super(Multi_Head_Attention,self).__init__()
+        self.number_attention_heads= number_attention_heads
+        self.num_topics= num_topics
+        self.attention_matrix_size= attention_matrix_size
+        #as the output from this multi-head should always be a fixed final size
+        self.w_out= nn.Linear(20,1)
+
+        self.heads= nn.ModuleList()
+        for i in range(self.number_attention_heads):
+            self.heads.append(Attention_Module(self.num_topics, self.attention_matrix_size))
+        
+    def forward(self, submitter_emb, reviewer_emb):
+        x= []
+        for i in range(self.number_attention_heads):
+            x.append(self.heads[i](submitter_emb,reviewer_emb))
+        z= torch.stack(x,dim=1)
+        o= torch.sum(z,dim=1)
+        return o
 
 
 class Match_LR(nn.Module):
@@ -74,7 +94,8 @@ class Match_LR(nn.Module):
 
         if self.attn_over_docs:
             self.padding=True
-            self.attention_module= Attention_Module(25,20,self.dropout)#num_topics,attention_matrix_size
+          #  self.attention_module= Attention_Module(25,20)#num_topics,attention_matrix_size
+            self.attention_module=Multi_Head_Attention(6,25,20)
             self.init_weights()
         
     def init_weights(self):
@@ -107,12 +128,10 @@ class Regression_Attention_Over_docs(nn.Module):
         super(Regression_Attention_Over_docs, self).__init__()
         
         self.padding=True
-        
-        #you need self.num_topics for now. You can call it in semantic embedding space  in future
         self.num_topics= 25
         self.attention_matrix_size= 20
 
-        self.n_classes = n_classes
+#        self.n_classes = n_classes
         self.batch_size = batch_size        
         
         self.attn_flag= attn_flag
@@ -123,12 +142,9 @@ class Regression_Attention_Over_docs(nn.Module):
         self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
         
         self.batch_norm= torch.nn.BatchNorm1d(self.attention_matrix_size)
-
         self.w_submitted= nn.Linear(self.num_topics,self.attention_matrix_size)
-        #for now treat it as a regression problem , instead of a class prediction problem
         self.w_out= nn.Linear(self.attention_matrix_size*2,1)
-    #    self.init_weights()
-
+ 
     def init_weights(self):
         initrange = 0.1
         # self.W_K.weight.data.uniform_(-initrange, initrange)
