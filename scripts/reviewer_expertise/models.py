@@ -18,7 +18,7 @@ import os
 torch.manual_seed(1)
 
 class Attention_Module(nn.Module):
-    def __init__(self,num_topics,attention_matrix_size):
+    def __init__(self,num_topics,attention_matrix_size,dropout):
         super(Attention_Module,self).__init__()
         self.num_topics= num_topics
         self.attention_matrix_size= attention_matrix_size
@@ -26,7 +26,7 @@ class Attention_Module(nn.Module):
         self.W_K= nn.Linear(self.num_topics,self.attention_matrix_size )
         self.W_V = nn.Linear(self.num_topics,self.attention_matrix_size)
         self.padding=True
-       # self.dropout=dropout
+        self.dropout=dropout
 
    # def init_weights(self):
 
@@ -43,33 +43,37 @@ class Attention_Module(nn.Module):
     def forward(self, submitter_emb, reviewer_emb):
         Q= self.W_Q(submitter_emb)
         K= self.W_K(reviewer_emb)
-     #   K= self.dropout(K)
         normalizing_factor= (math.sqrt(self.attention_matrix_size))
         e= (torch.bmm(Q.unsqueeze(dim=1),K.permute(0,2,1)) /normalizing_factor )
+    #    e=F.softmax(e)
+       # e= self.dropout(e)
         ww= self.element_wise_mul(e,reviewer_emb.permute(0,2,1))
         return ww
 
 class Multi_Head_Attention(nn.Module):
-    def __init__(self,number_attention_heads,num_topics,attention_matrix_size):
+    def __init__(self,number_attention_heads,num_topics,attention_matrix_size,dropout):
         super(Multi_Head_Attention,self).__init__()
         self.number_attention_heads= number_attention_heads
         self.num_topics= num_topics
         self.attention_matrix_size= attention_matrix_size
+        self.dropout= dropout
         #as the output from this multi-head should always be a fixed final size
-        self.w_out= nn.Linear(20,1)
+        self.w_out= nn.Linear(self.number_attention_heads*self.num_topics,self.num_topics)
 
         self.heads= nn.ModuleList()
         for i in range(self.number_attention_heads):
-            self.heads.append(Attention_Module(self.num_topics, self.attention_matrix_size))
+            self.heads.append(Attention_Module(self.num_topics, self.attention_matrix_size,dropout))
         
     def forward(self, submitter_emb, reviewer_emb):
         x= []
         for i in range(self.number_attention_heads):
             x.append(self.heads[i](submitter_emb,reviewer_emb))
-        z= torch.stack(x,dim=1)
-        o= torch.sum(z,dim=1)
+        z=torch.cat(x,dim=1)
+        o= self.w_out(z)
+        o= self.dropout(o)
+        #z= torch.stack(x,dim=1)
+        #o= torch.sum(z,dim=1)
         return o
-
 
 class Match_LR(nn.Module):
     def __init__(self,batch_size,submitter_emb_dim,reviewer_emb_dim,
@@ -90,12 +94,15 @@ class Match_LR(nn.Module):
         self.output = nn.Linear(128, 1)
         self.combined = nn.Linear(self.submitter_emb_dim, 128)   
         
+        self.number_heads=1
         self.dropout= nn.Dropout(p=0.2)
 
         if self.attn_over_docs:
             self.padding=True
-          #  self.attention_module= Attention_Module(25,20)#num_topics,attention_matrix_size
-            self.attention_module=Multi_Head_Attention(6,25,20)
+            if self.number_heads==1:
+                self.attention_module= Attention_Module(25,20,self.dropout)#num_topics,attention_matrix_size
+            else:
+                self.attention_module=Multi_Head_Attention(self.number_heads,25,20,self.dropout)
             self.init_weights()
         
     def init_weights(self):
@@ -134,11 +141,12 @@ class Regression_Attention_Over_docs(nn.Module):
         
         self.attn_flag= attn_flag
         self.test_flag= test_flag
-    
+        self.dropout= nn.Dropout(p=0.5)
+
         self.w_submitted= nn.Linear(self.num_topics,self.attention_matrix_size)
         self.w_out= nn.Linear(self.num_topics*2,1)
         if self.attn_flag:
-            self.attention_module=Attention_Module(self.num_topics, self.attention_matrix_size)
+            self.attention_module=Attention_Module(self.num_topics, self.attention_matrix_size,self.dropout)
     
 
     def forward(self, submitter_emb, reviewer_emb):    
@@ -175,3 +183,6 @@ class Regression_Simple(nn.Module):
         x= self.bdot (submitter_emb, reviewer_emb)
         y= self.W(x.unsqueeze(dim=1))
         return (y.squeeze(dim=1))
+
+
+        
