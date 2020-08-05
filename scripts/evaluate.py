@@ -17,8 +17,10 @@ from scipy.stats import entropy
 from reviewer_expertise.models import Match_LR,Regression_Attention_Over_docs,Regression_Simple
 from reviewer_expertise.utilities_model import get_train_test_data_from_hidden_representations,format_time, make_plot_training,prepare_data_bow,prepare_data,get_batch_eval, calculate_entropy_element, get_reviewer_entropy
 
-
-model_path= "LDA-Match_LR-flag_attn-True-epochs-30-batch_size-16"
+folder="./model_training/"
+#model_path= "LDA-Match_LR-flag_attn-True-epochs-30-batch_size-16"
+model_path="LDA-Match_LR-flag_attn-True-epochs-30-batch_size-16"
+#model_path="LDA-Match_LR-flag_attn-True-epochs-3-batch_size-16"
 params=model_path.split('-')
 if not os.path.exists(model_path):
     print('model not trained yet')
