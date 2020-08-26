@@ -96,6 +96,8 @@ class Match_LR(nn.Module):
         
         self.number_heads=1
         self.dropout= nn.Dropout(p=0.2)
+        self.distance= torch.tensor(0)
+        self.cos = nn.CosineSimilarity(dim=1, eps=1e-6)
 
         if self.attn_over_docs:
             self.padding=True
@@ -113,20 +115,27 @@ class Match_LR(nn.Module):
         self.weights_diff.data.uniform_(-initrange, initrange)
         self.weights_multi.data.uniform_(-initrange, initrange)
 
-    
+    def get_distance_attn_reviewer_sub(self,submitter_emb, reviewer_emb):
+        mean_rep= torch.mean(reviewer_emb,dim=1)#.squeeze() 
+        attn_rep= self.attention_module(submitter_emb, reviewer_emb)#.squeeze()
+        distance_paper_from_mean= F.kl_div( F.log_softmax(submitter_emb),F.softmax(mean_rep,dim=1),reduction= 'sum')
+        distance_paper_from_attn= F.kl_div( F.log_softmax(submitter_emb),F.softmax(attn_rep,dim=1), reduction= 'sum')
+
+        return distance_paper_from_mean, distance_paper_from_attn
+
+    def get_reviewer_weighted(self, submitter_emb, reviewer_emb):
+        weighted_reviewer_emb= self.attention_module(submitter_emb, reviewer_emb)
+        return weighted_reviewer_emb
+
     def forward(self, submitter_emb, reviewer_emb):
         if self.attn_over_docs==True:
-            reviewer_emb= self.attention_module(submitter_emb, reviewer_emb)
-       
+            reviewer_emb= self.get_reviewer_weighted(submitter_emb,reviewer_emb)
         add = submitter_emb + self.fc2(reviewer_emb)
         diff = submitter_emb - self.fc2(reviewer_emb)
         multi = submitter_emb * (self.fc2(reviewer_emb))     
-        
-        #commenting out multi term for the moment
-      #  combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff) + nn.Tanh()(self.weights_multi * multi))
         combo = self.combined(nn.Tanh()(self.weights_add * add) + nn.Tanh()(self.weights_diff * diff)) #+ nn.Tanh()(self.weights_multi * multi))
         op = 3*torch.sigmoid(self.output(combo))
-        return op.view(-1)
+        return op.view(-1) 
     
             
 class Regression_Attention_Over_docs(nn.Module):
