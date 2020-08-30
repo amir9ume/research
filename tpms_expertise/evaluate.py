@@ -20,7 +20,7 @@ from reviewer_expertise.utilities_model import get_train_test_data_from_hidden_r
 from reviewer_expertise.utilities_model import get_test_data_from_hidden_representations_with_ids,Average
 folder="./model_training/"
 
-saved_models="saved_models_today/"
+saved_models="../../workingAmir/tpms_expertise/saved_models_today/"
 model_path="LDA-Match_LR-flag_attn-True-epochs-2-batch_size-64-KL-True"
 
 params=model_path.split('-')
@@ -32,7 +32,7 @@ else:
     Attention_over_docs=bool(params[3])
     batch_size=int(params[-3])
     KL_flag=str(params[-1])
-    data_path = '../data_info/loaded_pickles_nips19/'
+    data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
     """
     test_sub= torch.load('test_sub.pt')
     test_rev=torch.load('test_rev.pt')
@@ -116,7 +116,7 @@ for rev_id in rev_dict:
     rev_dict[rev_id]= avg
 
 
-folder= "./meeting_183/"
+folder= "../../workingAmir/tpms_expertise/meeting_183/"
 
 with open(folder+"rev_dict_for_plot", "wb") as output_file:
     pickle.dump(rev_dict, output_file)

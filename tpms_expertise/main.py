@@ -32,7 +32,7 @@ print('slurm tmpdir loc: ', args.path)
 torch.manual_seed(1)
 r= os.getcwd()
 print(os.getcwd())
-data_path = '../data_info/loaded_pickles_nips19/'
+data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
 
 flag_early_stopping=False
 
@@ -45,10 +45,11 @@ model_name="Match_LR"
 device="cuda" if torch.cuda.is_available() else "cpu"
 train_sub,val_sub,test_sub, train_rev,val_rev,test_rev,y_train,y_val,y_test= get_train_test_data_from_hidden_representations(rep,data_path,device)
 
-#saving test data, for later evaluation
-torch.save(test_sub, 'test_sub.pt')
-torch.save(test_rev, 'test_rev.pt')
-torch.save(y_test, 'y_test.pt')
+# save_folder=''
+# #saving test data, for later evaluation
+# torch.save(test_sub, save_folder+'test_sub.pt')
+# torch.save(test_rev, save_folder'test_rev.pt')
+# torch.save(y_test, save_folder'y_test.pt')
 
 
 patience=5
@@ -195,7 +196,7 @@ def train_expertise_model(trial):
                 }
         )
 
-    saved_models_folder="saved_models_today/"
+    saved_models_folder="../../workingAmir/tpms_expertise/saved_models_today/"
     PATH=rep+'-'+model_name+'-flag_attn-'+str(Attention_over_docs)+'-epochs-'+str(epochs)+'-batch_size-'+str(batch_size)+"-KL-"+str(kl_div_flag)
     torch.save(model.state_dict(), saved_models_folder+PATH)
 
@@ -240,7 +241,7 @@ if __name__ == '__main__':
     study = optuna.create_study(sampler=sampler, direction='maximize')
     
     study.optimize(func=train_expertise_model, n_trials=1)
-    joblib.dump(study, './tuned_models/optuna_5_no_trial')
+    joblib.dump(study, '../../workingAmir/tpms_expertise/tuned_models/optuna_5_no_trial')
 
     df = study.trials_dataframe()
     print(df.head(3))
