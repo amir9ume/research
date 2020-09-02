@@ -66,7 +66,7 @@ train_sub,val_sub,test_sub, train_rev,val_rev,test_rev,y_train,y_val,y_test= get
 patience=5
 
 Attention_over_docs=True
-kl_div_flag=True
+kl_div_flag=False
 
 #trial.suggest_categorical('batch_size',[ 32,64])
 #trial.suggest_int('epochs',25,55) . trial.suggest_loguniform('lr', 1e-5, 1e-2)
@@ -93,9 +93,8 @@ def train_expertise_model(trial):
         model= Regression_Simple(25,25,batch_size,4,"mean")
 
 
-    criterion = torch.nn.MSELoss(reduction='sum') 
+    criterion = torch.nn.MSELoss(reduction='sum').to(device) 
     optimizer=cfg['optimizer'](model.parameters(), lr=cfg['lr'])
-
 
 
     if torch.cuda.device_count() > 1:
@@ -103,7 +102,6 @@ def train_expertise_model(trial):
         model = nn.DataParallel(model)
 
     model.to(device)
-
     #TRAINING MODULE
     losses= []
     training_stats = []
@@ -135,23 +133,18 @@ def train_expertise_model(trial):
                 if kl_div_flag:
                     loss2=F.kl_div(F.log_softmax(mini_batch_submitted_paper,dim=1), weighted_averages_reviewers,reduction= 'sum')
                 else:
-                    loss2= torch.zeros_like(loss1)
+                    loss2= torch.zeros_like(loss1).to(device)
                 weight_mse= cfg['weight_mse']
                 loss= weight_mse* loss1 + loss2    
                 loss_ep= weight_mse* loss_ep + loss2.item()
 
-            #    d1, d2= model.get_distance_attn_reviewer_sub(mini_batch_submitted_paper, mini_batch_reviewer_paper)
-
+        
                 loss.backward()         
                 optimizer.step()
-                class_label = torch.round(prediction).squeeze(dim=0)
-                trg_label = y.argmax(dim=1)
-                correct = correct + torch.sum(class_label==trg_label).item()
                         
         losses.append(loss_ep/len(y_train))
-        # Measure how long this epoch took.
         training_time = format_time(time.time() - t0)
-        print("Epoch:", e_num, " Loss:", losses[-1], ": Train Accuracy:", correct/len(y_train), "  Training epcoh took: {:}".format(training_time))
+        print("Epoch:", e_num, " Loss:", losses[-1], ": Training epcoh took: {:}".format(training_time))
 
         # #Validate after each epoch
         model.eval()
@@ -174,15 +167,15 @@ def train_expertise_model(trial):
                 
                 
             
-                class_label = torch.round(prediction).squeeze(dim=0)
-                trg_label = y_val[i].argmax(dim=0)
-                if rep=="LDA" and model_name=="Match_LR":
-                    if class_label==trg_label:
-                        correct= correct+1
-                else:      
-                    correct = correct + torch.sum(class_label==trg_label).item()
+            #     class_label = torch.round(prediction).squeeze(dim=0)
+            #     trg_label = y_val[i].argmax(dim=0)
+            #     if rep=="LDA" and model_name=="Match_LR":
+            #         if class_label==trg_label:
+            #             correct= correct+1
+            #     else:      
+            #         correct = correct + torch.sum(class_label==trg_label).item()
             
-            print("Validation Loss:", loss_val/len(y_val), ": Validation Accuracy:", correct/len(y_val))
+            print("Validation Loss:", loss_val/len(y_val))
             
             print("========================================================")
             # early_stopping needs the validation loss to check if it has decresed, 
@@ -202,7 +195,7 @@ def train_expertise_model(trial):
                 'epoch': e_num ,
                 'Training Loss': losses[-1],
                 'Valid. Loss': loss_val/len(y_val),
-                'Valid. Accur.': correct/len(y_val),
+                
                 'Training Time': training_time
                 }
         )
@@ -217,7 +210,7 @@ def train_expertise_model(trial):
         correct=0
         wrong=0
         loss_test=0
-        rev_entropy_val=0
+        #rev_entropy_val=0
         for i in range(0, len(y_test)):
             if model_name=="Regression_Simple" and rep!="BOW":
                 prediction = model(test_sub[i].unsqueeze(dim=0).float(), torch.mean(test_rev[i].unsqueeze(dim=0),dim=1).float()).float()
@@ -230,7 +223,6 @@ def train_expertise_model(trial):
             loss = criterion(prediction, y_test[i].argmax(dim=0).float())
             loss_val += loss.item()
             
-            rev_entropy= get_reviewer_entropy(test_rev[i].unsqueeze(dim=0).float())
            
             class_label = torch.round(prediction).squeeze(dim=0)
             trg_label = y_test[i].argmax(dim=0)
