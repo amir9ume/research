@@ -11,7 +11,6 @@ import datetime
 from datetime import datetime
 from sklearn.metrics import confusion_matrix
 import numpy as np
-from scipy.stats import entropy
 
 import os
 # import optuna
@@ -39,7 +38,10 @@ data_path=args.path
 curr_time_is=str(datetime.today().strftime('%Y-%m-%d'))
 #saved_models_folder=curr_time_is+'/'
 saved_models_folder= args.save_model
-os.mkdir(saved_models_folder)
+if os.path.exists(saved_models_folder):
+    pass
+else:
+    os.mkdir(saved_models_folder)
 
 
 flag_early_stopping=False
@@ -81,9 +83,9 @@ cfg = { 'device' : "cuda" if torch.cuda.is_available() else "cpu",
 
 epochs= cfg['epochs']
 batch_size=cfg['batch_size']
-
+device=cfg['device']
 if model_name=="Match_LR": #Match LR is Meghana's model
-    model= Match_LR(batch_size,25,25,4,Attention_over_docs)
+    model= Match_LR(batch_size,25,25,4,device,Attention_over_docs)
 elif model_name=="Regression_Attention_Over_docs":    
     model=Regression_Attention_Over_docs(batch_size,4,Attention_over_docs,True)
 elif model_name=="Regression_Simple":
@@ -94,7 +96,7 @@ criterion = torch.nn.MSELoss(reduction='sum')
 optimizer=cfg['optimizer'](model.parameters(), lr=cfg['lr'])
 
 
-device=cfg['device']
+
 if torch.cuda.device_count() > 1:
     print("Let's use", torch.cuda.device_count(), "GPUs!")
     model = nn.DataParallel(model)
@@ -156,7 +158,7 @@ for e_num in range(epochs):
         correct=0
         wrong=0
         loss_val=0
-        rev_entropy_val=0
+        
         for i in range(0, len(y_val)):
             if model_name=="Regression_Simple" and rep!="BOW":
                 prediction = model(val_sub[i].unsqueeze(dim=0).float(), torch.mean(val_rev[i].unsqueeze(dim=0),dim=1).float()).float()
@@ -169,7 +171,7 @@ for e_num in range(epochs):
             loss = criterion(prediction, y_val[i].argmax(dim=0).float())
             loss_val += loss.item()
             
-            rev_entropy= get_reviewer_entropy(val_rev[i].unsqueeze(dim=0).float())
+            
         
             class_label = torch.round(prediction).squeeze(dim=0)
             trg_label = y_val[i].argmax(dim=0)
@@ -180,7 +182,7 @@ for e_num in range(epochs):
                 correct = correct + torch.sum(class_label==trg_label).item()
         
         print("Validation Loss:", loss_val/len(y_val), ": Validation Accuracy:", correct/len(y_val))
-        print('reviewer entropy ', rev_entropy_val/len(y_val))
+        
         print("========================================================")
         # early_stopping needs the validation loss to check if it has decresed, 
         # and if it has, it will make a checkpoint of the current model
