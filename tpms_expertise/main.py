@@ -37,7 +37,8 @@ print(os.getcwd())
 #data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
 data_path=args.path
 curr_time_is=str(datetime.today().strftime('%Y-%m-%d'))
-saved_models_folder=curr_time_is+'/'
+#saved_models_folder=curr_time_is+'/'
+saved_models_folder= args.save_model
 os.mkdir(saved_models_folder)
 
 
@@ -202,10 +203,10 @@ def train_expertise_model(trial):
                 'Training Time': training_time
                 }
         )
-    #saved_models_folder="../../workingAmir/tpms_expertise/saved_models_today/"
+    
     PATH=rep+'-'+model_name+'-flag_attn-'+str(Attention_over_docs)+'-epochs-'+str(epochs)+'-batch_size-'+str(batch_size)+"-KL-"+str(kl_div_flag)
         
-    torch.save(model.state_dict(), saved_models_folder+PATH)
+    torch.save(model.state_dict(), saved_models_folder+'/'+PATH)
 
     #test set
     model.eval()
@@ -227,8 +228,7 @@ def train_expertise_model(trial):
             loss_val += loss.item()
             
             rev_entropy= get_reviewer_entropy(test_rev[i].unsqueeze(dim=0).float())
-            #rev_entropy_val+= rev_entropy
-
+           
             class_label = torch.round(prediction).squeeze(dim=0)
             trg_label = y_test[i].argmax(dim=0)
             if rep=="LDA" and model_name=="Match_LR":
@@ -236,8 +236,6 @@ def train_expertise_model(trial):
                     correct= correct+1
             else:      
                 correct = correct + torch.sum(class_label==trg_label).item()
-
-            #print("Test Loss:", loss_test/len(y_test), ": Test Accuracy:", correct/len(y_test))
 
 
     return correct/len(y_test)
@@ -248,8 +246,7 @@ if __name__ == '__main__':
     study = optuna.create_study(sampler=sampler, direction='maximize')
     
     study.optimize(func=train_expertise_model, n_trials=1)
-  #  joblib.dump(study, '../../workingAmir/tpms_expertise/tuned_models/optuna_5_no_trial')
-    joblib.dump(study, saved_models_folder+'optuna_5_no_trial')
+    joblib.dump(study, saved_models_folder+'/'+'optuna_5_no_trial')
 
     df = study.trials_dataframe()
     print(df.head(4))
