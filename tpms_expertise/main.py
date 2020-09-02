@@ -8,7 +8,7 @@ import pandas as pd
 import os
 import time
 import datetime
-
+from datetime import datetime
 from sklearn.metrics import confusion_matrix
 import numpy as np
 from scipy.stats import entropy
@@ -24,15 +24,22 @@ from reviewer_expertise.utilities_model import get_train_test_data_from_hidden_r
 
 import argparse
 parser=argparse.ArgumentParser()
+#this arhgument shall store , location of the data folder
 parser.add_argument('--path',type=str,help='path to the $slurm tmpdir is passed')
-#parser.add_argument('--save_model',type=str,help='path for saving the results')
+parser.add_argument('--save_model',type=str,help='path for saving the results')
 args=parser.parse_args()
 print('slurm tmpdir loc: ', args.path)
 
 torch.manual_seed(1)
 r= os.getcwd()
 print(os.getcwd())
-data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
+
+#data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
+data_path=args.path
+curr_time_is=str(datetime.today().strftime('%Y-%m-%d'))
+saved_models_folder=curr_time_is+'/'
+os.mkdir(saved_models_folder)
+
 
 flag_early_stopping=False
 
@@ -195,9 +202,9 @@ def train_expertise_model(trial):
                 'Training Time': training_time
                 }
         )
-
-    saved_models_folder="../../workingAmir/tpms_expertise/saved_models_today/"
+    #saved_models_folder="../../workingAmir/tpms_expertise/saved_models_today/"
     PATH=rep+'-'+model_name+'-flag_attn-'+str(Attention_over_docs)+'-epochs-'+str(epochs)+'-batch_size-'+str(batch_size)+"-KL-"+str(kl_div_flag)
+        
     torch.save(model.state_dict(), saved_models_folder+PATH)
 
     #test set
@@ -241,14 +248,15 @@ if __name__ == '__main__':
     study = optuna.create_study(sampler=sampler, direction='maximize')
     
     study.optimize(func=train_expertise_model, n_trials=1)
-    joblib.dump(study, '../../workingAmir/tpms_expertise/tuned_models/optuna_5_no_trial')
+  #  joblib.dump(study, '../../workingAmir/tpms_expertise/tuned_models/optuna_5_no_trial')
+    joblib.dump(study, saved_models_folder+'optuna_5_no_trial')
 
     df = study.trials_dataframe()
-    print(df.head(3))
+    print(df.head(4))
 
     print("Study statistics: ")
     print("  Number of finished trials: ", len(study.trials))
     print("Best trial:")
     trial = study.best_trial
 
-    print("  Value: ", trial.value)
+    print("  Value: ", trial)
