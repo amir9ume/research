@@ -9,6 +9,7 @@ import numpy as np
 import os
 import time
 import datetime
+from datetime import datetime
 import pickle
 
 from sklearn.metrics import confusion_matrix
@@ -18,10 +19,30 @@ from scipy.stats import entropy
 from reviewer_expertise.models import Match_LR,Regression_Attention_Over_docs,Regression_Simple
 from reviewer_expertise.utilities_model import get_train_test_data_from_hidden_representations,format_time, make_plot_training,prepare_data_bow,prepare_data,get_batch_eval, calculate_entropy_element, get_reviewer_entropy
 from reviewer_expertise.utilities_model import get_test_data_from_hidden_representations_with_ids,Average
+import argparse
+
 folder="./model_training/"
 
-saved_models="../../workingAmir/tpms_expertise/saved_models_today/"
-model_path="LDA-Match_LR-flag_attn-True-epochs-2-batch_size-64-KL-True"
+
+
+parser=argparse.ArgumentParser()
+parser.add_argument('--data_path',type=str,help='path to the $slurm tmpdir is passed')
+parser.add_argument('--saved_models',type=str,help='folder path to the saved models ')
+parser.add_argument('--model_name',type=str,help='name of the saved model')
+
+args=parser.parse_args()
+
+curr_time_is=str(datetime.today().strftime('%Y-%m-%d'))
+saved_evaluation='sav_eval_'+curr_time_is+'/'
+os.mkdir(saved_evaluation)
+
+
+
+
+#saved_models="../../workingAmir/tpms_expertise/saved_models_today/"
+saved_models= args.saved_models
+#model_path="LDA-Match_LR-flag_attn-True-epochs-2-batch_size-64-KL-True"
+model_path=args.model_name
 
 params=model_path.split('-')
 if not os.path.exists(saved_models+model_path):
@@ -32,7 +53,8 @@ else:
     Attention_over_docs=bool(params[3])
     batch_size=int(params[-3])
     KL_flag=str(params[-1])
-    data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
+   # data_path = '../../workingAmir/data_info/loaded_pickles_nips19/'
+    data_path=args.data_path
     """
     test_sub= torch.load('test_sub.pt')
     test_rev=torch.load('test_rev.pt')
@@ -116,19 +138,19 @@ for rev_id in rev_dict:
     rev_dict[rev_id]= avg
 
 
-folder= "../../workingAmir/tpms_expertise/meeting_183/"
 
-with open(folder+"rev_dict_for_plot", "wb") as output_file:
+
+with open(saved_evaluation+"rev_dict_for_plot", "wb") as output_file:
     pickle.dump(rev_dict, output_file)
 print('evalute done')
 
-with open(folder+"reviewer_entropies_for_plot", "wb") as o:
+with open(saved_evaluation+"reviewer_entropies_for_plot", "wb") as o:
     pickle.dump(reviewer_entropies, o)
 print('evalute done')
 
 
-with open(folder+"reviewer_distances_mean_for_plot", "wb") as o:
+with open(saved_evaluation+"reviewer_distances_mean_for_plot", "wb") as o:
     pickle.dump(reviewer_distances_mean, o)
 
-with open(folder+"reviewer_distances_attn_for_plot", "wb") as o:
+with open(saved_evaluation+"reviewer_distances_attn_for_plot", "wb") as o:
     pickle.dump(reviewer_distances_attn, o)
