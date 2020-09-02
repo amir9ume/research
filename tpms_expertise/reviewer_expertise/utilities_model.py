@@ -117,8 +117,10 @@ def get_train_test_data_from_hidden_representations(rep,data_path,device):
         paper_representation = pickle.load( open( data_path + 'dict_paper_lda_vectors.pickle', "rb" ))
 
 
-    bds_path='~/arcopy/neurips19_anon/anon_bids_file'
-    bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
+    #bds_path='~/arcopy/neurips19_anon/anon_bids_file'
+    #bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
+    bds_path= data_path+'bids_ac_anon_nips19'
+    
     df= pd.read_csv(bds_path)
     df=df.sample(frac=1)
     size= len(df.index)
@@ -229,8 +231,9 @@ def get_test_data_from_hidden_representations_with_ids(rep,data_path,device):
         paper_representation = pickle.load( open( data_path + 'dict_paper_lda_vectors.pickle', "rb" ))
 
 
-    bds_path='~/arcopy/neurips19_anon/anon_bids_file'
-    bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
+    #bds_path='~/arcopy/neurips19_anon/anon_bids_file'
+   # bds_path= '~/arcopy/workingAmir/data_info/loaded_pickles_nips19/bids_ac_anon_nips19'
+    bds_path= data_path+'bids_ac_anon_nips19'
     df= pd.read_csv(bds_path)
     df=df.sample(frac=1)
     size= len(df.index)
