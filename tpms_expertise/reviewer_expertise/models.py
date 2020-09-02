@@ -77,7 +77,7 @@ class Multi_Head_Attention(nn.Module):
 
 class Match_LR(nn.Module):
     def __init__(self,batch_size,submitter_emb_dim,reviewer_emb_dim,
-                 n_classes,attn_over_docs=True):
+                 n_classes,device,attn_over_docs=True):
         super(Match_LR, self).__init__()
         self.attn_over_docs=attn_over_docs
         self.padding=False
@@ -86,9 +86,9 @@ class Match_LR(nn.Module):
         self.submitter_emb_dim = submitter_emb_dim
         self.reviewer_emb_dim= reviewer_emb_dim
         
-        self.weights_add = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
-        self.weights_diff = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
-        self.weights_multi = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True)#.cuda()
+        self.weights_add = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True).to(device)#.cuda()
+        self.weights_diff = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True).to(device)#.cuda()
+        self.weights_multi = Variable(torch.Tensor(submitter_emb_dim), requires_grad=True).to(device)#.cuda()
         
         self.fc2 = nn.Linear(self.reviewer_emb_dim, self.reviewer_emb_dim)
         self.output = nn.Linear(128, 1)
