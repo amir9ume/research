@@ -53,7 +53,7 @@ def prepare_data(submitter, reviewer, df, device='cpu'):
             train_data_sub.append(torch.tensor(submitter[pid_curr],requires_grad=True, device= device))#.cuda()
             train_data_rev.append(torch.tensor(reviewer[rev_curr], requires_grad=True, device= device))#.cuda()
             idx = int(df.iloc[i]['bid'])
-            temp = torch.LongTensor([0, 0, 0, 0], device= device)#.cuda()
+            temp = torch.LongTensor([0, 0, 0, 0]).to(device)#.cuda()
             for j in range(4):
                 if j == idx:
                     temp[j] = 1
