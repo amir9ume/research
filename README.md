@@ -13,12 +13,14 @@ Sample Arguments:
 
 For main.py 
 --path "../../workingAmir/data_info/loaded_pickles_nips19/" --save_model "lda"--epochs "20"]
+
 For evaluate.py
 --data_path "../../workingAmir/data_info/loaded_pickles_nips19/"--saved_models "lda_old/"--model_name "LDA-Match_LR-flag_attn-True-epochs-40-batch_size-64-KL-False"]
 
 For rank_app.py
 --path "../../workingAmir/data_info/loaded_pickles_nips19/" --save_model "rank_net" --epochs "20"
 
-Folder_reviewer _expertise has models.py, other_models.py (old models) ,utilities
-And plots.py
+Folder_reviewer_expertise has:
+ models.py, other_models.py (old models) ,utilities
+ plots.py
 
