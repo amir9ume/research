@@ -16,7 +16,7 @@ from scipy.stats import entropy
 import os
 
 torch.manual_seed(1)
-
+#from reviewer_expertise.utlities_model import calculate_entropy_element
 
 class Attention_Module(nn.Module):
     def __init__(self, num_topics, attention_matrix_size, dropout):
@@ -193,36 +193,13 @@ class Match_LR(nn.Module):
 
     #tells where the model is focussing
     def get_attention_scores(self, submitter_emb, reviewer_emb):
-        attn_scores = self.attention_module(
+        attention_scores = self.attention_module(
             submitter_emb, reviewer_emb)
 
         #just calculate entropy of the attention scores above. no need for this kl divergence at the moment
-        entropy_attn_scores= None
-
-        return entropy_attn_scores
+        
+        #entropy= torch.sum(calculate_entropy_element(attention_scores[0][0]))
+        return attention_scores
 
     
 
-class MRRLoss(nn.Module):
-# """ Mean Reciprocal Rank Loss """
-    def __init__(self):
-        super(MRRLoss, self).__init__()
-
-    def forward(self, u, v):
-        # u=torch.reshape(u,(-1,))
-        # v=torch.reshape(v,(-1,))
-        #cosine distance between all pair of embedding in u and v batches.
-        # cos = nn.CosineSimilarity(dim=0)
-        # distances=cos(u,v)
-        cos = nn.CosineSimilarity(dim=2)
-        distances=cos(u.unsqueeze(dim=1),v)
-        # by construction the diagonal contains the correct elements
-        correct_elements = torch.diag(cos(u.unsqueeze(dim=1),v),0).unsqueeze(-1)
-
-        #maybe you can replace distances with the attention score?
-        # number of elements ranked wrong.
-        return torch.sum(distances < correct_elements)
-
-def get_rank_loss(submitter_emb,reviewer_emb):
-    rank_loss= MRRLoss()
-    return rank_loss(submitter_emb,reviewer_emb)
