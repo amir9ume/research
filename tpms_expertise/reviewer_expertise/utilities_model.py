@@ -122,9 +122,9 @@ def get_batch_eval(model_name, paper_emb, rev_emb, trg_value, idx, batch_size, p
         paper_emb[idx:idx+batch_size]), requires_grad=True)  # .permute(1,0)
     rev_papers = rev_emb[idx:idx+batch_size]
     if padding == True:
-        #    reviewer_papers = pad_sequence(rev_papers, batch_first=True, padding_value=0) # padding as different reviewers can have different number of papers
-        reviewer_papers = pad_sequence_my(
-            rev_papers, batch_first=True, padding_value=0, max_length=350)
+           reviewer_papers = pad_sequence(rev_papers, batch_first=True, padding_value=0) # padding as different reviewers can have different number of papers
+        # reviewer_papers = pad_sequence_my(
+        #     rev_papers, batch_first=True, padding_value=0, max_length=350)
     elif (model_name == "Regression_Simple" or model_name == "Match_LR") and rep != "BOW":
         reviewer_papers = torch.stack(
             [torch.mean(r, dim=0) for r in rev_papers])
@@ -135,7 +135,7 @@ def get_batch_eval(model_name, paper_emb, rev_emb, trg_value, idx, batch_size, p
     return paper_lines.float(), reviewer_papers.float(), trg
 
 
-def get_train_test_data_from_hidden_representations(rep, data_path, device):
+def get_train_test_data_from_hidden_representations(rep, data_path, device,fraction):
 
     if rep == 'BOW':
         folder = 'reviewer_expertise/summary_models/'
@@ -154,7 +154,7 @@ def get_train_test_data_from_hidden_representations(rep, data_path, device):
     bds_path = data_path+'bids_ac_anon_nips19'
 
     df = pd.read_csv(bds_path)
-    df = df.sample(frac=1)
+    df = df.sample(frac=fraction)
     size = len(df.index)
 
     print('data size is ', len(df.index))
@@ -337,3 +337,5 @@ def get_data_particular_reviewer_with_ids(rep, data_path, find_reviewer_ids, dev
             paper_representation, reviewer_representation, df, find_reviewer_ids, device)
 
     return data_sub, data_rev, data_y, reviewer_ids, submitter_ids
+
+

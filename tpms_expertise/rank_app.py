@@ -18,7 +18,7 @@ from sklearn.externals import joblib
 import sys
 
 from reviewer_expertise.models import Match_LR, Rank_Net
-from reviewer_expertise.other_models import Regression_Attention_Over_docs, Regression_Simple
+from reviewer_expertise.other_models import Regression_Attention_Over_docs, Regression_Simple , get_actual_relevance_using_cosine, get_synthetic_relevance_values 
 from reviewer_expertise.utilities_model import get_train_test_data_from_hidden_representations, format_time, make_plot_training, prepare_data_bow, prepare_data, get_batch_eval, calculate_entropy_element, get_reviewer_entropy, pad_sequence_my
 
 import argparse
@@ -76,34 +76,6 @@ def get_rank_loss(self, attention_scores, actual_relevance):
         return listnet_score_div
 
 
-def get_values(max_size, max_list_indices):
-    
-    original=torch.zeros_like(max_list_indices)
-    for j in range(len(max_list_indices)):
-        value= max_size
-        divisor=1
-        for i in max_list_indices[j]:
-            original[j][i]= value
-            value= value-5
-            divisor+=1
-    return original
-
-def get_actual_relevance(u, v):
-        cos = nn.CosineSimilarity(dim=2)
-        distances=cos(u.unsqueeze(dim=1),v) 
-        #return these distances in sorted order.
-        #also remember best rank, will have highest value. 
-        # so maybe just give it value of length of this relevance score vector-1. and others --1
-
-        #remember you want to sort within a batch, along the dimension of padding.
-        most_similar= torch.argsort(distances,dim=1,descending=True)
-        length= most_similar.shape[1]
-
-        original= get_values(length,most_similar ).float()
-
-        return original
-
-
 def train_expertise_model(trial):
     cfg = {'device': "cuda" if torch.cuda.is_available() else "cpu",
            'batch_size': 32,
@@ -156,7 +128,7 @@ def train_expertise_model(trial):
                 optimizer.zero_grad()
                 
                 attention_scores = model(mini_batch_submitted_paper, mini_batch_reviewer_paper).float()
-                actual_relevance= F.log_softmax(get_actual_relevance(mini_batch_submitted_paper,mini_batch_reviewer_paper),dim=1).unsqueeze(dim=1)
+                actual_relevance= F.log_softmax(get_actual_relevance_using_cosine(mini_batch_submitted_paper,mini_batch_reviewer_paper),dim=1).unsqueeze(dim=1)
                 attention_scores= F.softmax(attention_scores,dim=2)
 
                 # listNet_div= model.get_rank_loss(attention_scores,actual_relevance)
@@ -183,7 +155,7 @@ def train_expertise_model(trial):
 
                 attention_scores= F.softmax(attention_scores,dim=2) 
 
-                actual_relevance= F.log_softmax(get_actual_relevance(val_sub[i].unsqueeze(dim=0).float(),val_rev[i].unsqueeze(
+                actual_relevance= F.log_softmax(get_actual_relevance_using_cosine(val_sub[i].unsqueeze(dim=0).float(),val_rev[i].unsqueeze(
                         dim=0).float()),dim=1) #.unsqueeze(dim=1)       
                 loss = criterion(actual_relevance, attention_scores)
                 loss_val += loss.item()
@@ -220,7 +192,7 @@ def train_expertise_model(trial):
 
             attention_scores= F.softmax(attention_scores,dim=2) 
 
-            actual_relevance= F.log_softmax(get_actual_relevance(test_sub[i].unsqueeze(dim=0).float(),test_rev[i].unsqueeze(
+            actual_relevance= F.log_softmax(get_actual_relevance_using_cosine(test_sub[i].unsqueeze(dim=0).float(),test_rev[i].unsqueeze(
                     dim=0).float()),dim=1) #.unsqueeze(dim=1)       
             loss = criterion(actual_relevance, attention_scores)
             loss_test += loss.item()
