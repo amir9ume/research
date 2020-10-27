@@ -14,13 +14,13 @@ import datetime
 from datetime import datetime
 
 from models_text_rep import  LSTMWithAttentionAutoEncoder
-from contrastive_loss import NTXentLoss, loss_fn, loss_towards_ds
-from util_for_summary import read_data, get_batch
+from contrastive_loss import NTXentLoss, loss_fn, loss_towards_ds, ContrastiveLossELI5, ContrastiveLoss
+from util_for_summary import read_data, get_batch , format_time
 torch.manual_seed(1)
 
 
 cfg = {'device': "cuda" if torch.cuda.is_available() else "cpu",
-           'batch_size': 2,
+           'batch_size': 2000,
            'epochs':20,
            'src_emb_dim':50,
             'src_hidden_dim':50,
@@ -57,12 +57,14 @@ model= LSTMWithAttentionAutoEncoder(cfg['src_emb_dim'],
 model.to(device)
 #self.nt_xent_criterion = NTXentLoss(device, cfg['batch_size'], **config['loss'])
 #nt_xent_criterion = NTXentLoss(device, cfg['batch_size'], 0.5,True)
+#criterion= ContrastiveLossELI5 (cfg['batch_size'],verbose=False)
+criterion= ContrastiveLoss (cfg['batch_size'])
 optimizer = cfg['optimizer'](model.parameters(), lr=cfg['lr'])
 
 losses = []
 training_stats = []
 #harcoded max len for now
-max_len=10
+max_len=512
 for e_num in range(cfg['epochs']):
     loss_ep = 0
     correct = 0
@@ -72,6 +74,8 @@ for e_num in range(cfg['epochs']):
 
     model.train()
     for j in range(0, len(src), cfg['batch_size']):
+        if (j+cfg['batch_size'])>int(len(src)/cfg['batch_size'])* cfg['batch_size']:
+            break
         input_lines_src, transformed_lines, lengths_src = get_batch(
                         src, word2idx, j,
                         cfg['batch_size'], max_len) 
@@ -86,8 +90,10 @@ for e_num in range(cfg['epochs']):
         optimizer.zero_grad()            
     #    loss= nt_xent_criterion(z.float(), z2.float())
     #0.5 is temperature value here.
-        loss= loss_towards_ds(z.float(), z2.float(), 0.5)
+        #loss= loss_towards_ds(z.float(), z2.float(), 0.5)
+        loss= criterion(z.float(), z2.float())
         loss_ep += loss.item()
+    #    print('loss is ',loss_ep,'  j is ', j)
         loss.backward()
         optimizer.step()
 

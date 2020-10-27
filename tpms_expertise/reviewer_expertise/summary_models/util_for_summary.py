@@ -12,6 +12,9 @@ from torchtext.utils import download_from_url
 
 import operator
 
+import time
+import datetime
+
 def build_vocab(src):
     vocab = dict()
 
@@ -64,22 +67,44 @@ def trasform_function(input_line):
 
 #Gives batch data of size 2N. Inlcudes augmented data
 def get_batch(src, word2idx, idx, batch_size, max_len):
+#    print('index ',idx)
     lens = [len(line) for line in src[idx:idx+batch_size]]
     src_lines = []
 
     for paper in src[idx:idx+batch_size]:
         temp = []
+#        temp=torch.zeros(512)
+    #    print('length of paper ',len(paper))
+        # cnt=0
+        # if len(paper)>0:
         for w in paper:
             if w not in word2idx:
                 temp.append(word2idx['<unk>'])
+                # temp[cnt]=word2idx['<unk>']
             else:
                 temp.append(word2idx[w])
+            #    temp[cnt]=word2idx[w]
         if len(temp) < max_len:
             for i in range(len(temp), max_len):
                 temp.append(word2idx['<pad>']) 
         src_lines.append(temp)
+    # else:
+        #     temp= [0 for j in range(0,512)]
+        #     src_lines.append(temp)
     src_lines = torch.LongTensor(src_lines)
-
+#    print('shape src_lines', src_lines.shape)
     transformed_lines = src_lines
 
     return src_lines, transformed_lines, lens
+
+
+
+def format_time(elapsed):
+    '''
+    Takes a time in seconds and returns a string hh:mm:ss
+    '''
+    # Round to the nearest second.
+    elapsed_rounded = int(round((elapsed)))
+
+    # Format as hh:mm:ss
+    return str(datetime.timedelta(seconds=elapsed_rounded))
