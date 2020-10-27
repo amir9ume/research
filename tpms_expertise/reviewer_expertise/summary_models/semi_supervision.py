@@ -20,7 +20,7 @@ torch.manual_seed(1)
 
 
 cfg = {'device': "cuda" if torch.cuda.is_available() else "cpu",
-           'batch_size': 2000,
+           'batch_size': 800,
            'epochs':20,
            'src_emb_dim':50,
             'src_hidden_dim':50,
@@ -80,20 +80,11 @@ for e_num in range(cfg['epochs']):
                         src, word2idx, j,
                         cfg['batch_size'], max_len) 
 
-        #the encoder should take input line and transformed line, to do the operation
-        z = model(input_lines_src)
-
-        #for now imagine a random perturbation on z
-        # to get z"
-
-        z2=z
+        z1 = model(input_lines_src)
+        z2= model(transformed_lines)
         optimizer.zero_grad()            
-    #    loss= nt_xent_criterion(z.float(), z2.float())
-    #0.5 is temperature value here.
-        #loss= loss_towards_ds(z.float(), z2.float(), 0.5)
-        loss= criterion(z.float(), z2.float())
+        loss= criterion(z1.float(), z2.float())
         loss_ep += loss.item()
-    #    print('loss is ',loss_ep,'  j is ', j)
         loss.backward()
         optimizer.step()
 

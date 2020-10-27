@@ -15,6 +15,10 @@ import operator
 import time
 import datetime
 
+# import torch
+# xlmr = torch.hub.load('pytorch/fairseq', 'xlmr.large')
+# xlmr.eval()
+
 def build_vocab(src):
     vocab = dict()
 
@@ -65,18 +69,15 @@ def trasform_function(input_line):
 
     return None
 
+
+# translator = Translator()
 #Gives batch data of size 2N. Inlcudes augmented data
 def get_batch(src, word2idx, idx, batch_size, max_len):
-#    print('index ',idx)
+
     lens = [len(line) for line in src[idx:idx+batch_size]]
     src_lines = []
-
     for paper in src[idx:idx+batch_size]:
         temp = []
-#        temp=torch.zeros(512)
-    #    print('length of paper ',len(paper))
-        # cnt=0
-        # if len(paper)>0:
         for w in paper:
             if w not in word2idx:
                 temp.append(word2idx['<unk>'])
@@ -88,12 +89,10 @@ def get_batch(src, word2idx, idx, batch_size, max_len):
             for i in range(len(temp), max_len):
                 temp.append(word2idx['<pad>']) 
         src_lines.append(temp)
-    # else:
-        #     temp= [0 for j in range(0,512)]
-        #     src_lines.append(temp)
+    reverse_lines=src_lines[::-1]
+
     src_lines = torch.LongTensor(src_lines)
-#    print('shape src_lines', src_lines.shape)
-    transformed_lines = src_lines
+    transformed_lines = torch.LongTensor(reverse_lines)
 
     return src_lines, transformed_lines, lens
 
